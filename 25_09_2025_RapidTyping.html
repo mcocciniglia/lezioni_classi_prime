@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Allenati con RapidTyping – Guida per gli studenti</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --card: #0b1224ee;
+      --ink: #e5e7eb;
+      --muted:#94a3b8;
+      --accent:#22d3ee;
+      --accent2:#a78bfa;
+      --ok:#34d399;
+      --warn:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% 10%, #1e293b 0, transparent 60%), radial-gradient(900px 600px at 90% 20%, #0ea5e9 0, transparent 40%), linear-gradient(160deg,#020617 0%, #0b1224 60%, #0b1224 100%);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--accent)}
+    .wrapper{max-width:980px;margin:40px auto;padding:0 18px}
+    .hero{position:relative;border-radius:22px;padding:32px 26px;background:linear-gradient(135deg, #0ea5e91a, #a78bfa1a);box-shadow:0 20px 60px rgba(2,6,23,.5), inset 0 0 0 1px #1f2a44}
+    h1{font-size:clamp(1.6rem,4vw,2.4rem);margin:0 0 8px;letter-spacing:.3px}
+    .subtitle{color:var(--muted);margin:0 0 12px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{appearance:none;border:none;cursor:pointer;border-radius:14px;padding:12px 16px;font-weight:700;letter-spacing:.2px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#001018;box-shadow:0 8px 25px rgba(34,211,238,.35)}
+    .btn-ghost{background:#0b122480;border:1px solid #243145;color:var(--ink)}
+    .grid{display:grid;gap:18px}
+    @media(min-width:860px){.grid.cols-3{grid-template-columns:1fr 1fr 1fr}.grid.cols-2{grid-template-columns:1fr 1fr}}
+    .card{background:var(--card);border:1px solid #1d263e;border-radius:18px;padding:20px;box-shadow:0 12px 30px rgba(2,6,23,.45)}
+    h2{font-size:1.35rem;margin:0 0 10px}
+    h3{font-size:1.1rem;margin:12px 0 6px;color:#c7d2fe}
+    .muted{color:var(--muted)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0a162c;border:1px solid #233150;border-bottom-width:2px;border-radius:8px;padding:.12rem .45rem;color:#e2e8f0}
+    .checklist{list-style:none;padding-left:0}
+    .checklist li{margin:.4rem 0;padding-left:28px;position:relative}
+    .checklist li::before{content:"✔";position:absolute;left:0;top:0.05rem;color:var(--ok)}
+    .callout{border-left:4px solid var(--accent);background:linear-gradient(90deg,#0ea5e91a,#22d3ee0d);padding:12px 14px;border-radius:12px}
+    .pill{display:inline-block;border:1px dashed #324265;border-radius:999px;padding:.25rem .6rem;color:#cbd5e1;font-size:.85rem}
+    .steps{counter-reset:step}
+    .steps li{counter-increment:step;margin:.55rem 0}
+    .steps li::marker{content:counter(step) ".  "}
+    .footer{color:#93a4c7;text-align:center;margin:26px 0 10px;font-size:.9rem}
+    .hr{height:1px;background:#1b2541;margin:24px 0}
+    .note{font-size:.95rem;color:#cbd5e1}
+    .big{font-size:1.05rem}
+    .badge{display:inline-block;padding:.28rem .6rem;border-radius:999px;background:#10213f;color:#7dd3fc;border:1px solid #1f2a44;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <section class="hero">
+      <span class="badge">Touch typing • 10–20 min al giorno</span>
+      <h1>Allenati con <span style="color:#7dd3fc">RapidTyping</span> e diventa un/una pro della tastiera</h1>
+      <p class="subtitle">Migliora velocità e precisione: bastano sessioni brevi e costanti. Qui trovi download, istruzioni e consigli.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://rapidtyping.com/downloads.html" target="_blank" rel="noopener">Scarica RapidTyping</a>
+        <a class="btn btn-ghost" href="#download">Istruzioni di download</a>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <section class="grid cols-3">
+      <div class="card">
+        <h3>🎯 Perché allenarsi</h3>
+        <p class="big">Digitare senza guardare la tastiera ti fa risparmiare tempo, riduce gli errori e ti aiuta in tutte le materie.</p>
+      </div>
+      <div class="card">
+        <h3>⌛ Quanto basta</h3>
+        <p class="big">Fai pratica <strong>10–20 minuti</strong> al giorno. La regolarità vale più delle maratone.</p>
+      </div>
+      <div class="card">
+        <h3>📈 Obiettivo</h3>
+        <p class="big">Punta prima alla <strong>precisione</strong> (errori &le; 10%), poi aumenta la <strong>velocità</strong> (cpm).</p>
+      </div>
+    </section>
+
+    <section class="card" id="mani">
+      <h2>Posizione corretta delle mani</h2>
+      <p class="note">Impara la "riga di base": le dita riposano su <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> <span class="kbd">F</span> (mano sinistra) e <span class="kbd">J</span> <span class="kbd">K</span> <span class="kbd">L</span> <span class="kbd">;</span> (mano destra). I tasti <span class="kbd">F</span> e <span class="kbd">J</span> hanno un piccolo rilievo per orientarti senza guardare.</p>
+      <ul class="checklist">
+        <li>Schiena dritta, spalle rilassate. Piedi ben appoggiati.</li>
+        <li>Polsi <strong>sollevati</strong> (non appoggiarli mentre digiti).</li>
+        <li>Usa <strong>tutte</strong> le dita: ognuna ha la sua colonna di tasti.</li>
+        <li>Guarda lo schermo, non la tastiera: affidati ai rilievi su <span class="kbd">F</span> e <span class="kbd">J</span>.</li>
+      </ul>
+      <div class="callout">Suggerimento: se ti accorgi che stai guardando la tastiera, rallenta e ricomincia. La memoria muscolare arriva con la calma.</div>
+    </section>
+
+    <section class="card" id="download">
+      <h2>Scarica RapidTyping (Windows)</h2>
+      <p>Vai alla pagina ufficiale dei download: <a href="https://rapidtyping.com/downloads.html" target="_blank" rel="noopener">rapidtyping.com/downloads.html</a></p>
+      <ul class="steps">
+        <li>Clicca sul <strong>pulsante verde</strong> per la <strong>versione Portable</strong> (non richiede installazione: puoi usarla anche da chiavetta).</li>
+        <li>Oppure, se usi un PC di casa, scegli il <strong>Setup per Windows</strong> (installazione classica).</li>
+        <li>Avvia il programma e, al primo avvio, scegli la lingua italiana se disponibile.</li>
+      </ul>
+      <p class="note">La versione portable è ideale per esercitarti ovunque senza installare nulla.</p>
+    </section>
+
+    <section class="grid cols-2">
+      <div class="card" id="uso">
+        <h2>Come usare RapidTyping (prima sessione)</h2>
+        <ol class="steps">
+          <li>Apri RapidTyping e seleziona il <strong>corso base</strong> (riga di base e parole brevi).</li>
+          <li>Regola l'altezza della sedia, posiziona le dita sulla riga di base e inizia l'esercizio.</li>
+          <li>Mira alla <strong>precisione</strong>: se superi il 10% di errori, ripeti l'esercizio con più calma.</li>
+          <li>Al termine, controlla le <strong>statistiche</strong> (cpm, errori, tempo) e annota il risultato.</li>
+          <li>Ripeti con un secondo esercizio, se hai tempo.</li>
+        </ol>
+        <p class="note">Ricorda: la velocità arriverà naturalmente quando la precisione sarà stabile.</p>
+      </div>
+      <div class="card" id="routine">
+        <h2>Programma di allenamento</h2>
+        <ul class="checklist">
+          <li>🥇 <strong>Settimana 1–2:</strong> 10–15 min al giorno, riga di base e tasti vicini.</li>
+          <li>🥈 <strong>Settimana 3–4:</strong> 15–20 min, parole e frasi, introduci le maiuscole.</li>
+          <li>🥉 <strong>Da 1 mese in poi:</strong> alterna <em>accuracy day</em> (precisione) e <em>speed day</em> (velocità).</li>
+        </ul>
+        <p class="pill">Obiettivo suggerito: errori ≤ 10% → poi aumenta la velocità di 5–10 cpm a settimana.</p>
+      </div>
+    </section>
+
+    <section class="card" id="tips">
+      <h2>Consigli utili</h2>
+      <ul class="checklist">
+        <li>Fai pause brevi: meglio 2×10 min che 1×20 min se sei stanco/a.</li>
+        <li>Non rincorrere i numeri: cura il gesto, i risultati seguiranno.</li>
+        <li>Usa sempre la stessa postura e posizione delle mani: crea abitudini sane.</li>
+        <li>Riprova gli esercizi difficili dopo un giorno: il cervello consolida durante il riposo.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="obiettivi">
+      <h2>Fissa i tuoi obiettivi</h2>
+      <p class="note">Scrivi i tuoi obiettivi personali (es. "precisione 95% entro 2 settimane" o "+30 cpm entro 1 mese") e verifica i progressi ogni venerdì.</p>
+    </section>
+
+    <p class="footer">Buon allenamento! Costanza, postura corretta e attenzione: il trio vincente. ✨</p>
+  </div>
+</body>
+</html>
