@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Le azioni di base sui file e sul testo — Google Documenti (Handout HTML)</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#0b1220;
+      --muted:#4b5563;
+      --accent:#1d4ed8;
+      --card:#f8fafc;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;line-height:1.6}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    h1{font-size:clamp(1.6rem, 1.2rem + 1.5vw, 2.1rem);margin:0 0 8px}
+    h2{font-size:1.25rem;margin:1.2rem 0 .5rem;color:#0b3aa5}
+    p.lead{color:var(--muted);margin:.25rem 0 1rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin:14px 0}
+    ol{margin:0;padding-left:1.25rem}
+    .kbd{display:inline-block;border:1px solid var(--border);border-bottom-width:2px;border-radius:6px;padding:.05rem .4rem;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#fff}
+    .tip{border-left:4px solid var(--accent);padding:.6rem .8rem;background:#eef2ff;border-radius:10px;margin:.75rem 0}
+    figure{margin:0}
+    figcaption{font-size:.9rem;color:#475569;margin-top:6px}
+    .img-resp{display:block;max-width:100%;height:auto;border:1px solid var(--border);border-radius:12px;background:#fff}
+    .aside{font-size:.95rem;color:var(--muted)}
+    .hr{height:1px;background:var(--border);margin:18px 0}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+    .checklist li{margin:.15rem 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Le azioni di base sui file e sul testo</h1>
+    <p class="lead"><strong>Versione per Google Documenti.</strong> Questa scheda guida gli studenti passo‑passo: crea un nuovo documento, incolla il testo non formattato, applica le formattazioni richieste e usa gli strumenti di base (annulla, trova/sostituisci, ortografia, apici/pedici). Adatta per DSA: caratteri grandi, passaggi chiari, tasti rapidi.</p>
+
+    <div class="card">
+      <h2>Figura 8.5</h2>
+      <figure>
+        <img src="effettoserra.jpg" alt="Figura 8.5: pagina da riprodurre - Effetto serra" class="img-resp">
+        <figcaption>Immagine di riferimento da riprodurre (effettoserra.jpg).</figcaption>
+      </figure>
+    </div>
+
+    <div class="card">
+      <h2>Materiali</h2>
+      <ol>
+        <li>Scarica dal corso Moodle il file <span class="mono">effetto_serra.txt</span> (testo non formattato).</li>
+        <li>Accedi a Google Drive con l’account scolastico.</li>
+      </ol>
+      <p class="tip"><strong>Accessibilità:</strong> se fatichi a leggere i testi piccoli, in Google Documenti puoi aumentare lo zoom (in alto a sinistra) e usare font ad alta leggibilità come Arial o Atkinson Hyperlegible (se disponibile).</p>
+    </div>
+
+    <div class="card">
+      <h2>Parte A — Creare il documento e inserire il testo</h2>
+      <ol>
+        <li>In Google Drive apri la cartella <em>esercitazioni</em>, clicca <span class="kbd">Nuovo</span> → <strong>Documenti Google</strong> → <strong>Documento vuoto</strong>.</li>
+        <li>Rinomina il file: in alto a sinistra clic su <em>Documento senza titolo</em> e scrivi <strong>Effetto serra (testo)</strong>, poi premi <span class="kbd">Invio</span>.</li>
+        <li>Apri il file <span class="mono">effetto_serra.txt</span> dal tuo computer (Blocco note, TextEdit o editor di testo).</li>
+        <li>Nel file di testo premi <span class="kbd">Ctrl</span>+<span class="kbd">A</span> (Mac: <span class="kbd">⌘</span>+<span class="kbd">A</span>) per selezionare tutto, poi <span class="kbd">Ctrl</span>+<span class="kbd">C</span> per copiare.</li>
+        <li>Torna su Google Documenti e premi <span class="kbd">Ctrl</span>+<span class="kbd">V</span> per incollare il testo nel documento vuoto.</li>
+        <li>In cima al testo aggiungi una nuova riga con la parola <strong>L’effetto serra</strong> e vai a capo (<span class="kbd">Invio</span>). Questa riga sarà il <em>titolo</em>.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Parte B — Formattare titolo e testo</h2>
+      <ol>
+        <li>Seleziona tutto il testo: <span class="kbd">Ctrl</span>+<span class="kbd">A</span>. Imposta il <strong>font</strong> su <strong>Verdana</strong> (in alternativa Arial) e il corpo su <strong>12</strong>.</li>
+        <li>Seleziona solo la riga del titolo <em>L’effetto serra</em>: rendila <strong>grassetto</strong> (<span class="kbd">Ctrl</span>+<span class="kbd">B</span>), <strong>centrata</strong>, colore <strong>blu</strong>, corpo <strong>14</strong>.</li>
+        <li>Rendi in <em>corsivo</em> le parole indicate (ad es. <em>effetto serra</em> nel primo paragrafo): seleziona la parola e premi <span class="kbd">Ctrl</span>+<span class="kbd">I</span>. Ripeti per gli altri termini chiave (gas‑serra, vapore acqueo, ecc.).</li>
+        <li>Seleziona i titoli di sezione presenti nel testo (ad es. <em>Quali conseguenze ha l’effetto serra atmosferico?</em>, <em>Quali sono i gas-serra?</em>, <em>Come funziona l’effetto serra?</em>) e imposta <strong>grassetto</strong> senza cambiare dimensione.</li>
+      </ol>
+      <p class="tip"><strong>Trucco veloce:</strong> per applicare la stessa formattazione a più parole, selezionane una già formattata e usa <em>Modifica → Copia formato</em> (icona pennello). Poi fai doppio clic sull’icona per “bloccarla” e applicarla a più parole; clicca di nuovo per disattivarla.</p>
+    </div>
+
+    <div class="card">
+      <h2>Parte C — Interlinea, spazio tra paragrafi ed elenchi</h2>
+      <ol>
+        <li>Seleziona l’intero documento (<span class="kbd">Ctrl</span>+<span class="kbd">A</span>), poi <strong>Formato → Interlinea e spaziatura tra paragrafi → Aggiungi spazio prima del paragrafo</strong>. I paragrafi saranno più separati e leggibili.</li>
+        <li>Riduci l’interlinea a <strong>Singola</strong>: <em>Formato → Interlinea e spaziatura tra paragrafi → Interlinea → Singola</em>.</li>
+        <li>Trasforma il quarto e il quinto paragrafo in un <strong>elenco numerato</strong> (oppure puntato): seleziona i due paragrafi e clicca l’icona <em>Elenco numerato</em> sulla toolbar. Cambia stile numerazione se necessario.</li>
+        <li>Trasforma gli ultimi paragrafi (sotto) in un <strong>elenco puntato</strong> se richiesto: seleziona e clicca l’icona <em>Elenco puntato</em>.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Parte D — Riquadrare il titolo e usare il righello</h2>
+      <ol>
+        <li>Posiziona il cursore sul titolo. Vai su <strong>Formato → Bordi e sfondo paragrafi</strong>. Imposta <em>Bordi</em> su <strong>tutti i lati</strong>, <em>Spessore</em> ~ <strong>1 pt</strong>, <em>Distanza dal testo</em>  <strong>4 pt</strong>, quindi <strong>Applica</strong>.</li>
+        <li>Se il riquadro è troppo largo, usa il <strong>righello</strong>: trascina i triangolini sinistro e destro fino a restringere il paragrafo del titolo (es. margini a ~5 cm e ~11 cm) finché il riquadro appare centrato.</li>
+        <li>Imposta il <strong>rientro prima riga</strong> dei paragrafi di testo: con il cursore sul paragrafo trascina verso destra il piccolo triangolo superiore del righello a <strong>1 cm</strong>. Ripeti nei primi paragrafi dopo ogni titoletto.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Parte E — Annullare e ripristinare</h2>
+      <ol>
+        <li>Prova a eliminare il primo paragrafo, poi <strong>Annulla</strong> con <span class="kbd">Ctrl</span>+<span class="kbd">Z</span>.</li>
+        <li>Ripristina l’azione con <span class="kbd">Ctrl</span>+<span class="kbd">Y</span> (<em>Modifica → Ripeti</em>), quindi annulla di nuovo con <span class="kbd">Ctrl</span>+<span class="kbd">Z</span>.</li>
+      </ol>
+      <div class="tip">
+        <strong>Scorciatoie utili</strong> — Copia: <span class="kbd">Ctrl</span>+<span class="kbd">C</span> · Taglia: <span class="kbd">Ctrl</span>+<span class="kbd">X</span> · Incolla: <span class="kbd">Ctrl</span>+<span class="kbd">V</span> · Seleziona tutto: <span class="kbd">Ctrl</span>+<span class="kbd">A</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Parte F — Correzione ortografica</h2>
+      <ol>
+        <li>Cancella la lettera <strong>g</strong> da «energia» per ottenere «eneria». Google Documenti la evidenzierà.</li>
+        <li>Fai clic destro sulla parola e scegli il suggerimento corretto <strong>energia</strong> per correggere.</li>
+        <li>Per parole tecniche corrette ma sconosciute al dizionario, usa <strong>Aggiungi al dizionario personale</strong> oppure <strong>Ignora</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Parte G — Trovare e sostituire</h2>
+      <ol>
+        <li>Apri <strong>Modifica → Trova e sostituisci</strong>. Nella casella <em>Trova</em> scrivi <strong>gas-</strong> (o <strong>gas‑</strong> con trattino).</li>
+        <li>In <em>Sostituisci con</em> scrivi <strong>gas </strong> (con uno spazio). Clicca <strong>Sostituisci tutto</strong> per cambiare tutte le occorrenze.</li>
+        <li>In alternativa, usa <strong>Sostituisci</strong> singole volte per controllare caso per caso. Usa <strong>Avanti</strong> per saltare le occorrenze che non vuoi sostituire.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Parte H — Apici e pedici</h2>
+      <ol>
+        <li>Trova la stringa <strong>W/m2</strong> e seleziona solo il numero <strong>2</strong>. Vai su <strong>Formato → Testo → Apice</strong> (scorciatoia: <span class="kbd">Ctrl</span>+<span class="kbd">.</span>).</li>
+        <li>Trova la stringa <strong>CO2</strong> e seleziona il numero <strong>2</strong>. Vai su <strong>Formato → Testo → Pedice</strong> (scorciatoia: <span class="kbd">Ctrl</span>+<span class="kbd">,</span>).</li>
+        <li>Ripeti per tutte le occorrenze di <strong>W/m2</strong> e <strong>CO2</strong> presenti nel documento.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Consegna su Moodle</h2>
+      <ol class="checklist">
+        <li>Rinomina il file come <strong>Cognome_Nome_1A_EffettoSerra.docx</strong> (o in base alla tua classe).</li>
+        <li>Esporta/Scarica in <strong>PDF</strong>: <em>File → Scarica → PDF</em>.</li>
+        <li>Carica il PDF nell’attività Moodle indicata dal docente.</li>
+      </ol>
+    </div>
+
+    <div class="hr"></div>
+    <p class="aside">Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche. Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+  </div>
+</body>
+</html>
