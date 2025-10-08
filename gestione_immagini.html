@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gestione delle immagini in Google Documenti — Guida per la classe</title>
+<meta name="description" content="Guida passo-passo per inserire, ridimensionare, ritagliare, bordare, posizionare e didascaliare immagini in Google Documenti. Con link per scaricare le immagini dell'attività." />
+
+<!-- Impostazioni accessibilità / DSA -->
+<style>
+  :root{
+    --bg:#ffffff;
+    --text:#111111;
+    --muted:#444;
+    --brand:#0b57d0;           /* blu Google acceso, buon contrasto sul bianco */
+    --brand-2:#0848ad;
+    --ok:#0a7c2f;
+    --card:#f6f7f9;
+    --kbd-bg:#f2f2f2;
+    --kbd-bd:#bbb;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0 auto;
+    max-width:960px;
+    background:var(--bg);
+    color:var(--text);
+    font: 18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    letter-spacing: 0.2px;
+    padding:24px 16px 80px;
+  }
+  h1,h2,h3{line-height:1.25; margin:1.2em 0 .4em}
+  h1{font-size:clamp(28px,3.2vw,36px)}
+  h2{font-size:clamp(22px,2.4vw,28px)}
+  h3{font-size:clamp(19px,2vw,22px)}
+  p{margin:.6em 0}
+  .lead{font-size:1.05em;color:var(--muted)}
+  .box{background:var(--card); border:1px solid #e3e6ea; border-radius:12px; padding:16px 18px; margin:14px 0}
+  .steps ol{margin:0; padding-left:1.2em}
+  .steps li{margin:.55em 0}
+  .hint{font-size:.95em; color:var(--muted)}
+  .downloads{display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 4px}
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:600;
+    padding:12px 16px; border-radius:10px; border:2px solid var(--brand);
+    color:white; background:var(--brand);
+  }
+  .btn:hover,.btn:focus{background:var(--brand-2); border-color:var(--brand-2)}
+  .btn.link{background:transparent; color:var(--brand)}
+  .btn.link:hover,.btn.link:focus{background:#e8f0fe}
+  kbd{
+    font: 600 .95rem/1.4 ui-monospace, "SFMono-Regular","Consolas","Roboto Mono",monospace;
+    border:1px solid var(--kbd-bd); border-bottom-width:2px;
+    padding:0 .35em; border-radius:6px; background:var(--kbd-bg); white-space:nowrap;
+  }
+  .two-col{display:grid; gap:16px; grid-template-columns: 1fr; }
+  @media (min-width:860px){ .two-col{ grid-template-columns: 1.1fr .9fr } }
+  figure{margin:0; padding:0}
+  figcaption{font-size:.95em; color:var(--muted); margin-top:6px}
+  .checklist li{margin:.4em 0}
+  .footer{
+    position:fixed; left:0; right:0; bottom:0; background:#0b0b0b; color:#fff;
+    font-size:.95rem; padding:10px 14px; text-align:center
+  }
+  .sr-only{position:absolute!important; width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>8.3 — Gestione delle immagini in <strong>Google Documenti</strong></h1>
+  <p class="lead">Obiettivo: riprodurre la pagina “Effetto serra” inserendo e gestendo tre immagini (serra, gas serra, effetto serra), con didascalie e corretta posizione rispetto al testo.</p>
+</header>
+
+<section class="box" aria-labelledby="download-img">
+  <h2 id="download-img">Scarica le immagini dell’attività</h2>
+  <p>Le immagini si trovano **nella stessa cartella** di questa pagina. Clicca per scaricare:</p>
+  <div class="downloads">
+    <a class="btn" href="serra.jpg" download>⬇️ Scarica <strong>serra.jpg</strong></a>
+    <a class="btn" href="gas-serra.png" download>⬇️ Scarica <strong>gas-serra.png</strong></a>
+    <a class="btn" href="effetto_serra.png" download>⬇️ Scarica <strong>effetto_serra.png</strong></a>
+  </div>
+  <p class="hint">Se il browser apre l’immagine invece di scaricarla: clic destro &rarr; <em>Salva immagine con nome…</em></p>
+</section>
+
+<section class="two-col">
+  <div>
+    <h2>Procedura guidata (passi sequenziali)</h2>
+
+    <div class="box steps">
+      <h3>1) Inserire un’immagine nel documento</h3>
+      <ol>
+        <li>Apri il file di testo su Google Documenti. Posiziona il cursore nel punto desiderato.</li>
+        <li>Vai su <strong>Inserisci &rarr; Immagini &rarr; Carica dal computer</strong> e scegli <strong>serra.jpg</strong>.</li>
+        <li>Se l’immagine è grande, trascina gli angoli per ridimensionarla mantenendo le proporzioni.</li>
+      </ol>
+      <p class="hint"><kbd>Alt</kbd>+<kbd>/</kbd> apre la barra comandi; digita “immagine” per trovare più in fretta.</p>
+    </div>
+
+    <div class="box steps">
+      <h3>2) Ritaglio e bordo</h3>
+      <ol>
+        <li>Seleziona l’immagine &rarr; clic su <strong>Ritaglia</strong> (icona con cornice). Trascina i bordi neri per mantenere il soggetto centrale.</li>
+        <li>Per il bordo: icona <strong>Colore bordo</strong> &rarr; <em>nero</em>; icona <strong>Spessore bordo</strong> &rarr; <em>1&nbsp;pt</em>.</li>
+      </ol>
+    </div>
+
+    <div class="box steps">
+      <h3>3) Posizionare l’immagine rispetto al testo</h3>
+      <ol>
+        <li>Con l’immagine selezionata, apri la barra di <em>opzioni di testo</em> (le icone sotto).</li>
+        <li>Scegli <strong>Testo a capo</strong> per far scorrere il paragrafo a fianco dell’immagine.</li>
+        <li>Imposta <strong>Margine immagine</strong> a circa <em>3&nbsp;mm</em> per distanziare il testo.</li>
+      </ol>
+    </div>
+
+    <div class="box steps">
+      <h3>4) Aggiungere una didascalia (strumento Disegno)</h3>
+      <ol>
+        <li>Vai su <strong>Inserisci &rarr; Disegno &rarr; Nuovo</strong>.</li>
+        <li>Clicca l’icona <strong>Immagine</strong> nel disegno e inserisci <strong>gas-serra.png</strong>. Ridimensionala.</li>
+        <li>Premi l’icona <strong>Casella di testo</strong> e trascina un rettangolo sotto l’immagine.</li>
+        <li>Scrivi la didascalia (es. <em>I principali gas serra</em>) in <strong>Arial 14</strong>, centrata.</li>
+        <li>Clicca <strong>Salva e chiudi</strong>. Disegno e didascalia si comporteranno come un unico oggetto.</li>
+      </ol>
+    </div>
+
+    <div class="box steps">
+      <h3>5) Inserire la seconda immagine con didascalia</h3>
+      <ol>
+        <li>Ripeti il punto 4 usando <strong>effetto_serra.png</strong>.</li>
+        <li>Riapri il disegno con <strong>Modifica</strong> se devi cambiare il testo della didascalia.</li>
+      </ol>
+    </div>
+
+    <div class="box steps">
+      <h3>6) Esercizi rapidi</h3>
+      <ol>
+        <li>Ruota temporaneamente l’immagine della serra di <em>90°</em> (usa il maniglione blu in alto) e poi <strong>Annulla</strong> con <kbd>Ctrl</kbd>+<kbd>Z</kbd>.</li>
+        <li>Applica un <strong>bordo rosso 2&nbsp;pt</strong> alla seconda immagine, poi rimuovilo.</li>
+        <li>Posiziona la didascalia “<em>Uno schema dell’effetto serra atmosferico</em>” a destra dell’immagine, in grassetto.</li>
+      </ol>
+    </div>
+  </div>
+
+  <aside aria-labelledby="shortcuts">
+    <h2 id="shortcuts">Scorciatoie utili in Google Documenti</h2>
+    <div class="box">
+      <ul class="checklist">
+        <li><kbd>Ctrl</kbd>+<kbd>K</kbd> Inserisci/modifica collegamento</li>
+        <li><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Y</kbd> Annulla annullamento (Ripristina)</li>
+        <li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> Anteprima di stampa</li>
+        <li><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd>, poi <kbd>M</kbd> Inserisci immagine dal computer (menu accesskey)</li>
+        <li><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> Apri barra laterale Alt-testo</li>
+      </ul>
+      <p class="hint">Suggerimento accessibilità: usa l’<strong>Alt-testo</strong> per descrivere l’immagine agli screen reader (clic destro &rarr; <em>Alt&nbsp;text</em>).</p>
+    </div>
+
+    <h2>Obiettivi e valutazione</h2>
+    <div class="box">
+      <ul class="checklist">
+        <li>Inserisce immagini da file locale.</li>
+        <li>Ridimensiona mantenendo le proporzioni; esegue un ritaglio semplice.</li>
+        <li>Applica bordo e margini coerenti.</li>
+        <li>Imposta correttamente <em>Testo a capo</em>.</li>
+        <li>Crea una didascalia mediante <em>Disegno</em>.</li>
+      </ul>
+    </div>
+  </aside>
+  <div class="box" id="risultato-finale">
+  <h3>📸 Risultato finale atteso</h3>
+  <figure>
+    <img src="risultatofinale.jpg" alt="Documento completo con immagini e didascalie sull’effetto serra"
+         style="max-width:100%; border:1px solid #ccc; border-radius:10px; display:block; margin:auto;">
+    <figcaption>Il documento correttamente impaginato con tutte le immagini e le didascalie.</figcaption>
+  </figure>
+</div>
+</section>
+
+<section class="box" id="consegna">
+  <h2>Consegna su Classroom / Moodle</h2>
+  <ol>
+    <li>Rinomina il documento: <strong>CognomeNome_1A_IT_EffettoSerra</strong>.</li>
+    <li>In alto, inserisci la data e scrivi: “Attività 8.3 – Gestione immagini”.</li>
+    <li>Al termine, esporta anche in <strong>PDF</strong> (<em>File → Scarica → PDF</em>) e carica entrambi i file.</li>
+  </ol>
+</section>
+
+<footer class="footer">
+  Docente: <strong>Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche</strong>.
+  Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.
+</footer>
+</body>
+</html>
