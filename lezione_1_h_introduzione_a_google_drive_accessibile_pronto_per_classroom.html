@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introduzione a Google Drive — Lezione da 1 ora (1ª IT)</title>
+  <meta name="description" content="Lezione guidata e accessibile per introdurre Google Drive in una classe prima: creare cartelle, rinominare file, differenza locale/cloud, passaggi sequenziali DSA-friendly." />
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0b0b0c;
+      --muted: #4a5568;
+      --brand: #0d6efd;
+      --ok: #0a7d2a;
+      --warn: #b45309;
+      --accent: #0ea5e9;
+      --surface: #f5f7fb;
+      --kbd-bg: #16181d;
+      --kbd-fg: #f1f5f9;
+      --focus: #ffbf47;
+      --shadow: 0 2px 14px rgba(0,0,0,.08);
+      --radius: 16px;
+      --font-body: "Atkinson Hyperlegible", "Lexend", "Segoe UI", system-ui, -apple-system, Roboto, Arial, Verdana, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --fs-xxl: clamp(1.6rem, 2.2vw + 1rem, 2.2rem);
+      --fs-xl: clamp(1.25rem, 1.2vw + .9rem, 1.6rem);
+      --fs-lg: 1.125rem;
+      --fs-md: 1rem;
+      --fs-sm: .95rem;
+      --line: 1.55;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1116;
+        --fg: #e8eaee;
+        --muted: #b8c0cc;
+        --brand: #62a8ff;
+        --surface: #12171f;
+        --kbd-bg: #0b0f15;
+        --kbd-fg: #e8eaee;
+        --focus: #ffd166;
+        --shadow: 0 2px 12px rgba(0,0,0,.35);
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body);
+      line-height: var(--line); letter-spacing: .2px; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header {
+      background: linear-gradient(180deg, var(--surface), transparent);
+      border-radius: var(--radius);
+      padding: 24px; box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h1 { font-size: var(--fs-xxl); margin: 0 0 6px; }
+    h2 { font-size: var(--fs-xl); margin: 28px 0 10px; }
+    h3 { font-size: var(--fs-lg); margin: 18px 0 8px; }
+    p { font-size: var(--fs-md); }
+    .pill { display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border-radius:999px; background:var(--surface); font-size:var(--fs-sm); color:var(--muted); }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--surface); border-radius: var(--radius); padding: 18px 18px 16px; box-shadow: var(--shadow); }
+    .steps ol { counter-reset: step; list-style: none; padding: 0; margin: 0; }
+    .steps li { counter-increment: step; background: var(--surface); border-radius: 14px; padding: 14px 14px 14px 54px; position: relative; margin: 12px 0; box-shadow: var(--shadow); }
+    .steps li::before { content: counter(step); position: absolute; left: 14px; top: 12px; width: 28px; height: 28px; border-radius: 999px; background: var(--brand); color: white; display: grid; place-items:center; font-weight: 700; }
+    .hint { border-left: 4px solid var(--accent); padding: 10px 12px; background: color-mix(in oklab, var(--accent) 12%, transparent); border-radius: 10px; }
+    a.btn { display:inline-block; text-decoration:none; background: var(--brand); color:white; padding: 10px 14px; border-radius: 12px; font-weight: 700; }
+    .kbd { font-family: var(--font-mono); background: var(--kbd-bg); color: var(--kbd-fg); padding: 2px 6px; border-radius: 6px; border: 1px solid #30363d; font-size: .95em; }
+    details { background: var(--surface); border-radius: 12px; padding: 12px 14px; box-shadow: var(--shadow); }
+    summary { cursor: pointer; font-weight: 700; }
+    .checklist { display: grid; gap: 10px; }
+    .checklist label { display:flex; gap: 12px; align-items: flex-start; background: var(--surface); padding: 10px 12px; border-radius: 12px; box-shadow: var(--shadow); }
+    .checklist input[type="checkbox"] { inline-size: 1.2rem; block-size: 1.2rem; margin-top: 4px; accent-color: var(--ok); }
+    .footer { margin-top: 26px; padding: 12px 16px; border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); font-size: var(--fs-sm); }
+    .sr { position: absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space: nowrap; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 8px; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff; color: #000; }
+      .card, header, .steps li, details { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="pill" aria-label="lezione info"><span>⏱️ 1 ora</span><span>•</span><span>Classe: 1ª IT</span><span>•</span><span>Modalità: laboratorio</span></div>
+      <h1>Introduzione a Google Drive</h1>
+      <p>Obiettivi: capire cos'è il <strong>cloud</strong>, accedere a <strong>Google Drive</strong>, creare e rinominare <strong>cartelle e file</strong>, distinguere tra salvataggio locale e online.</p>
+      <p class="no-print"><a class="btn" href="https://drive.google.com" target="_blank" rel="noopener">Apri Google Drive ↗</a></p>
+    </header>
+
+    <section class="grid" aria-label="panoramica">
+      <div class="card">
+        <h2>Prerequisiti</h2>
+        <ul>
+          <li>Accesso all'account scolastico Google (Classroom/Drive).</li>
+          <li>Conoscenze base di tastiera (RapidTyping).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Strumenti</h2>
+        <ul>
+          <li>PC del laboratorio + connessione internet.</li>
+          <li>Navigatore (consigliato: Chrome) e LIM.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card steps" aria-labelledby="passi">
+      <h2 id="passi">Attività guidata (25′)</h2>
+      <ol>
+        <li>
+          <strong>Accedi a Google Drive</strong><br />
+          Vai su <span class="kbd">drive.google.com</span> ed entra con il tuo account scolastico.
+          <div class="hint" role="note">Suggerimento: barra degli indirizzi veloce → <span class="kbd">Ctrl</span> + <span class="kbd">L</span>, poi digita l'indirizzo.</div>
+        </li>
+        <li>
+          <strong>Crea la cartella principale</strong><br />
+          Clicca su <em>Nuovo</em> → <em>Cartella</em> e chiamala <em>Laboratorio di Tecnologie Informatiche</em>.
+          <details class="no-print" aria-label="Tasti scorciatoia cartella">
+            <summary>💡 Tasti rapidi (se abilitati in Drive)</summary>
+            <p>Nuova cartella: <span class="kbd">Shift</span> + <span class="kbd">F</span> · Nuovo documento: <span class="kbd">Shift</span> + <span class="kbd">T</span></p>
+          </details>
+        </li>
+        <li>
+          <strong>Crea la sottocartella “Documenti”</strong><br />
+          Entra nella cartella appena creata → <em>Nuovo</em> → <em>Cartella</em> → scrivi <em>Documenti</em>.
+        </li>
+        <li>
+          <strong>Crea un documento e rinominalo</strong><br />
+          Dentro “Documenti” → <em>Nuovo</em> → <em>Documenti Google</em> → rinomina in <em>Prova_01</em> (in alto a sinistra).
+          <div class="hint" role="note">In Google Documenti non serve “Salva”: il salvataggio è <strong>automatico</strong>.</div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card" aria-labelledby="esercizio">
+      <h2 id="esercizio">Esercizio di consolidamento (15′)</h2>
+      <ul>
+        <li>Crea una seconda cartella chiamata <em>Immagini di laboratorio</em>.</li>
+        <li>Carica un file immagine (ad es. il logo della scuola).</li>
+        <li>Condividi la cartella con il compagno accanto (solo visualizzazione).</li>
+      </ul>
+      <details class="no-print">
+        <summary>Come condividere in sicurezza</summary>
+        <ol>
+          <li>Tasto destro sulla cartella → <em>Condividi</em>.</li>
+          <li>Inserisci l'email del compagno.</li>
+          <li>Imposta il ruolo su <strong>Visualizzatore</strong> → <em>Invia</em>.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="card" aria-labelledby="ripasso">
+      <h2 id="ripasso">Ripasso rapido (10′)</h2>
+      <ul>
+        <li>Che differenza c'è tra <strong>salvataggio locale</strong> e <strong>Drive</strong>?</li>
+        <li>Come si crea una nuova <strong>cartella</strong>?</li>
+        <li>Dove trovi i file <strong>condivisi con te</strong>?</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="check" id="checklist">
+      <h2 id="check">Checklist personale ✔︎</h2>
+      <p>Spunta i passaggi completati. Il tuo progresso viene salvato in questo browser.</p>
+      <form class="checklist" id="todo">
+        <label><input type="checkbox" data-key="acc"> Mi sono collegato a <strong>drive.google.com</strong>.</label>
+        <label><input type="checkbox" data-key="cartella"> Ho creato la cartella <em>Laboratorio di Tecnologie Informatiche</em>.</label>
+        <label><input type="checkbox" data-key="sub"> Ho creato la sottocartella <em>Documenti</em>.</label>
+        <label><input type="checkbox" data-key="doc"> Ho creato e rinominato <em>Prova_01</em>.</label>
+        <label><input type="checkbox" data-key="share"> Ho condiviso correttamente una cartella.</label>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="note-registro">
+      <h2 id="note-registro">Annotazione per il registro</h2>
+      <p><em>Laboratorio:</em> introduzione a Google Drive. Creazione e gestione di cartelle/file, rinomina documento, differenza locale/cloud. Esercizio di condivisione controllata.</p>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <p><strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche. Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Salvataggio checklist in localStorage (permanenza locale, nessun tracking esterno)
+    (function() {
+      const form = document.getElementById('todo');
+      if (!form) return;
+      const boxes = form.querySelectorAll('input[type="checkbox"][data-key]');
+      boxes.forEach(cb => {
+        const key = 'drive_lesson_' + cb.dataset.key;
+        const val = localStorage.getItem(key);
+        if (val === '1') cb.checked = true;
+        cb.addEventListener('change', () => localStorage.setItem(key, cb.checked ? '1' : '0'));
+      });
+    })();
+  </script>
+</body>
+</html>
