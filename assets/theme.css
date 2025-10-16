@@ -1,0 +1,26 @@
+
+/* Dark theme override using data-theme="dark" on <html> */
+html[data-theme="dark"]{
+  --bg:#0b1220;
+  --ink:#e5e7eb;
+  --muted:#cbd5e1;
+  --accent:#38bdf8;
+  --accent-2:#0ea5e9;
+  --panel:#0f172a;
+  --code-bg:#0b1020;
+  --code-ink:#e5e7eb;
+}
+html[data-theme="dark"] header{
+  background:linear-gradient(135deg,#0b2a3a,#111827);
+  border-color:#1f2937;
+}
+html[data-theme="dark"] th{ background:#1d4ed8; }
+html[data-theme="dark"] tbody tr:nth-child(odd){ background:#0e1a31; }
+html[data-theme="dark"] pre{ border-color:#334155; box-shadow:none; }
+html[data-theme="dark"] .callout{ background:#261a00; color:#fde68a; border-left-color:#f59e0b; }
+html[data-theme="dark"] footer{ border-top-color:#334155; }
+.toggle{
+  display:inline-flex; align-items:center; gap:8px; border:1px solid #cbd5e1; border-radius:999px; padding:6px 10px;
+  background:var(--panel); cursor:pointer; user-select:none; font-weight:600;
+}
+html[data-theme="dark"] .toggle{ border-color:#334155; }

@@ -1,0 +1,145 @@
+/* ===== DSA-friendly base ===== */
+@font-face{
+  font-family:"Atkinson Hyperlegible";
+  src: url("https://fonts.gstatic.com/s/atkinsonhyperlegible/v12/HH7cN5w2qMzzf9Y8KV5x.woff2") format("woff2");
+  font-display: swap;
+}
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&display=swap");
+
+:root{
+  --bg: #ffffff;
+  --fg: #0e1116;
+  --muted:#5e6370;
+  --brand:#0d6efd;
+  --callout:#ff7a18;         /* arancione per riquadri callout */
+  --panel:#f5f7fb;
+  --panel-border:#d8deea;
+  --focus:#1c7ed6;
+  --kbd-bg:#111;
+  --kbd-fg:#fff;
+  --code-bg:#f3f4f6;
+  --shadow: 0 2px 12px rgba(0,0,0,.06);
+  --radius: 16px;
+}
+
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"Atkinson Hyperlegible","Lexend",-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.6;
+  font-size:18px;
+}
+
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== Layout ===== */
+.container{max-width:980px;margin:0 auto;padding:24px}
+.container.narrow{max-width:860px}
+.page-header{
+  padding:28px 24px 8px;
+  border-bottom:1px solid var(--panel-border);
+}
+h1,h2,h3{letter-spacing:.2px}
+h1{font-size:clamp(28px,3.4vw,36px);margin:.1em 0 .2em}
+.subtitle{margin:0;color:var(--muted)}
+.pill{margin-top:8px;font-size:.95rem;color:#17324d}
+
+/* ===== Accessibilità ===== */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed;left:16px;top:16px;width:auto;height:auto;padding:8px 12px;
+  background:#000;color:#fff;border-radius:8px;z-index:9999;
+}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* ===== Pannelli / Riquadri ===== */
+.panel{
+  background:var(--panel);
+  border:1px solid var(--panel-border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px 20px;
+  margin:20px 0;
+}
+.panel > h2, .panel > h3{margin-top:4px}
+
+.callout{
+  border-left:10px solid var(--callout);
+  background:linear-gradient(90deg,#fff7f0, var(--panel) 60%);
+}
+.callout h2,.callout h3{margin-top:0}
+.box{
+  background:#fff;border:1px dashed #c9cfdb;border-radius:14px;padding:14px 16px;margin:14px 0;
+}
+
+/* ===== Elenchi a passaggi ===== */
+.steps{counter-reset:step;margin:0;padding:0;list-style:none}
+.steps > li{
+  counter-increment:step;
+  background:#fff;
+  border:1px solid var(--panel-border);
+  border-radius:14px;
+  padding:14px 16px;
+  margin:12px 0;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.steps > li::before{
+  content:counter(step);
+  position:absolute;left:-12px;top:-12px;
+  background:var(--brand);color:#fff;
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;font-weight:700;
+}
+
+/* ===== Tip / Warning ===== */
+details.tip summary, details.warning summary{
+  cursor:pointer;font-weight:600
+}
+details.tip{border-left:8px solid #2bb673}
+details.warning{border-left:8px solid #d6336c}
+details{background:#fff;border:1px solid var(--panel-border);border-radius:12px;padding:10px 12px;margin:12px 0}
+
+/* ===== Codice & KBD ===== */
+code{background:var(--code-bg);padding:.1em .35em;border-radius:8px}
+kbd{
+  background:var(--kbd-bg);color:var(--kbd-fg);
+  padding:0 .45em;border-radius:6px;font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace;
+  box-shadow:inset 0 -2px 0 rgba(255,255,255,.15)
+}
+
+/* ===== Figure / Placeholder risultato ===== */
+.figure{
+  display:block;background:#fff;border:2px dashed #a7b1c5;border-radius:16px;
+  padding:16px;text-align:center;color:#566074;margin:16px 0;
+}
+.figure .caption{margin-top:8px;color:#6b7280;font-size:.95rem}
+.figure img{max-width:100%;height:auto;border-radius:12px}
+
+/* ===== Esercizi ===== */
+.exercise{border-left:10px solid #2b8a3e}
+.exercise h2{margin-top:0}
+.exercise ol{padding-left:1.2rem}
+
+/* ===== Footer ===== */
+footer.small{font-size:.95rem}
+.muted{color:var(--muted)}
+
+/* ===== Responsivo ===== */
+@media (max-width:720px){
+  .container{padding:18px}
+  .steps > li{padding:12px 14px}
+}
+
+/* ===== Stampa ===== */
+@media print{
+  .skip-link, .pill {display:none}
+  body{font-size:12pt}
+  .panel,.steps > li, details{box-shadow:none}
+}
