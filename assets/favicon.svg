@@ -1,43 +1,20 @@
-<!-- Lezioni Classi Prime — Favicon (tech) -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Logo laboratorio informatica">
-  <defs>
-    <style>
-      .chip { fill: none; stroke: #3b9eff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-      .pins { stroke: #3b9eff; stroke-width: 3; stroke-linecap: round; }
-      .brace { fill: none; stroke: #ff8c42; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-    </style>
-  </defs>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Favicon Lezioni IT">
+  <title>Lezioni IT</title>
+  <style>
+    .bg { fill: #3b9eff; }           /* blu tema */
+    .glyph { stroke: #ff8c42; }      /* simbolo arancione */
+    .slash { stroke: #ffffff; }      /* tag centrale bianco */
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #2d80d8; }         /* blu più profondo per dark */
+    }
+  </style>
 
-  <!-- Corpo chip -->
-  <rect x="14" y="14" width="36" height="36" rx="8" class="chip"></rect>
+  <!-- sfondo pieno -->
+  <rect class="bg" x="0" y="0" width="64" height="64" rx="12" ry="12"></rect>
 
-  <!-- Pin (8 totali, 2 per lato) -->
-  <g class="pins">
-    <!-- sinistra -->
-    <line x1="10" y1="22" x2="14" y2="22"></line>
-    <line x1="10" y1="42" x2="14" y2="42"></line>
-    <!-- destra -->
-    <line x1="50" y1="22" x2="54" y2="22"></line>
-    <line x1="50" y1="42" x2="54" y2="42"></line>
-    <!-- alto -->
-    <line x1="22" y1="10" x2="22" y2="14"></line>
-    <line x1="42" y1="10" x2="42" y2="14"></line>
-    <!-- basso -->
-    <line x1="22" y1="50" x2="22" y2="54"></line>
-    <line x1="42" y1="50" x2="42" y2="54"></line>
-  </g>
-
-  <!-- { } al centro -->
-  <path class="brace" d="M30 24c-3 0-4 2-4 5v2c0 2-1 3-3 3h-1
-                         M22 30h0
-                         M22 30h0
-                         m1 0h-1
-                         M23 30h-1
-                         M23 30h0
-                         m1 0h-1
-                         M23 30h0
-                         M22 30h0" opacity="0"></path>
-  <!-- Disegno reale delle graffe (separate per nitidezza a piccole dimensioni) -->
-  <path class="brace" d="M28 24c-2.5 0-3.5 1.8-3.5 4.5v2c0 1.8-1 2.5-2.5 2.5H20"></path>
-  <path class="brace" d="M36 24c2.5 0 3.5 1.8 3.5 4.5v2c0 1.8 1 2.5 2.5 2.5H44"></path>
+  <!-- simbolo </> semplificato -->
+  <polyline class="glyph" fill="none" points="20,20 12,32 20,44" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+  <line class="slash" x1="32" y1="20" x2="32" y2="44" stroke-width="6" stroke-linecap="round"></line>
+  <polyline class="glyph" fill="none" points="44,20 52,32 44,44" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline>
 </svg>
