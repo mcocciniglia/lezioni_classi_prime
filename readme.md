@@ -1,18 +1,3 @@
-# 🌐 Lezioni Classi Prime — Laboratorio di Tecnologie Informatiche
-
-Benvenuti nel repository ufficiale delle **lezioni interattive e accessibili** di  
-**Laboratorio di Tecnologie Informatiche** (Prof. Marco Cocciniglia).
-
-Ogni lezione è disponibile in formato **HTML accessibile**, con:
-- Font DSA-friendly (Atkinson Hyperlegible, Lexend)
-- Istruzioni **sequenziali e chiare**
-- Contrasti elevati e **riquadri colorati** per evidenziare le parti operative
-- Scorciatoie da tastiera evidenziate con `kbd`
-
----
-
-## 📘 Struttura del repository
-
 
 ---
 
@@ -20,7 +5,7 @@ Ogni lezione è disponibile in formato **HTML accessibile**, con:
 
 | Modulo | Argomento | Link |
 |:-------|:-----------|:-----|
-| 8.2 | **Introduzione a Google Drive** | [Apri lezione](https://mcocciniglia.github.io/lezioni_classi_prime/drive/) |
+| 8.2 | **Introduzione a Google Drive** | [Apri lezione](https://mcocciniglia.github.io/lezioni_classi_prime/drive_intro/) |
 | 8.3 | **Gestione delle immagini** | [Apri lezione](https://mcocciniglia.github.io/lezioni_classi_prime/images/) |
 | 8.4 | **Gestione delle tabelle in Google Documenti** | [Apri lezione](https://mcocciniglia.github.io/lezioni_classi_prime/table/) |
 
@@ -28,7 +13,7 @@ Ogni lezione è disponibile in formato **HTML accessibile**, con:
 
 ## 🧭 Come navigare
 
-- Ogni lezione è raggiungibile tramite un link breve, es.:  
+- Ogni lezione è raggiungibile tramite un link breve, ad esempio:  
   `https://mcocciniglia.github.io/lezioni_classi_prime/table/`
 - Il file principale di ogni sezione è sempre `index.html`.
 - I CSS e gli script comuni sono nella cartella `/assets/` condivisa da tutte le lezioni.
