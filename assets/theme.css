@@ -1,26 +1,90 @@
+/* ==========================================================
+   Modalità Dark — Soft Dark DSA (AA/AAA)
+   Palette pensata per lettura prolungata + DSA
+   ========================================================== */
 
-/* Dark theme override using data-theme="dark" on <html> */
 html[data-theme="dark"]{
-  --bg:#0b1220;
-  --ink:#e5e7eb;
-  --muted:#cbd5e1;
-  --accent:#38bdf8;
-  --accent-2:#0ea5e9;
-  --panel:#0f172a;
-  --code-bg:#0b1020;
-  --code-ink:#e5e7eb;
+  /* Base */
+  --bg:#181a1f;           /* fondo pagina (grafite caldo)           */
+  --fg:#f2f5fa;           /* testo principale                        */ /* ≈11.6:1 vs bg → AAA */
+  --muted:#aab2bf;        /* testo secondario                        */
+
+  /* Contenitori */
+  --panel:#23262d;        /* pannelli/box                            */ /* ≈8.5:1 con fg → AAA */
+  --panel-border:#373b43; /* bordi sottili                           */
+
+  /* Interattivi / accenti */
+  --brand:#3b9eff;        /* pulsanti/link                           */ /* ≈6.9:1 vs bg → AA*/
+  --callout:#ff8c42;      /* barra arancione dei callout             */
+
+  /* Codice / tastiera */
+  --code-bg:#2d3139;
+  --kbd-bg:#f0f2f5;
+  --kbd-fg:#111;
+
+  /* Ombre */
+  --shadow:0 2px 8px rgba(0,0,0,.35);
 }
-html[data-theme="dark"] header{
-  background:linear-gradient(135deg,#0b2a3a,#111827);
-  border-color:#1f2937;
+
+/* Fondo leggermente “vivo” per evitare effetto coltre */
+html[data-theme="dark"] body{
+  background: radial-gradient(circle at 20% 0%, #1d2025 0%, #181a1f 60%);
+  color: var(--fg);
 }
-html[data-theme="dark"] th{ background:#1d4ed8; }
-html[data-theme="dark"] tbody tr:nth-child(odd){ background:#0e1a31; }
-html[data-theme="dark"] pre{ border-color:#334155; box-shadow:none; }
-html[data-theme="dark"] .callout{ background:#261a00; color:#fde68a; border-left-color:#f59e0b; }
-html[data-theme="dark"] footer{ border-top-color:#334155; }
-.toggle{
-  display:inline-flex; align-items:center; gap:8px; border:1px solid #cbd5e1; border-radius:999px; padding:6px 10px;
-  background:var(--panel); cursor:pointer; user-select:none; font-weight:600;
+
+/* Pannelli e testata */
+html[data-theme="dark"] .panel{
+  background: var(--panel) !important;
+  border-color: var(--panel-border) !important;
+  box-shadow: 0 0 14px rgba(0,0,0,.25);
 }
-html[data-theme="dark"] .toggle{ border-color:#334155; }
+html[data-theme="dark"] .page-header{
+  border-bottom-color: var(--panel-border) !important;
+}
+
+/* Callout più leggibile */
+html[data-theme="dark"] .callout{
+  background: linear-gradient(90deg, #2b241e 0%, var(--panel) 72%);
+  border-left-color:#ff9a58;
+}
+html[data-theme="dark"] .callout :is(h2,h3,p,li){ color:#f7f9fc; }
+
+/* Box, steps, dettagli, figure */
+html[data-theme="dark"] :is(.box, .steps > li, details, .figure){
+  background: var(--panel) !important;
+  border-color: var(--panel-border) !important;
+  color: var(--fg) !important;
+}
+html[data-theme="dark"] .box a{ color: var(--brand); }
+html[data-theme="dark"] hr{ border-color: var(--panel-border) !important; }
+
+/* Bottoni e toggle tema */
+html[data-theme="dark"] .btn      { background: var(--brand); color:#fff !important; }
+html[data-theme="dark"] .btn-ghost{ background: transparent; color: var(--brand) !important; border-color: var(--brand); }
+html[data-theme="dark"] #theme-toggle{ background: var(--brand); color:#fff; }
+
+/* Opzionale: pannelli un filo più “piatti” */
+html[data-theme="dark"] .panel.soft{ box-shadow:none; }
+
+/* ==========================================================
+   (Opzionale) High-Contrast AAA — attiva con data-contrast="aaa"
+   Usalo solo quando ti serve contrasto massimo (verifiche/proiezioni)
+   ========================================================== */
+
+html[data-theme="dark"][data-contrast="aaa"]{
+  --bg:#15171b;
+  --fg:#fafcff;         /* ancora più chiaro */
+  --panel:#20232a;
+  --panel-border:#3e434c;
+  --brand:#2f81f7;      /* blu un po’ più scuro → testo bianco più leggibile */
+  --callout:#ffa455;    /* arancione più luminoso */
+}
+
+html[data-theme="dark"][data-contrast="aaa"] .panel{
+  box-shadow: none;
+}
+
+html[data-theme="dark"][data-contrast="aaa"] .callout{
+  background:#20232a;
+  border-left-color:#ffae6a;
+}
