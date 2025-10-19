@@ -4,19 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>8.4 — La gestione delle tabelle (Google Documenti)</title>
+  <title>8.4 — Gestione delle tabelle (Google Documenti)</title>
 
-  <link rel="stylesheet" href="../assets/style.css" />
-  <link rel="stylesheet" href="../assets/theme.css" media="(prefers-color-scheme: dark)" />
-  <script defer src="../assets/theme.js"></script>
+  <!-- stessi asset e percorsi di drive_intro -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=2025-10-17b">
+  <link rel="stylesheet" href="../assets/style.css?v=2025-10-17a">
+  <link rel="stylesheet" href="../assets/theme.css?v=2025-10-17a">
+  <script defer src="../assets/theme.js?v=2025-10-17a"></script>
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Salta al contenuto</a>
 
   <header class="page-header container narrow">
-    <h1>8.4 — La gestione delle tabelle</h1>
-    <p class="subtitle">Riproduci la pagina sull’<strong>Effetto serra</strong> usando una tabella in Google Documenti.</p>
-    <p class="pill">Font DSA-friendly • Istruzioni sequenziali • Riquadri ad alto contrasto</p>
+    <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap">
+      <h1 style="margin:0;flex:1">8.4 — Gestione delle tabelle</h1>
+      <button id="themeToggle" class="theme-toggle" aria-label="Cambia tema" aria-pressed="false">
+        <span class="btn-label">Tema scuro</span>
+        <span aria-hidden="true" class="btn-icon">🌓</span>
+      </button>
+      <button id="contrastToggle" class="btn-ghost" aria-pressed="false" title="Aumenta la leggibilità">
+        Contrasto alto ☀️
+      </button>
+    </div>
+    <p class="pill">⏱️ 2 ore • Classe: 1ª IT • Modalità: laboratorio</p>
+    <p class="subtitle">Creiamo e formattiamo una tabella in Documenti Google; intestazione unita e colorata; numeri di pagina in piè di pagina.</p>
+    <hr>
   </header>
 
   <main id="contenuto" class="container narrow">
@@ -24,26 +36,27 @@
     <section class="panel callout">
       <h2>Obiettivi</h2>
       <ul>
-        <li>Inserire e riempire una tabella 3×3.</li>
-        <li>Formattare contenuti e ridimensionare le colonne.</li>
-        <li>Aggiungere riga d’intestazione, unire celle e colorare.</li>
-        <li>Gestire colonne del documento, orientamento pagina.</li>
-        <li>Inserire intestazione, piè di pagina e numeri di pagina.</li>
+        <li>Inserire una <strong>tabella 3×3</strong> nel punto indicato del testo.</li>
+        <li>Spostare testi nelle celle (trascina / <kbd>Ctrl</kbd>+<kbd>X</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd>).</li>
+        <li>Formattare colonne (grassetto, corsivo) e <strong>ridimensionare</strong> le larghezze.</li>
+        <li>Aggiungere una riga di <strong>intestazione</strong>, unire le celle e <strong>colorarla</strong>.</li>
+        <li>Gestire <strong>colonne del documento</strong> e <strong>orientamento pagina</strong>.</li>
+        <li>Inserire <strong>intestazione</strong>, <strong>piè di pagina</strong> e <strong>numeri di pagina</strong>.</li>
       </ul>
     </section>
 
     <section class="panel">
       <h2>Materiali</h2>
       <div class="box">
-        File di partenza: <code>effetto serra (immagini)</code> • Google Documenti (web).
+        File di partenza: <code>effetto serra (immagini)</code> • Applicativo: <strong>Documenti Google</strong>.
       </div>
     </section>
 
     <section class="panel">
-      <h2>Parte 1 — Inserire una tabella</h2>
+      <h2>Parte 1 — Inserire la tabella</h2>
       <ol class="steps">
-        <li>Apri il file e salvalo come <strong>effetto serra (tabella)</strong>.</li>
-        <li>Vai alla riga che termina con «<strong>TABELLA:</strong>» e premi Invio.</li>
+        <li>Apri il documento e salvalo come <strong>effetto serra (tabella)</strong>.</li>
+        <li>Vai alla riga che termina con «<strong>TABELLA:</strong>» e premi <kbd>Invio</kbd>.</li>
         <li><strong>Inserisci → Tabella</strong> → seleziona <strong>3 colonne × 3 righe</strong>.</li>
         <li>Compare la tabella: il cursore è nella prima cella.</li>
       </ol>
@@ -55,28 +68,28 @@
     <section class="panel">
       <h2>Parte 2 — Riempire la tabella</h2>
       <ol class="steps">
-        <li>Seleziona il testo sotto la tabella (le 3 voci + numeri + spiegazioni) e trascina nelle celle.</li>
-        <li>In alternativa usa <kbd>Ctrl</kbd>+<kbd>X</kbd> (Taglia) e <kbd>Ctrl</kbd>+<kbd>V</kbd> (Incolla).</li>
-        <li>Disposizione consigliata: <strong>riga 1</strong> voci; <strong>riga 2</strong> numeri; <strong>riga 3</strong> spiegazioni.</li>
+        <li>Seleziona il testo sotto la tabella (voci, numeri, spiegazioni) e trascinalo nelle celle.</li>
+        <li>Oppure usa <kbd>Ctrl</kbd>+<kbd>X</kbd> e <kbd>Ctrl</kbd>+<kbd>V</kbd> per spostare con precisione.</li>
+        <li>Disposizione: <strong>riga 1</strong> voci; <strong>riga 2</strong> numeri; <strong>riga 3</strong> spiegazioni.</li>
       </ol>
       <details class="warning"><summary>Attenzione</summary>
-        <p>Andare a capo <em>dentro</em> una cella non crea una nuova riga di tabella ma solo una nuova riga di testo.</p>
+        <p>Invio dentro una cella aggiunge <em>una riga di testo nella cella</em>, non una riga di tabella.</p>
       </details>
     </section>
 
     <section class="panel">
       <h2>Parte 3 — Formattazioni</h2>
       <ol class="steps">
-        <li>Seleziona tutta la tabella → imposta <strong>Arial 10 pt</strong> e <strong>Rimuovi lo spazio prima del paragrafo</strong>.</li>
+        <li>Seleziona tutta la tabella e imposta <strong>Arial 10 pt</strong>; <strong>Formato → Interlinea e spaziatura → Rimuovi lo spazio prima del paragrafo</strong>.</li>
         <li>Colonna 1 → <strong>grassetto</strong>. Colonna 3 → <em>corsivo</em>.</li>
       </ol>
     </section>
 
     <section class="panel">
-      <h2>Parte 4 — Larghezza colonne</h2>
+      <h2>Parte 4 — Larghezze colonne</h2>
       <ol class="steps">
         <li>Trascina il bordo tra col. 1 e 2 per allargare la prima e stringere la seconda.</li>
-        <li>Ripeti tra col. 2 e 3 finché l’impaginazione è equilibrata.</li>
+        <li>Ripeti tra col. 2 e 3 finché l’impaginazione risulta equilibrata.</li>
         <li>Precisione: <strong>Formato → Opzioni tabella</strong> → imposta larghezze in mm.</li>
       </ol>
     </section>
@@ -92,10 +105,10 @@
     </section>
 
     <section class="panel">
-      <h2>Parte 6 — Colonne e orientamento pagina</h2>
+      <h2>Parte 6 — Colonne del documento e orientamento pagina</h2>
       <ol class="steps">
         <li>Seleziona il testo (non la tabella) → <strong>Formato → Colonne</strong> → scegli 2 colonne (o altro).</li>
-        <li>Per modalità “orizzontale”: <strong>File → Impostazione pagina</strong> → <strong>Orientamento: Orizzontale</strong>.</li>
+        <li><strong>File → Impostazione pagina</strong> → <strong>Orientamento: Orizzontale</strong> per impaginazione “stile presentazione”.</li>
       </ol>
     </section>
 
@@ -103,7 +116,7 @@
       <h2>Parte 7 — Intestazione, piè di pagina e numeri</h2>
       <ol class="steps">
         <li><strong>Inserisci → Intestazione e piè di pagina</strong>.</li>
-        <li>In <strong>Intestazione</strong>: scrivi <em>Esercitazione con Google Documenti</em>, centra, corsivo, grigio.</li>
+        <li>In <strong>Intestazione</strong>: <em>Esercitazione con Google Documenti</em> (centrato, corsivo, grigio).</li>
         <li>In <strong>Piè di pagina</strong>: <strong>Opzioni → Numeri di pagina</strong> → posizione “Piè di pagina” → <strong>Applica</strong>.</li>
         <li>Dopo il numero, scrivi “ di ” → <strong>Inserisci → Numeri di pagina → Conteggio pagine</strong>. Allinea a destra.</li>
       </ol>
@@ -112,8 +125,8 @@
       </div>
     </section>
 
-    <!-- SPAZIO PER L’IMMAGINE DEL RISULTATO FINALE -->
-    <figure class="figure" aria-label="Risultato finale tabella effetto serra">
+    <!-- Spazio per immagine del risultato finale -->
+        <figure class="figure" aria-label="Risultato finale tabella effetto serra">
       <img src="tabella.jpg" 
            alt="Esempio di tabella effetto serra con intestazione e righe colorate">
       <div class="caption">
@@ -133,8 +146,15 @@
       <ol>
         <li><strong>V/F</strong> — Una tabella può essere modificata (righe/colonne) in qualsiasi momento. <em>(V)</em></li>
         <li>Come inserire i numeri di pagina solo nel piè di pagina? Descrivi i passaggi.</li>
-        <li><strong>Scacchiera</strong> — Crea una tabella <strong>8 × 8</strong> e alterna i colori delle celle (bianco/blu). Salva come <code>scacchiera</code>.</li>
+        <li><strong>Scacchiera</strong> — Crea una tabella <strong>8×8</strong> e alterna i colori delle celle (bianco/blu). Salva come <code>scacchiera</code>.</li>
       </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Annotazione per il registro</h2>
+      <p class="box">
+        Laboratorio: gestione delle tabelle in Documenti Google. Inserimento tabella, formattazioni, riga di intestazione unita e colorata, numeri di pagina in piè di pagina.
+      </p>
     </section>
 
     <footer class="container narrow small muted">
@@ -142,5 +162,25 @@
       Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
     </footer>
   </main>
+
+  <!-- Stato iniziale del pulsante “Contrasto alto” (come drive_intro) -->
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const root = document.documentElement;
+    const cBtn = document.getElementById("contrastToggle");
+    if (!cBtn) return;
+    const initOn = root.getAttribute("data-contrast") === "aaa";
+    cBtn.classList.toggle("is-active", initOn);
+    cBtn.setAttribute("aria-pressed", initOn ? "true" : "false");
+    cBtn.textContent = initOn ? "Contrasto alto attivo ⚡" : "Contrasto alto ☀️";
+    cBtn.addEventListener("click", () => {
+      const on = root.getAttribute("data-contrast") === "aaa";
+      root.setAttribute("data-contrast", on ? "" : "aaa");
+      cBtn.classList.toggle("is-active", !on);
+      cBtn.setAttribute("aria-pressed", !on ? "true" : "false");
+      cBtn.textContent = !on ? "Contrasto alto attivo ⚡" : "Contrasto alto ☀️";
+    });
+  });
+  </script>
 </body>
 </html>
