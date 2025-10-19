@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Allenati con RapidTyping – Guida per gli studenti</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Assets comuni -->
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+  <script>
+    // Imposta subito il tema iniziale prima del paint per evitare flicker
+    (function(){
+      try{
+        var key='theme';
+        var saved=localStorage.getItem(key);
+        if(saved==='dark'||saved==='light'){
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      }catch(e){/* no-op */}
+    })();
+  </script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="container flex-between">
+      <div>
+        <span class="badge">Touch typing • 10–20 min al giorno</span>
+        <h1 class="title">Prof. Marco Cocciniglia</h1>
+        <p class="subtitle">Allenati con <strong>RapidTyping</strong> e diventa un/una pro della tastiera</p>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn" id="theme-toggle" data-theme-toggle aria-label="Cambia tema" aria-pressed="false">🌓 Tema</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container flow">
+    <section class="callout">
+      <p class="big">Migliora velocità e precisione: bastano sessioni brevi e costanti. Qui trovi download, istruzioni e consigli.</p>
+      <div class="actions">
+        <a class="btn" href="#download">Istruzioni di download</a>
+        <a class="btn primary" href="https://rapidtyping.com/download/RapidTyping.zip" target="_blank" rel="noopener">⬇️ Scarica RapidTyping (.zip)</a>
+      </div>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h3>🎯 Perché allenarsi</h3>
+        <p class="big">Digitare senza guardare la tastiera ti fa risparmiare tempo, riduce gli errori e ti aiuta in tutte le materie.</p>
+      </article>
+      <article class="card">
+        <h3>⌛ Quanto basta</h3>
+        <p class="big">Fai pratica <strong>10–20 minuti</strong> al giorno. La regolarità vale più delle maratone.</p>
+      </article>
+      <article class="card">
+        <h3>📈 Obiettivo</h3>
+        <p class="big">Punta prima alla <strong>precisione</strong> (errori &le; 10%), poi aumenta la <strong>velocità</strong> (cpm).</p>
+      </article>
+    </section>
+
+    <section class="card" id="mani">
+      <h2>Posizione corretta delle mani</h2>
+      <p class="note">Impara la "riga di base": le dita riposano su <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> <span class="kbd">F</span> (mano sinistra) e <span class="kbd">J</span> <span class="kbd">K</span> <span class="kbd">L</span> <span class="kbd">;</span> (mano destra). I tasti <span class="kbd">F</span> e <span class="kbd">J</span> hanno un piccolo rilievo per orientarti senza guardare.</p>
+      <ul class="checklist">
+        <li>Schiena dritta, spalle rilassate. Piedi ben appoggiati.</li>
+        <li>Polsi <strong>sollevati</strong> (non appoggiarli mentre digiti).</li>
+        <li>Usa <strong>tutte</strong> le dita: ognuna ha la sua colonna di tasti.</li>
+        <li>Guarda lo schermo, non la tastiera: affidati ai rilievi su <span class="kbd">F</span> e <span class="kbd">J</span>.</li>
+      </ul>
+      <div class="callout">Suggerimento: se ti accorgi che stai guardando la tastiera, rallenta e ricomincia. La memoria muscolare arriva con la calma.</div>
+    </section>
+
+    <section class="card" id="download">
+      <h2>Scarica RapidTyping (Windows)</h2>
+      <p>Vai alla pagina ufficiale dei download: <a href="https://rapidtyping.com/downloads.html" target="_blank" rel="noopener">rapidtyping.com/downloads.html</a></p>
+      <ul class="steps">
+        <li>Clicca sul <strong>pulsante verde</strong> per la <strong>versione Portable</strong> (non richiede installazione: puoi usarla anche da chiavetta), oppure usa il pulsante qui sotto.</li>
+      </ul>
+      <p>
+        <a class="btn primary" href="https://rapidtyping.com/download/RapidTyping.zip" target="_blank" rel="noopener">⬇️ Scarica direttamente RapidTyping.zip</a>
+      </p>
+      <ul class="steps">
+        <li>Avvia il programma e, al primo avvio, scegli la lingua italiana se disponibile.</li>
+      </ul>
+      <p class="note">La versione portable è ideale per esercitarti ovunque senza installare nulla.</p>
+    </section>
+
+    <section class="grid-2">
+      <article class="card" id="uso">
+        <h2>Come usare RapidTyping (prima sessione)</h2>
+        <ol class="steps">
+          <li>Apri RapidTyping e seleziona il <strong>corso base</strong> (riga di base e parole brevi).</li>
+          <li>Regola l'altezza della sedia, posiziona le dita sulla riga di base e inizia l'esercizio.</li>
+          <li>Mira alla <strong>precisione</strong>: se superi il 10% di errori, ripeti l'esercizio con più calma.</li>
+          <li>Al termine, controlla le <strong>statistiche</strong> (cpm, errori, tempo) e annota il risultato.</li>
+          <li>Ripeti con un secondo esercizio, se hai tempo.</li>
+        </ol>
+        <p class="note">Ricorda: la velocità arriverà naturalmente quando la precisione sarà stabile.</p>
+      </article>
+      <article class="card" id="routine">
+        <h2>Programma di allenamento</h2>
+        <ul class="checklist">
+          <li>🥇 <strong>Settimana 1–2:</strong> 10–15 min al giorno, riga di base e tasti vicini.</li>
+          <li>🥈 <strong>Settimana 3–4:</strong> 15–20 min, parole e frasi, introduci le maiuscole.</li>
+          <li>🥉 <strong>Da 1 mese in poi:</strong> alterna <em>accuracy day</em> (precisione) e <em>speed day</em> (velocità).</li>
+        </ul>
+        <p class="pill">Obiettivo suggerito: errori ≤ 10% → poi aumenta la velocità di 5–10 cpm a settimana.</p>
+      </article>
+    </section>
+
+    <section class="card" id="tips">
+      <h2>Consigli utili</h2>
+      <ul class="checklist">
+        <li>Fai pause brevi: meglio 2×10 min che 1×20 min se sei stanco/a.</li>
+        <li>Non rincorrere i numeri: cura il gesto, i risultati seguiranno.</li>
+        <li>Usa sempre la stessa postura e posizione delle mani: crea abitudini sane.</li>
+        <li>Riprova gli esercizi difficili dopo un giorno: il cervello consolida durante il riposo.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="obiettivi">
+      <h2>Fissa i tuoi obiettivi</h2>
+      <p class="note">Scrivi i tuoi obiettivi personali (es. "precisione 95% entro 2 settimane" o "+30 cpm entro 1 mese") e verifica i progressi ogni venerdì.</p>
+    </section>
+
+    <p class="muted small">Buon allenamento! Costanza, postura corretta e attenzione: il trio vincente. ✨<br>Per qualsiasi dubbio o passaggio non chiaro, sentitevi liberi di chiedere spiegazioni senza esitazioni.</p>
+  </main>
+  <script>
+    // Shim di compatibilità per il toggle tema
+    (function(){
+      var ROOT=document.documentElement;
+      var KEY='theme';
+      function getSaved(){
+        try{var v=localStorage.getItem(KEY); if(v==='dark'||v==='light') return v;}catch(e){}
+        return null;
+      }
+      function systemPrefersDark(){
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+      function currentTheme(){ return ROOT.getAttribute('data-theme'); }
+      function setTheme(t){ ROOT.setAttribute('data-theme', t); try{localStorage.setItem(KEY,t);}catch(e){} }
+      function computeInitial(){ return getSaved() || (systemPrefersDark()? 'dark':'light'); }
+      function toggle(){ setTheme(currentTheme()==='dark' ? 'light' : 'dark'); }
+      function init(){
+        // Garantisce che il tema sia impostato anche se theme.js non aggancia
+        if(!currentTheme()){ setTheme(computeInitial()); }
+        var btn=document.querySelector('#theme-toggle,[data-theme-toggle],.js-theme-toggle');
+        if(btn && !btn.__themeBound){ btn.addEventListener('click', toggle); btn.__themeBound=true; }
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+    })();
+  </script>
+</body>
+</html>
