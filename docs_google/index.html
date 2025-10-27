@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Google Documenti — Interfaccia, formattazione e lavoro offline</title>
+
+  <!-- CSS condivisi (DSA-friendly) -->
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="page-header container">
+  <!-- Breadcrumb come nelle altre pagine -->
+  <nav class="breadcrumb" aria-label="Percorso">
+    <a href="https://mcocciniglia.github.io/lezioni_classi_prime/">Home</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://mcocciniglia.github.io/lezioni_classi_prime/#videoscrittura">Videoscrittura</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Google Documenti</span>
+  </nav>
+
+  <h1>Google Documenti — Interfaccia, formattazione e lavoro offline</h1>
+
+  <!-- Controlli tema / contrasto -->
+  <div class="theme-controls">
+    <button id="themeToggle" class="btn btn-theme" type="button" aria-pressed="false" aria-label="Cambia tema">
+      <span class="btn-label">Tema scuro 🌙</span>
+    </button>
+    <button id="contrastToggle" class="btn btn-outline btn-contrast" type="button"
+            aria-pressed="false" aria-label="Attiva/disattiva contrasto alto">
+      Contrasto alto ☀️
+    </button>
+  </div>
+
+  <p class="pill">⏱️ 2 ore • Classe: 1ª IT • Modalità: laboratorio</p>
+</header>
+
+<main class="container content">
+  
+  
+
+  <aside class="callout">
+    <strong>Obiettivo della lezione.</strong> Riconoscere i principali elementi dell’interfaccia di
+    <em>Google Documenti</em>, applicare formattazioni base a testo e paragrafi, collaborare con commenti/suggerimenti
+    e abilitare la modalità <em>offline</em>.
+  </aside>
+
+  <section id="cos-e">
+    <h2>1) Che cos’è un word processor (in breve)</h2>
+    <p>
+      È un programma di videoscrittura per creare, impaginare e condividere documenti.
+      Con Google Documenti lavori nel browser: i file sono salvati su Drive e puoi collaborare in tempo reale.
+    </p>
+    <ul>
+      <li>Copia/incolla e <kbd>Ctrl</kbd>+<kbd>Z</kbd> Annulla.</li>
+      <li>Formattazione: <strong>grassetto</strong>, <em>corsivo</em>, <u>sottolineato</u>, colore, dimensione.</li>
+      <li>Formattazioni di paragrafo: allineamenti, rientri, elenchi, interlinea, giustificazione.</li>
+      <li>Link, immagini, tabelle, commenti e suggerimenti.</li>
+      <li>Esportazione in <code>.pdf</code>, <code>.docx</code> e altri formati.</li>
+    </ul>
+  </section>
+
+  <section id="interfaccia">
+    <h2>2) L’interfaccia di Google Documenti</h2>
+
+    <figure class="figure">
+      <img src="./Toolbar.png" alt="Schermata di Google Documenti con etichette: nome documento, barra dei menù, barra dei pulsanti, righello, strumenti di condivisione, cursore." />
+      <figcaption>
+        <strong>Figura A — Mappa rapida dell’interfaccia.</strong>
+        <em>Nome del documento</em> (rinomina con un clic), <em>Barra dei menù</em> (File, Modifica, Visualizza…),
+        <em>Barra dei pulsanti</em> con i comandi più usati, <em>Righello</em> per tabulatori e rientri,
+        <em>Strumenti di condivisione</em> (pulsante <q>Condividi</q>) e il <em>cursore</em> nel foglio.
+      </figcaption>
+    </figure>
+
+    <div class="grid two">
+      <div>
+        <h3>Selezione prima di agire</h3>
+        <p>Per applicare una formattazione a parole o frasi, <strong>seleziona</strong> prima il testo.</p>
+        <ul>
+          <li>Doppio clic = parola. Triplo clic = frase/paragrafo.</li>
+          <li><kbd>Shift</kbd> + frecce = espandi selezione da tastiera.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Scorciatoie utili</h3>
+        <ul class="kbd-list">
+          <li><kbd>Ctrl</kbd>+<kbd>B</kbd> grassetto — <kbd>Ctrl</kbd>+<kbd>I</kbd> corsivo — <kbd>Ctrl</kbd>+<kbd>U</kbd> sottolineato</li>
+          <li><kbd>Ctrl</kbd>+<kbd>K</kbd> inserisci link — <kbd>Ctrl</kbd>+<kbd>A</kbd> seleziona tutto</li>
+          <li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> conta parole — <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>7</kbd>/<kbd>8</kbd> elenco num./puntato</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="avvio">
+    <h2>3) Aprire Google Documenti</h2>
+
+    <figure class="figure">
+      <img src="./GoogleDocumenti.png" alt="Launcher delle app Google con l’icona Documenti e il menu laterale di Documenti con la voce Impostazioni." />
+      <figcaption>
+        <strong>Figura B — Come arrivarci velocemente.</strong>
+        Apri l’<em>app launcher</em> Google (i nove puntini) &rarr; <strong>Documenti</strong>.
+        Dal menu laterale puoi anche accedere a <em>Impostazioni</em> e alla <em>Guida</em>.
+      </figcaption>
+    </figure>
+
+    <ol class="steps">
+      <li>Vai su <strong>drive.google.com</strong> o apri direttamente <strong>Documenti</strong>.</li>
+      <li>Fai clic su <strong>+ Vuoto</strong> per un nuovo documento o apri un modello.</li>
+      <li>Rinomina il file cliccando su <em>Documento senza titolo</em>.</li>
+    </ol>
+  </section>
+
+  <section id="formattazione">
+    <h2>4) Formattare testo e paragrafi</h2>
+    <div class="grid two">
+      <div>
+        <h3>Testo</h3>
+        <ul>
+          <li>Dimensione/Font: menu a tendina nella barra.</li>
+          <li>Stile: <strong>B</strong>, <em>I</em>, <u>U</u>, colore testo/evidenziazione.</li>
+          <li>Ricerca rapida: seleziona parola &rarr; <kbd>Ctrl</kbd>+<kbd>K</kbd> per link o <kbd>Ctrl</kbd>+<kbd>F</kbd> per trova.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Paragrafo</h3>
+        <ul>
+          <li>Allineamento: sinistra, centro, destra, giustificato.</li>
+          <li>Rientri e tabulatori: usa il <strong>righello</strong>.</li>
+          <li>Elenchi: puntati/numerati; aumenta/diminuisci rientro.</li>
+          <li>Interlinea e spaziatura paragrafo dal menu <em>Formato</em>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="collaborazione">
+    <h2>5) Condividere e collaborare</h2>
+    <p>
+      Clic su <strong>Condividi</strong> &rarr; inserisci email dei compagni &rarr; scegli il ruolo:
+      <em>Lettore</em>, <em>Commentatore</em> o <em>Editor</em>.
+    </p>
+    <ul>
+      <li><strong>Commenti</strong>: seleziona testo &rarr; icona fumetto o <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>M</kbd>.</li>
+      <li><strong>Suggerisci</strong>: attiva modalità <em>Suggerimenti</em> (icona matita) per proporre modifiche reversibili.</li>
+      <li><strong>Cronologia versioni</strong>: <em>File &rarr; Cronologia versioni</em> per ripristinare uno stato precedente.</li>
+    </ul>
+  </section>
+
+  <section id="formati">
+    <h2>6) Salvare ed esportare</h2>
+    <p>I documenti sono salvati in Drive automaticamente. Per scaricare:</p>
+    <ul>
+      <li><em>File &rarr; Scarica</em> &rarr; <strong>PDF</strong> (per consegna/lettura), <strong>DOCX</strong> (compatibile Word), <strong>TXT/HTML</strong> ecc.</li>
+    </ul>
+    <aside class="note">
+      <strong>Buona pratica:</strong> consegna ufficiale in <em>PDF</em>; conserva l’originale su Drive per future modifiche.
+    </aside>
+  </section>
+
+  <section id="offline">
+    <h2>7) Usare Google Documenti <em>offline</em></h2>
+
+    <figure class="figure">
+      <img src="./offline.png" alt="Menu di Google Documenti con voce Impostazioni evidenziata per attivare la modalità offline." />
+      <figcaption>
+        <strong>Figura C — Attiva la modalità offline.</strong>
+        Da <em>Documenti</em> apri <strong>Impostazioni</strong> &rarr; abilita <q>Modalità offline</q>.
+        Funziona con Chrome/Edge. I file recenti saranno modificabili senza Internet e si sincronizzeranno alla
+        prima riconnessione.
+      </figcaption>
+    </figure>
+
+    <ol class="steps">
+      <li>Apri <strong>Documenti</strong> &rarr; <em>Menu principale</em> &rarr; <strong>Impostazioni</strong>.</li>
+      <li>Attiva <strong>Modalità offline</strong> (se richiesto, installa l’estensione Google Docs Offline).</li>
+      <li>Per singoli file: <em>File &rarr; Rendi disponibile offline</em>.</li>
+    </ol>
+  </section>
+
+  <section id="esercizi">
+    <h2>8) Esercizi veloci (da svolgere in laboratorio)</h2>
+    <ol>
+      <li>Crea un nuovo documento intitolato <em>Prova Videoscrittura</em>. Scrivi tre frasi e applica: una in <strong>grassetto</strong>,
+          una in <em>corsivo</em>, una <u>sottolineata</u>. Allinea la seconda al centro.</li>
+      <li>Inserisci un elenco puntato di 4 voci. Trasformalo in elenco numerato con scorciatoia da tastiera.</li>
+      <li>Condividi il documento con un compagno come <em>Commentatore</em> e scambiatevi un commento.</li>
+      <li>Esporta in <strong>PDF</strong> e carica il file su Classroom/Moodle (pulsante in alto).</li>
+    </ol>
+  </section>
+
+  <hr />
+  <footer class="page-footer">
+    <p>Docente: <strong>Prof. Marco Cocciniglia</strong> — Laboratorio di Tecnologie Informatiche.</p>
+    <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili,
+       contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+  </footer>
+</main>
+
+<!-- JS condiviso (toggle tema/contrasto) -->
+<script src="https://mcocciniglia.github.io/common/assets/theme.js" defer></script>
+</body>
+</html>
