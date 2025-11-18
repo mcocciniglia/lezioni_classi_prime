@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Guida – Incassi cinema multisala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Asset comuni -->
+    <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+    <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+    <script src="https://mcocciniglia.github.io/common/assets/theme.js" defer></script>
+    <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+
+    <style>
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+        .page-header,
+        .page-footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="page">
+
+<div class="content-wrapper">
+
+<header class="page-header">
+    <h1>Calcolo degli incassi di un cinema multisala</h1>
+    <p class="subtitle">
+        Guida passo-passo per creare un foglio Google professionale<br>
+        (somma, trascinamento, riferimenti relativi/assoluti)
+    </p>
+
+    <!-- Pulsante cambio tema: id richiesto da theme.js -->
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambia tema"></button>
+</header>
+
+<main class="page-content">
+
+    <!-- 1 -->
+    <section class="panel">
+        <h2>1. Crea il file e imposta il titolo</h2>
+        <ol>
+            <li>Apri <strong>Google Drive</strong> e crea un nuovo <strong>Foglio Google</strong>.</li>
+            <li>Rinominalo come: <strong>Incassi cinema – Nome Cognome</strong>.</li>
+            <li>In <strong>A1</strong> scrivi: <code>Calcolo degli incassi di un cinema multisala</code>.</li>
+            <li>Allarga la colonna A per farlo stare su una sola riga.</li>
+        </ol>
+    </section>
+
+    <!-- 2 -->
+    <section class="panel">
+        <h2>2. Inserisci i prezzi dei biglietti</h2>
+        <p>Questi valori saranno usati con <strong>riferimenti assoluti</strong>.</p>
+        <ol>
+            <li>A3 → <code>Costo biglietto intero</code></li>
+            <li>B3 → <code>8,00</code></li>
+            <li>A4 → <code>Costo biglietto ridotto</code></li>
+            <li>B4 → <code>4,50</code></li>
+            <li>Formato → Numero → <strong>Valuta</strong></li>
+        </ol>
+
+        <div class="callout">
+            Useremo <code>$B$3</code> e <code>$B$4</code> per bloccare i prezzi nelle formule.
+        </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="panel">
+        <h2>3. Costruisci la tabella degli spettatori</h2>
+        <p>Segui la struttura della consegna.</p>
+        <ol>
+            <li>Crea le colonne: Sala – Interi/Ridotti per ogni giorno – Totale Interi – Totale Ridotti.</li>
+            <li>Nella colonna A inserisci le sale 1–5.</li>
+            <li>Inserisci gli spettatori (Interi e Ridotti) come nel modello.</li>
+        </ol>
+
+        <div class="callout">
+            Suggerimento: centra i numeri e applica i bordi.
+        </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="panel">
+        <h2>4. Calcola i totali delle sale</h2>
+        <ol>
+            <li>Nella cella del <strong>TOTALE Interi</strong> di Sala 1 scrivi:  
+            <code>=SOMMA(intervallo delle celle degli Interi)</code></li>
+            <li>Premi Invio.</li>
+            <li>Trascina la formula verso il basso per copiarla nelle altre sale.</li>
+            <li>Ripeti per i <strong>TOTALE Ridotti</strong>.</li>
+            <li>Nella riga "TOTALE" somma ogni colonna.</li>
+        </ol>
+
+        <div class="callout">
+            Quando trascini la formula, i riferimenti cambiano da soli: sono <strong>relativi</strong>.
+        </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="panel">
+        <h2>5. Crea la tabella degli incassi</h2>
+        <p>Sotto la prima tabella costruisci la sezione <strong>INCASSI</strong>.</p>
+        <ol>
+            <li>Crea le colonne degli incassi per i giorni della settimana.</li>
+            <li>Aggiungi la colonna <strong>TOTALE incassi</strong>.</li>
+            <li>Riporta le sale da 1 a 5.</li>
+        </ol>
+    </section>
+
+    <!-- 6 -->
+    <section class="panel">
+        <h2>6. Calcola gli incassi con riferimenti assoluti</h2>
+        <ol>
+            <li>Nella cella degli incassi di Sala 1 – Martedì scrivi:<br>
+                <code>= (Interi * $B$3) + (Ridotti * $B$4)</code>
+            </li>
+            <li>Sostituisci Interi/Ridotti con le celle corrette (es. C9, D9…)</li>
+            <li>Trascina verso destra per gli altri giorni.</li>
+            <li>Trascina verso il basso per le altre sale.</li>
+            <li>Calcola il totale incassi con <code>=SOMMA()</code>.</li>
+        </ol>
+
+        <div class="callout">
+            I prezzi <code>$B$3</code> e <code>$B$4</code> non cambiano mai: sono <strong>assoluti</strong>.
+        </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="panel">
+        <h2>7. Percentuali e riepilogo</h2>
+        <ol>
+            <li>% Interi venduti → <code>=TotInteri / TotBiglietti</code></li>
+            <li>Formatta come percentuale.</li>
+            <li>Totale biglietti → Interi + Ridotti.</li>
+            <li>Incasso totale → <code>=SOMMA()</code> delle colonne.</li>
+        </ol>
+    </section>
+
+    <!-- 8 -->
+    <section class="panel">
+        <h2>8. Controllo finale</h2>
+        <ul>
+            <li>Le etichette corrispondono al modello?</li>
+            <li>I totali si aggiornano cambiando un singolo valore?</li>
+            <li>Formati corretti (valuta, numeri, percentuali)?</li>
+            <li>Tabella chiara e leggibile?</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer class="page-footer">
+    <p>
+        Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.<br>
+        Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali,
+        font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.
+    </p>
+</footer>
+
+</div>
+
+</body>
+</html>
