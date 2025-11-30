@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Analisi dei risultati di una gara sportiva – Foglio di calcolo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Asset comuni -->
+    <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+    <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+    <script src="https://mcocciniglia.github.io/common/assets/theme.js" defer></script>
+    <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+
+    <style>
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+        .page-header,
+        .page-footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="page">
+
+<div class="content-wrapper">
+
+<header class="page-header">
+    <h1>Analisi dei risultati di una gara sportiva</h1>
+    <p class="subtitle">
+        Seconda attività su Fogli Google<br>
+        (media, minimo, massimo, grafici, formattazione condizionale)
+    </p>
+
+    <!-- Pulsante cambio tema -->
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambia tema"></button>
+</header>
+
+<main class="page-content">
+
+    <!-- Introduzione -->
+    <section class="panel">
+        <h2>Obiettivo dell'attività</h2>
+        <p>
+            In questa attività userai <strong>Google Fogli</strong> per analizzare i risultati di una
+            <strong>gara sportiva</strong> (ad esempio salto in lungo, lanci, prove di corsa).
+            Lavorerai su una tabella piccola ma completa, imparando a usare:
+        </p>
+        <ul>
+            <li><strong>MEDIA</strong> per calcolare la prestazione media;</li>
+            <li><strong>MIN</strong> e <strong>MAX</strong> per trovare il risultato migliore e peggiore;</li>
+            <li>un <strong>grafico a colonne</strong> per rappresentare i dati;</li>
+            <li>la <strong>formattazione condizionale</strong> per evidenziare i risultati più alti e più bassi.</li>
+        </ul>
+    </section>
+
+    <!-- 1. Crea il file -->
+    <section class="panel">
+        <h2>1. Crea il file di lavoro</h2>
+        <ol>
+            <li>Apri <strong>Google Drive</strong>.</li>
+            <li>Clicca su <strong>Nuovo → Fogli Google</strong>.</li>
+            <li>Rinomina il file come: <strong>Gara sportiva – Nome Cognome</strong>.</li>
+            <li>In <strong>A1</strong> scrivi il titolo:  
+                <code>Analisi dei risultati di una gara sportiva</code>
+            </li>
+        </ol>
+    </section>
+
+    <!-- 2. Costruisci la tabella -->
+    <section class="panel">
+        <h2>2. Costruisci la tabella dei risultati</h2>
+        <p>Crea una tabella con questa struttura (partendo da riga 3):</p>
+        <ul>
+            <li><strong>A3</strong> → <code>Studente</code></li>
+            <li><strong>B3</strong> → <code>Prova 1</code></li>
+            <li><strong>C3</strong> → <code>Prova 2</code></li>
+            <li><strong>D3</strong> → <code>Prova 3</code></li>
+            <li><strong>E3</strong> → <code>Media</code></li>
+            <li><strong>F3</strong> → <code>Migliore</code></li>
+            <li><strong>G3</strong> → <code>Peggiore</code></li>
+        </ul>
+        <ol>
+            <li>Nella colonna <strong>A</strong> inserisci 6–8 nomi (o iniziali) dei “partecipanti”
+                alla gara (ad es. <code>Alessia</code>, <code>Gabriele</code>, <code>Fatima</code>…).</li>
+            <li>Nelle colonne <strong>B</strong>, <strong>C</strong> e <strong>D</strong> inserisci i punteggi
+                delle tre prove (il docente può fornire i dati oppure potete inventarli).</li>
+            <li>Allinea i numeri a destra o al centro e applica i bordi alle celle della tabella.</li>
+        </ol>
+        <div class="callout">
+            Scegli valori semplici (es. da 3 a 10 oppure da 1,00 a 10,00) per concentrare l’attenzione
+            sulle <strong>formule</strong> e non sui calcoli a mano.
+        </div>
+    </section>
+
+    <!-- 3. Calcola la media -->
+    <section class="panel">
+        <h2>3. Calcola la media dei risultati</h2>
+        <ol>
+            <li>Vai in <strong>E4</strong> (riga del primo studente, colonna Media).</li>
+            <li>Scrivi la formula:  
+                <code>=MEDIA(B4:D4)</code>
+            </li>
+            <li>Premi <strong>Invio</strong>: compare la media delle tre prove.</li>
+            <li>Usa la maniglietta in basso a destra della cella E4 e
+                <strong>trascina verso il basso</strong> per copiare la formula a tutti gli studenti.</li>
+        </ol>
+        <div class="callout">
+            Stai usando i riferimenti <strong>relativi</strong>: trascinando la formula,
+            l’intervallo si adatta automaticamente alla riga (B5:D5, B6:D6, …).
+        </div>
+    </section>
+
+    <!-- 4. Minimo e massimo -->
+    <section class="panel">
+        <h2>4. Trova il risultato migliore e peggiore</h2>
+        <ol>
+            <li>Vai in <strong>F4</strong> (Migliore) e scrivi:  
+                <code>=MAX(B4:D4)</code>
+            </li>
+            <li>Premi <strong>Invio</strong>.</li>
+            <li>Trascina la formula verso il basso per copiarla a tutte le righe.</li>
+            <li>Vai in <strong>G4</strong> (Peggiore) e scrivi:  
+                <code>=MIN(B4:D4)</code>
+            </li>
+            <li>Premi <strong>Invio</strong> e trascina verso il basso.</li>
+        </ol>
+        <div class="callout">
+            <strong>MAX</strong> restituisce il valore più alto dell’intervallo,
+            <strong>MIN</strong> quello più basso.
+        </div>
+    </section>
+
+    <!-- 5. Grafico a colonne -->
+    <section class="panel">
+        <h2>5. Crea un grafico a colonne</h2>
+        <ol>
+            <li>Seleziona l’intervallo che contiene i nomi degli studenti e le medie
+                (ad es. da <strong>A3</strong> a <strong>E</strong> dell’ultima riga).</li>
+            <li>Vai su <strong>Inserisci → Grafico</strong>.</li>
+            <li>Nella barra laterale, se necessario, imposta il tipo di grafico su
+                <strong>Grafico a colonne</strong>.</li>
+            <li>Controlla che sull’asse orizzontale ci siano i nomi e sulle colonne le medie.</li>
+            <li>Sposta il grafico in una zona libera del foglio, senza coprire i dati.</li>
+        </ol>
+        <div class="callout">
+            Il grafico ti permette di vedere a colpo d’occhio chi ha avuto i risultati migliori
+            e chi è sotto la media.
+        </div>
+    </section>
+
+    <!-- 6. Formattazione condizionale -->
+    <section class="panel">
+        <h2>6. Evidenzia i risultati con la formattazione condizionale</h2>
+        <ol>
+            <li>Seleziona la colonna delle <strong>Medie</strong> (solo le celle con i risultati).</li>
+            <li>Vai su <strong>Formato → Formattazione condizionale</strong>.</li>
+            <li>Imposta una regola del tipo:
+                <ul>
+                    <li><em>Se il valore è maggiore o uguale a 7</em> → sfondo verde chiaro, testo in grassetto.</li>
+                </ul>
+            </li>
+            <li>Aggiungi una seconda regola:
+                <ul>
+                    <li><em>Se il valore è minore di 5</em> → sfondo rosso chiaro, testo bianco.</li>
+                </ul>
+            </li>
+            <li>Controlla l’anteprima e poi clicca su <strong>Fine</strong>.</li>
+        </ol>
+        <div class="callout">
+            La formattazione condizionale aiuta a leggere i dati velocemente:
+            verde = risultato buono, rosso = risultato da migliorare.
+        </div>
+    </section>
+
+    <!-- 7. (Facoltativo) Classifica -->
+    <section class="panel">
+        <h2>7. (Facoltativo) Crea una classifica ordinata</h2>
+        <p>Per chi finisce prima:</p>
+        <ol>
+            <li>In un’area libera del foglio scrivi un piccolo titolo:
+                <code>Classifica per media</code>.</li>
+            <li>Sotto, in una cella vuota (es. <strong>I3</strong>) inserisci la formula:
+                <br><code>=ORDINA(A4:E9; E4:E9; FALSO)</code>
+            </li>
+            <li>Adatta l’intervallo alle tue righe (A4:E<em>ultima</em>) e alla colonna delle medie.</li>
+            <li>Osserva come la tabella viene riordinata automaticamente dal migliore al peggiore.</li>
+        </ol>
+    </section>
+
+    <!-- 8. Verifica finale -->
+    <section class="panel">
+        <h2>8. Controllo finale del lavoro</h2>
+        <ul>
+            <li>La tabella ha tutte le intestazioni corrette? (Studente, Prova 1, Prova 2…)</li>
+            <li>Le formule di <strong>MEDIA</strong>, <strong>MAX</strong> e <strong>MIN</strong>
+                sono state trascinate in tutte le righe?</li>
+            <li>Il grafico mostra correttamente le medie di tutti gli studenti?</li>
+            <li>La formattazione condizionale mette in evidenza risultati alti e bassi?</li>
+            <li>Se modifichi una prova, medie, minimi, massimi e grafico si aggiornano da soli?</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer class="page-footer">
+    <p>
+        Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.<br>
+        Questa pagina è pensata per essere letta anche da studenti DSA:
+        istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.
+    </p>
+</footer>
+
+</div>
+
+</body>
+</html>
