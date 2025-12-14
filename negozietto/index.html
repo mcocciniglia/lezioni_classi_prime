@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestione vendite di un piccolo negozio – Google Fogli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Asset comuni (DSA-friendly + tema) -->
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script src="https://mcocciniglia.github.io/common/assets/theme.js" defer></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+
+  <style>
+    .content-wrapper{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+    }
+    .page-header,.page-footer{ text-align:center; }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 900px){
+      .grid-2{ grid-template-columns: 1fr 1fr; }
+    }
+    .kbd{
+      display:inline-block;
+      padding:.1rem .4rem;
+      border-radius:.4rem;
+      border:1px solid var(--border, rgba(0,0,0,.15));
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .95em;
+    }
+    .mini-table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top:.5rem;
+      overflow:hidden;
+      border-radius: .75rem;
+    }
+    .mini-table th,.mini-table td{
+      border: 1px solid var(--border, rgba(0,0,0,.12));
+      padding: .55rem .6rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .mini-table th{ font-weight: 700; }
+    .left{ text-align:left !important; }
+  </style>
+  
+</head>
+
+<body class="page">
+  <div class="content-wrapper">
+
+    <header class="page-header">
+      <h1>Gestione vendite di un piccolo negozio</h1>
+      <p class="subtitle">
+        Secondo esercizio – Google Fogli<br>
+        (SOMMA, MEDIA, MIN/MAX, formattazione condizionale, grafici)
+      </p>
+ <!-- Controlli tema / contrasto -->
+      <div class="theme-controls">
+        <button
+          id="themeToggle"
+          class="btn btn-theme"
+          type="button"
+          aria-pressed="false"
+          aria-label="Cambia tema"
+        >
+          <span class="btn-label">Tema scuro 🌙</span>
+        </button>
+ <!-- Pulsante cambio tema -->
+    	<button id="themeToggle" class="theme-toggle" aria-label="Cambia tema" aria-pressed="false">
+	  <span class="btn-label">Tema chiaro</span><button id="contrastToggle" class="btn-ghost"
+        title="AA/AAA = livelli di contrasto per migliorare la leggibilità (accessibilità)"
+        style="margin-left:.5rem">
+  Contrasto alto 🔆
+	</button>
+      </div>
+      <!-- Toggle tema (agganciato da theme.js) -->
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambia tema"></button>
+    </header>
+
+    <main class="page-content">
+
+      <section class="panel">
+        <h2>Obiettivo</h2>
+        <p>
+          In questa attività simulerai la gestione delle <strong>vendite settimanali</strong> di un piccolo negozio.
+          Creerai una tabella ordinata e userai le funzioni di Fogli Google per calcolare totali, medie e
+          individuare giorni/prodotti migliori e peggiori. Alla fine costruirai anche un <strong>grafico</strong>.
+        </p>
+        <div class="callout">
+          <strong>Competenze:</strong> uso delle formule, trascinamento intelligente, lettura dei dati, visualizzazione con grafici.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>1. Crea il file</h2>
+        <ol>
+          <li>Apri <strong>Google Drive</strong> → <strong>Nuovo</strong> → <strong>Fogli Google</strong>.</li>
+          <li>Rinomina: <strong>Vendite negozio – Nome Cognome</strong>.</li>
+          <li>In <strong>A1</strong> scrivi: <code>Gestione vendite di un piccolo negozio</code>.</li>
+          <li>Lascia una riga vuota e inizia la tabella da <strong>A3</strong>.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>2. Costruisci la tabella</h2>
+        <p>Imposta questa struttura (puoi partire da riga 3):</p>
+
+        <table class="mini-table" aria-label="Struttura tabella vendite">
+          <thead>
+            <tr>
+              <th class="left">Prodotto</th>
+              <th>Lunedì</th>
+              <th>Martedì</th>
+              <th>Mercoledì</th>
+              <th>Giovedì</th>
+              <th>Venerdì</th>
+              <th>Totale</th>
+              <th>Media</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left">Acqua</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+            </tr>
+            <tr>
+              <td class="left">Panini</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+            </tr>
+            <tr>
+              <td class="left">Snack</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+            </tr>
+            <tr>
+              <td class="left">Bibite</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+            </tr>
+            <tr>
+              <td class="left"><strong>Totale giorno</strong></td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ol>
+          <li>Inserisci 4–6 prodotti (puoi usare quelli sopra o aggiungerne altri).</li>
+          <li>Inserisci i numeri di vendita (pezzi venduti) da <strong>Lunedì</strong> a <strong>Venerdì</strong>.</li>
+          <li>Applica bordi e allineamento per rendere la tabella leggibile.</li>
+        </ol>
+
+        <div class="callout">
+          <strong>Suggerimento:</strong> usa numeri realistici e semplici (es. 0–40) per concentrarti sulle formule.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>3. Totale e media per prodotto</h2>
+        <ol>
+          <li>Nella colonna <strong>Totale</strong> (prima riga prodotto) scrivi:
+            <br><code>=SOMMA(B4:F4)</code>
+          </li>
+          <li>Nella colonna <strong>Media</strong> (stessa riga) scrivi:
+            <br><code>=MEDIA(B4:F4)</code>
+          </li>
+          <li>Trascina entrambe le formule verso il basso per tutti i prodotti.</li>
+        </ol>
+        <div class="callout">
+          Il trascinamento funziona perché i riferimenti sono <strong>relativi</strong>: B5:F5, B6:F6, ecc.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>4. Totale vendite per giorno</h2>
+        <ol>
+          <li>Nella riga <strong>Totale giorno</strong>, sotto <strong>Lunedì</strong>, scrivi:
+            <br><code>=SOMMA(B4:B7)</code>
+          </li>
+          <li>Trascina la formula verso destra fino a <strong>Venerdì</strong>.</li>
+          <li>(Facoltativo) Calcola anche il totale settimanale complessivo nella cella sotto “Totale”:
+            <br><code>=SOMMA(G4:G7)</code>
+          </li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>5. Giorno migliore e peggiore</h2>
+        <p>In un’area libera del foglio (es. sotto la tabella) scrivi due righe:</p>
+        <ul>
+          <li><strong>Vendite massime in un giorno</strong>: <code>=MAX(B8:F8)</code></li>
+          <li><strong>Vendite minime in un giorno</strong>: <code>=MIN(B8:F8)</code></li>
+        </ul>
+        <div class="callout">
+          Qui stai usando <strong>MAX</strong> e <strong>MIN</strong> per capire i picchi della settimana.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>6. Formattazione condizionale</h2>
+        <div class="grid-2">
+          <div>
+            <h3>Opzione A (semplice)</h3>
+            <ol>
+              <li>Seleziona l’area delle vendite (es. <strong>B4:F7</strong>).</li>
+              <li>Formato → <strong>Formattazione condizionale</strong>.</li>
+              <li>Applica una scala di colore (valori bassi/medi/alti).</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Opzione B (con media dell’intervallo)</h3>
+            <ol>
+              <li>Seleziona <strong>B4:F7</strong>.</li>
+              <li>Formato → Formattazione condizionale → <strong>Formula personalizzata è</strong>.</li>
+              <li>Inserisci:
+                <br><code>=B4&gt;MEDIA($B$4:$F$7)</code>
+              </li>
+              <li>Scegli uno stile (es. sfondo verde chiaro).</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="callout">
+          Se il campo della formula resta rosso: controlla di avere <strong>=</strong> all’inizio e che l’intervallo sia corretto.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>7. Grafico</h2>
+        <ol>
+          <li>Seleziona <strong>Prodotto</strong> + colonna <strong>Totale</strong> (es. A4:A7 e G4:G7).</li>
+          <li>Inserisci → <strong>Grafico</strong>.</li>
+          <li>Scegli un <strong>grafico a colonne</strong> (o barre) per confrontare i prodotti.</li>
+          <li>Dai un titolo al grafico: <code>Totale vendite per prodotto</code>.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>Consegna</h2>
+        <ul>
+          <li>Tabella completa con vendite inserite.</li>
+          <li>Totali e medie calcolati correttamente con formule.</li>
+          <li>Totali per giorno.</li>
+          <li>Formattazione condizionale applicata.</li>
+          <li>Grafico inserito e leggibile.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Controllo finale</h2>
+        <ul>
+          <li>Se cambi un numero di vendita, <strong>totali, medie e grafico</strong> si aggiornano da soli?</li>
+          <li>La tabella è ordinata e leggibile (bordi, allineamento, intestazioni)?</li>
+          <li>Hai usato il trascinamento senza riscrivere ogni formula?</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.<br>
+        Pagina ottimizzata per studenti DSA: font ad alta leggibilità, istruzioni sequenziali e layout pulito.
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
