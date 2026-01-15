@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Verifica Google Fogli — Registro voti (con SE, min/max/media, grafici)</title>
+
+  <!-- Asset comuni del tuo progetto -->
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+
+  <header class="page-header">
+    <div class="container">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+        <div>
+          <h1>Verifica di laboratorio — Google Fogli</h1>
+          <p class="subtitle">
+            Registro voti semplificato: <span class="pill">MEDIA • MIN • MAX</span>
+            <span class="pill">SE()</span> <span class="pill">Formattazione condizionale</span>
+            <span class="pill">ORDINA</span> <span class="pill">Grafico</span>
+          </p>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+            <span aria-hidden="true">🌓</span> <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-ghost" type="button" aria-pressed="false">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="panel callout">
+      <h2>Informazioni</h2>
+      <ul>
+        <li><strong>Durata:</strong> 2 ore (con estensione facoltativa a casa)</li>
+        <li><strong>Strumento:</strong> Google Fogli</li>
+        <li><strong>Consegna:</strong> condividi il file con il docente o consegna secondo le indicazioni date in classe</li>
+      </ul>
+
+      <div class="box">
+        <p class="muted" style="margin:0">
+          Suggerimento: lavora con calma e controlla ogni colonna prima di passare alla successiva.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel exercise">
+      <h2>✅ Cosa devi fare (obbligatorio)</h2>
+
+      <ol class="steps">
+        <li>
+          <h3>1) Crea la tabella</h3>
+          <p>Crea un foglio con queste colonne (in riga 1):</p>
+          <div class="box">
+            <p style="margin:0">
+              <strong>A</strong> Studente |
+              <strong>B</strong> Verifica 1 |
+              <strong>C</strong> Verifica 2 |
+              <strong>D</strong> Verifica 3 |
+              <strong>E</strong> Media |
+              <strong>F</strong> Min |
+              <strong>G</strong> Max |
+              <strong>H</strong> Esito
+            </p>
+          </div>
+          <p>Inserisci <strong>almeno 5 studenti</strong> e voti tra <strong>1 e 10</strong> nelle verifiche.</p>
+
+          <details class="tip">
+            <summary>🔎 Come fare (aiuto)</summary>
+            <ul>
+              <li>Scrivi i titoli in riga 1.</li>
+              <li>Inserisci i nomi in colonna A (riga 2 in poi).</li>
+              <li>Inserisci i voti in B–D.</li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <h3>2) Calcola MEDIA, MIN e MAX</h3>
+          <p>Per ogni studente calcola:</p>
+          <ul>
+            <li><strong>Media</strong> dei 3 voti</li>
+            <li><strong>Min</strong> (voto più basso)</li>
+            <li><strong>Max</strong> (voto più alto)</li>
+          </ul>
+
+          <details class="tip">
+            <summary>🔎 Soluzione (formule esempio)</summary>
+            <p class="muted">Esempio sulla riga 2 (adatta se usi righe diverse):</p>
+            <div class="box">
+              <p style="margin:0">
+                <strong>E2</strong>: <code>=MEDIA(B2:D2)</code><br>
+                <strong>F2</strong>: <code>=MIN(B2:D2)</code><br>
+                <strong>G2</strong>: <code>=MAX(B2:D2)</code>
+              </p>
+            </div>
+            <p>Poi trascina le formule verso il basso (maniglia in basso a destra della cella).</p>
+          </details>
+        </li>
+
+        <li>
+          <h3>3) Usa la funzione SE() per l’“Esito”</h3>
+          <p>In colonna <strong>H (Esito)</strong> scrivi:</p>
+          <ul>
+            <li><strong>“Promosso”</strong> se la <strong>media ≥ 6</strong></li>
+            <li><strong>“Non promosso”</strong> se la <strong>media &lt; 6</strong></li>
+          </ul>
+
+          <details class="tip">
+            <summary>🔎 Soluzione (SE)</summary>
+            <div class="box">
+              <p style="margin:0">
+                <strong>H2</strong>: <code>=SE(E2&gt;=6;"Promosso";"Non promosso")</code>
+              </p>
+            </div>
+            <p class="muted">Ricorda: in italiano gli argomenti di <code>SE()</code> sono separati da <strong>;</strong></p>
+          </details>
+        </li>
+
+        <li>
+          <h3>4) Formattazione condizionale sulla Media</h3>
+          <p>Colora automaticamente la colonna <strong>Media</strong>:</p>
+          <ul>
+            <li><strong>verde</strong> se media ≥ 6</li>
+            <li><strong>rosso</strong> se media &lt; 6</li>
+          </ul>
+
+          <details class="tip">
+            <summary>🔎 Come fare (passaggi rapidi)</summary>
+            <ol>
+              <li>Seleziona l’intervallo delle medie (es. <code>E2:E20</code>).</li>
+              <li>Vai su <strong>Formato → Formattazione condizionale</strong>.</li>
+              <li>Crea una regola: “Maggiore o uguale a” <strong>6</strong> → scegli verde.</li>
+              <li>Aggiungi una seconda regola: “Minore di” <strong>6</strong> → scegli rosso.</li>
+            </ol>
+          </details>
+        </li>
+
+        <li>
+          <h3>5) Ordina per Media (dal più alto al più basso)</h3>
+          <p>Ordina la tabella in modo che lo studente con la media più alta sia in cima.</p>
+
+          <details class="tip">
+            <summary>🔎 Come fare</summary>
+            <ol>
+              <li>Seleziona tutta la tabella (da A1 a H…)</li>
+              <li>Vai su <strong>Dati → Ordina intervallo</strong></li>
+              <li>Spunta “L’intervallo ha intestazioni”</li>
+              <li>Ordina per <strong>Media</strong> → <strong>Z → A</strong> (decrescente)</li>
+            </ol>
+          </details>
+        </li>
+
+        <li>
+          <h3>6) Crea un grafico delle medie</h3>
+          <p>Crea un <strong>grafico a colonne</strong> con:</p>
+          <ul>
+            <li>asse orizzontale: <strong>Studente</strong></li>
+            <li>valori: <strong>Media</strong></li>
+          </ul>
+
+          <details class="tip">
+            <summary>🔎 Come fare</summary>
+            <ol>
+              <li>Seleziona le colonne <strong>Studente</strong> e <strong>Media</strong> (es. A1:A20 e E1:E20).</li>
+              <li>Vai su <strong>Inserisci → Grafico</strong>.</li>
+              <li>Scegli “Grafico a colonne”.</li>
+              <li>Aggiungi un titolo (es. “Medie della classe”).</li>
+            </ol>
+            <details class="warning">
+              <summary>Attenzione (errore comune)</summary>
+              <p>Se il grafico prende anche Min/Max o altre colonne, torna in “Impostazione” e imposta correttamente intervallo e serie.</p>
+            </details>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>🏠 Estensione facoltativa (da casa)</h2>
+      <p>Scegli <strong>UNA</strong> opzione.</p>
+
+      <details class="tip">
+        <summary>Opzione A — “Giudizio” con SE annidati</summary>
+        <p>Aggiungi una colonna <strong>I – Giudizio</strong>:</p>
+        <ul>
+          <li><strong>Ottimo</strong> se media ≥ 8</li>
+          <li><strong>Sufficiente</strong> se media tra 6 e 7,99</li>
+          <li><strong>Insufficiente</strong> se media &lt; 6</li>
+        </ul>
+
+        <details class="tip">
+          <summary>🔎 Soluzione (SE annidato)</summary>
+          <div class="box">
+            <p style="margin:0">
+              <strong>I2</strong>: <code>=SE(E2&gt;=8;"Ottimo";SE(E2&gt;=6;"Sufficiente";"Insufficiente"))</code>
+            </p>
+          </div>
+        </details>
+      </details>
+
+      <details class="tip">
+        <summary>Opzione B — Migliora il grafico</summary>
+        <ul>
+          <li>Rendi più leggibili le etichette (dimensione, inclinazione, ecc.)</li>
+          <li>Aggiungi un titolo chiaro e (se vuoi) una descrizione</li>
+          <li>Inserisci una nota nel foglio: “La sufficienza è 6”</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>📌 Checklist finale (prima di consegnare)</h2>
+      <ul>
+        <li>Ho inserito almeno <strong>5 studenti</strong> e i voti 1–10</li>
+        <li>La colonna <strong>Media</strong> è calcolata con una formula</li>
+        <li>Le colonne <strong>Min</strong> e <strong>Max</strong> sono corrette</li>
+        <li>La colonna <strong>Esito</strong> usa <strong>SE()</strong></li>
+        <li>La <strong>formattazione condizionale</strong> colora le medie</li>
+        <li>La tabella è <strong>ordinata</strong> per media</li>
+        <li>Il <strong>grafico</strong> mostra le medie degli studenti</li>
+      </ul>
+    </section>
+
+    <footer class="panel small">
+      <p style="margin:0">
+        <strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.<br>
+        <span class="muted">
+          Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili,
+          contrasti elevati e scorciatoie da tastiera evidenziate.
+        </span>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
