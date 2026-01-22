@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>Problema pratico – Scontrino smart (sconti + spedizione)</title>
+
+  <!-- Asset condivisi progetto -->
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+
+  <style>
+    /* Piccole aggiunte locali (non duplicano gli asset) */
+    details { margin: 1rem 0; }
+    summary { cursor: pointer; font-weight: 700; }
+    summary:focus { outline: 3px solid currentColor; outline-offset: 3px; }
+    .callout {
+      border-left: 6px solid #ff8c00;
+      padding: 0.9rem 1rem;
+      margin: 1rem 0;
+      background: rgba(255, 140, 0, 0.08);
+      border-radius: 10px;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; }
+    th, td { border: 1px solid rgba(0,0,0,.2); padding: .55rem .6rem; }
+    th { background: rgba(0,0,0,.06); }
+    kbd { padding: .1rem .35rem; border: 1px solid rgba(0,0,0,.35); border-bottom-width: 2px; border-radius: .35rem; }
+    code { font-size: 0.95em; }
+    .grid2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 900px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+    .muted { opacity: .85; }
+ 
+/* Fix: tasti leggibili in tema scuro */
+html[data-theme="dark"]{
+  --kbd-bg: #2d3139;  /* scuro */
+  --kbd-fg: #f2f5fa;  /* chiaro */
+}
+
+html[data-theme="dark"] kbd{
+  background: var(--kbd-bg) !important;
+  color: var(--kbd-fg) !important;
+}
+
+ </style>
+</head>
+
+<body>
+<main class="container">
+<div style="display:flex; gap:.6rem; justify-content:flex-end; align-items:center; margin: .5rem 0 1rem;">
+  <button id="contrastToggle" class="btn btn-ghost" type="button" aria-pressed="false">
+    Contrasto alto ☀️
+  </button>
+
+  <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+    <span class="btn-label">Tema chiaro</span>
+  </button>
+</div>
+  <header>
+    <h1>Problema pratico: “Scontrino smart”</h1>
+    <p class="lead">
+      Consolidamento di <strong>SE</strong> (e logica) in <strong>Excel / Google Fogli</strong>,
+      dopo l’esercizio precedente sulla <strong>media scolastica</strong>.
+    </p>
+  </header>
+
+  <section class="callout">
+    <h2>Obiettivo</h2>
+    <ul>
+      <li>Trasformare <strong>regole</strong> in <strong>formule</strong>.</li>
+      <li>Usare <strong>SE</strong> in modo corretto e leggibile.</li>
+      <li>Capire la differenza tra: calcoli <em>per riga</em> e calcoli <em>totali</em> (ordine).</li>
+    </ul>
+    <p class="muted">
+      Suggerimento operativo: usa <strong>riempimento</strong> per copiare le formule verso il basso.
+      Scorciatoie utili: <kbd>Ctrl</kbd> + <kbd>C</kbd>, <kbd>Ctrl</kbd> + <kbd>V</kbd>.
+    </p>
+  </section>
+
+  <section>
+    <h2>1) Prepara la tabella</h2>
+    <p>In un foglio nuovo crea queste colonne (riga 1 = intestazioni):</p>
+
+    <table aria-label="Struttura tabella scontrino smart">
+      <thead>
+        <tr>
+          <th>Colonna</th>
+          <th>Nome</th>
+          <th>Cosa contiene</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A</td><td>Prodotto</td><td>Nome del prodotto</td></tr>
+        <tr><td>B</td><td>Prezzo unitario (€)</td><td>Numero (es. 2,50)</td></tr>
+        <tr><td>C</td><td>Quantità</td><td>Numero intero (es. 3)</td></tr>
+        <tr><td>D</td><td>Totale riga</td><td>Prezzo × Quantità</td></tr>
+        <tr><td>E</td><td>Sconto (%)</td><td>Percentuale calcolata con SE</td></tr>
+        <tr><td>F</td><td>Totale scontato</td><td>Totale riga con sconto applicato</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Inserisci almeno <strong>6 prodotti</strong> (righe 2–7) inventati da te.
+      Esempio: penna, quaderno, evidenziatore, righello, ecc.
+    </p>
+
+    <details>
+      <summary>✅ Controllo veloce (clicca)</summary>
+      <div class="callout">
+        <ul>
+          <li>In B e C ci sono numeri (non testo).</li>
+          <li>In B usa 2 decimali (formato valuta).</li>
+          <li>In E userai percentuali (formato %).</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>2) Regole del negozio</h2>
+
+    <details>
+      <summary>📌 Regole per lo sconto (clicca per vedere)</summary>
+      <div class="callout">
+        <ul>
+          <li>Se <strong>Quantità ≥ 10</strong> → sconto <strong>15%</strong></li>
+          <li>Altrimenti se <strong>Quantità ≥ 5</strong> → sconto <strong>10%</strong></li>
+          <li>Altrimenti → sconto <strong>0%</strong></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>📌 Regole per la spedizione (clicca per vedere)</summary>
+      <div class="callout">
+        <ul>
+          <li>Se il totale (merce scontata) è <strong>≥ 50 €</strong> → spedizione <strong>0 €</strong></li>
+          <li>Altrimenti → spedizione <strong>4,90 €</strong></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>3) Calcoli richiesti</h2>
+
+    <div class="grid2">
+      <div>
+        <h3>Calcoli per riga (prodotti)</h3>
+        <ol>
+          <li><strong>D</strong>: Totale riga</li>
+          <li><strong>E</strong>: Sconto (%)</li>
+          <li><strong>F</strong>: Totale scontato</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Calcoli di ordine (totali)</h3>
+        <ol>
+          <li><strong>Totale merce</strong>: somma dei totali scontati</li>
+          <li><strong>Spedizione</strong>: dipende dal totale merce</li>
+          <li><strong>Totale finale</strong>: totale merce + spedizione</li>
+        </ol>
+      </div>
+    </div>
+
+    <details>
+      <summary>🧩 Dove mettere i totali? (clicca)</summary>
+      <div class="callout">
+        <p>
+          Puoi riservare 3 righe in basso, ad esempio:
+          <strong>F9</strong> = Totale merce, <strong>F10</strong> = Spedizione, <strong>F11</strong> = Totale finale.
+        </p>
+        <p class="muted">
+          Suggerimento: scrivi anche le etichette in E9, E10, E11.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>4) Istruzioni “nascoste” (aiuti)</h2>
+
+    <details>
+      <summary>👀 Aiuto 1 – Formula per D (Totale riga)</summary>
+      <div class="callout">
+        <p>In <strong>D2</strong> scrivi una formula che moltiplica prezzo e quantità (colonne B e C).</p>
+        <p class="muted">Poi copia la formula fino all’ultima riga dei prodotti.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>👀 Aiuto 2 – Come pensare la colonna E (Sconto)</summary>
+      <div class="callout">
+        <p>
+          In <strong>E2</strong> devi restituire una percentuale (0% oppure 10% oppure 15%) in base alla quantità (C2).
+        </p>
+        <ul>
+          <li>Prima controlli la condizione più “forte” (≥ 10)</li>
+          <li>Poi quella successiva (≥ 5)</li>
+          <li>Altrimenti 0</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>👀 Aiuto 3 – Formula per F (Totale scontato)</summary>
+      <div class="callout">
+        <p>
+          In <strong>F2</strong> prendi il totale riga (D2) e applica lo sconto (E2).
+        </p>
+        <p class="muted">
+          Attenzione: E2 è una percentuale. Ragiona su “quanto rimane da pagare” dopo lo sconto.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>👀 Aiuto 4 – Totale merce, spedizione, totale finale</summary>
+      <div class="callout">
+        <ul>
+          <li><strong>Totale merce</strong>: somma dei valori in F (solo righe prodotto)</li>
+          <li><strong>Spedizione</strong>: usa <strong>SE</strong> e la regola dei 50€</li>
+          <li><strong>Totale finale</strong>: totale merce + spedizione</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🆘 Aiuto extra – Evitare troppi SE annidati</summary>
+      <div class="callout">
+        <p>
+          Se nel tuo foglio è disponibile, puoi usare <strong>SE.PIÙ</strong> (Excel) / <strong>IFS</strong> (Google Fogli)
+          per scrivere più condizioni in sequenza.
+        </p>
+        <p class="muted">
+          In alternativa: tabella di soglie + CERCA.VERT / VLOOKUP (argomento che vedremo più avanti).
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>5) Verifica finale (autocontrollo)</h2>
+    <details>
+      <summary>✅ Check-list (clicca)</summary>
+      <div class="callout">
+        <ul>
+          <li>Se metti una quantità 10 su una riga, lo sconto diventa 15%?</li>
+          <li>Se metti una quantità 5 su una riga, lo sconto diventa 10%?</li>
+          <li>Se aumenti i prezzi e superi 50€, la spedizione va a 0€?</li>
+          <li>Il totale finale cambia in modo coerente?</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <details>
+      <summary>⭐ Estensione facoltativa (per chi finisce prima)</summary>
+      <div class="callout">
+        <p>Aggiungi una colonna <strong>G: Categoria</strong> (es. Libro / Materiale / Altro).</p>
+        <p>
+          Regola: se la categoria è <strong>Libro</strong>, aggiungi uno sconto extra del <strong>5%</strong>,
+          ma lo sconto totale non deve superare <strong>20%</strong>.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    <hr>
+    <p>
+      <strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.<br>
+      Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali,
+      font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.
+    </p>
+  </footer>
+
+</main>
+</body>
+</html>
