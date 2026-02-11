@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Google Fogli – Prova di consolidamento (funzioni base)</title>
+
+  <!-- CSS condivisi -->
+  <link rel="stylesheet" href="../common/assets/style.css" />
+  <link rel="stylesheet" href="../common/assets/theme.css" />
+  <script defer src="../common/assets/theme.js"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>Google Fogli – Prova di consolidamento</h1>
+      <p class="muted">Funzioni: SOMMA, MEDIA, MIN, MAX, SE (anche annidati) • Formattazione condizionale • Grafici</p>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <!-- PANNELLO SINISTRO: CONSEGNA -->
+    <section class="panel">
+      <h2>Consegna</h2>
+      <div class="callout orange">
+        <strong>Tempo:</strong> 40–50 minuti<br/>
+        <strong>Strumenti:</strong> solo Google Fogli (niente componenti aggiuntivi)<br/>
+        <strong>Obiettivo:</strong> consolidare formule e strumenti base in modo ordinato e leggibile
+      </div>
+
+      <h3>Cosa devi consegnare</h3>
+      <ul>
+        <li>Un file Google Fogli chiamato: <strong>Verifica_Fogli_Cognome_Nome_Classe</strong></li>
+        <li>Deve contenere 2 fogli:
+          <ul>
+            <li><strong>Dati</strong> (tabella incollata + formule)</li>
+            <li><strong>Report</strong> (riepiloghi + grafici)</li>
+          </ul>
+        </li>
+        <li>Le formule devono essere <strong>visibili</strong> (non immagini) e scritte in modo chiaro.</li>
+      </ul>
+
+      <h3>Regole</h3>
+      <ul>
+        <li>Non cancellare righe/colonne della tabella: compila solo ciò che è richiesto.</li>
+        <li>Evita calcoli “a mente”: usa sempre formule.</li>
+        <li>Se usi intervalli, cerca di usare riferimenti corretti (range coerenti).</li>
+      </ul>
+
+      <hr/>
+
+      <h2>Struttura consigliata del foglio</h2>
+      <ol>
+        <li>Crea 2 fogli: <strong>Dati</strong> e <strong>Report</strong></li>
+        <li>In <strong>Dati</strong>, incolla la tabella (vedi a destra) in <strong>A1:H13</strong></li>
+        <li>Completa le colonne richieste (I–N) e poi costruisci il <strong>Report</strong></li>
+      </ol>
+    </section>
+
+    <!-- PANNELLO DESTRO: DATI + ESERCIZI -->
+    <section class="panel">
+      <h2>Foglio 1: “Dati”</h2>
+      <p>Incolla questa tabella in <strong>A1:H13</strong> (copia e incolla così com’è):</p>
+
+      <pre class="codeblock">ID	Studente	Classe	Verifica1	Verifica2	Verifica3	Assenze	Lode
+1	Alessi Giulia	3A	7	8	6	2	NO
+2	Barone Luca	3A	5	6	5	6	NO
+3	Costa Miriam	3A	9	8	10	0	SI
+4	Di Mauro Paolo	3A	4	5	6	10	NO
+5	Esposito Sara	3A	6	7	6	3	NO
+6	Ferrara Ivan	3B	8	7	9	1	NO
+7	Greco Nina	3B	7	6	7	4	NO
+8	Lombardo Anna	3B	10	9	10	0	SI
+9	Messina Fabio	3B	3	4	5	12	NO
+10	Pappalardo Chiara	3B	6	5	7	5	NO
+11	Russo Matteo	3C	8	8	7	2	NO
+12	Salerno Ilenia	3C	5	5	6	7	NO</pre>
+
+      <div class="callout orange">
+        <strong>Nota:</strong> “Lode” vale <em>SI/NO</em>. Le verifiche sono voti in decimi. Le assenze sono giorni.
+      </div>
+
+      <h3>Parte A – Calcoli per riga (aggiungi colonne)</h3>
+      <p>A partire dalla colonna <strong>I</strong>, crea queste intestazioni:</p>
+      <ul>
+        <li><strong>I1:</strong> Totale</li>
+        <li><strong>J1:</strong> Media</li>
+        <li><strong>K1:</strong> Min</li>
+        <li><strong>L1:</strong> Max</li>
+        <li><strong>M1:</strong> Esito</li>
+        <li><strong>N1:</strong> Bonus</li>
+      </ul>
+
+      <p>Compila le formule dalla riga 2 alla riga 13:</p>
+      <ol>
+        <li><strong>Totale</strong>: somma di Verifica1–Verifica3</li>
+        <li><strong>Media</strong>: media di Verifica1–Verifica3</li>
+        <li><strong>Min</strong>: minimo tra Verifica1–Verifica3</li>
+        <li><strong>Max</strong>: massimo tra Verifica1–Verifica3</li>
+        <li><strong>Esito</strong> (con SE annidati):
+          <ul>
+            <li>Se <strong>Media ≥ 8</strong> → <strong>“Ottimo”</strong></li>
+            <li>Altrimenti se <strong>Media ≥ 6</strong> → <strong>“Sufficiente”</strong></li>
+            <li>Altrimenti → <strong>“Insufficiente”</strong></li>
+          </ul>
+        </li>
+        <li><strong>Bonus</strong> (con SE annidati):
+          <ul>
+            <li>Se <strong>Lode = "SI"</strong> e <strong>Assenze = 0</strong> → <strong>2</strong></li>
+            <li>Se <strong>Lode = "SI"</strong> e <strong>Assenze &gt; 0</strong> → <strong>1</strong></li>
+            <li>Se <strong>Lode = "NO"</strong> → <strong>0</strong></li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>Parte B – Formattazione condizionale</h3>
+      <ul>
+        <li>In colonna <strong>J (Media)</strong>:
+          <ul>
+            <li>evidenzia in modo chiaro i valori <strong>&lt; 6</strong></li>
+            <li>evidenzia in modo chiaro i valori <strong>≥ 8</strong></li>
+          </ul>
+        </li>
+        <li>In colonna <strong>M (Esito)</strong>:
+          <ul>
+            <li>“Insufficiente” deve risaltare</li>
+            <li>“Ottimo” deve risaltare</li>
+          </ul>
+        </li>
+      </ul>
+
+      <hr/>
+
+      <h2>Foglio 2: “Report”</h2>
+      <h3>Parte C – Riepiloghi (celle libere, ben ordinate)</h3>
+      <p>Inserisci un piccolo report con queste voci (usa formule):</p>
+      <ul>
+        <li><strong>Media generale delle Medie</strong> (colonna J del foglio Dati)</li>
+        <li><strong>Media più alta</strong> e <strong>media più bassa</strong></li>
+        <li><strong>Assenze totali</strong></li>
+        <li><strong>Numero di “Insufficiente”</strong> (puoi contare con metodi a tua scelta: va bene anche contando manualmente SOLO se accompagnato da un controllo con formule su un intervallo; preferibile con formule se già conosci CONT.SE)</li>
+      </ul>
+
+      <h3>Parte D – Grafici (2 grafici)</h3>
+      <ol>
+        <li><strong>Grafico a colonne</strong>: Media (J) per Studente (B)</li>
+        <li><strong>Grafico a torta</strong> oppure <strong>a colonne</strong>: Assenze (G) per Classe (C) (puoi raggruppare o visualizzare i singoli record, a tua scelta)</li>
+      </ol>
+
+      <div class="callout orange">
+        <strong>Checklist finale</strong><br/>
+        ☐ Tabella incollata correttamente<br/>
+        ☐ Colonne I–N complete con formule<br/>
+        ☐ Formattazione condizionale applicata e leggibile<br/>
+        ☐ Foglio “Report” con riepiloghi e 2 grafici<br/>
+        ☐ Nome file corretto
+      </div>
+
+      <hr/>
+
+      <h2>Valutazione (indicativa)</h2>
+      <ul>
+        <li><strong>Formule corrette</strong> (Totale/Media/Min/Max): 40%</li>
+        <li><strong>SE annidati</strong> (Esito + Bonus): 30%</li>
+        <li><strong>Formattazione condizionale</strong>: 15%</li>
+        <li><strong>Grafici + ordine del report</strong>: 15%</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container muted" style="padding: 1.25rem 0;">
+    <small>© Prova di consolidamento – Google Fogli</small>
+  </footer>
+</body>
+</html>
