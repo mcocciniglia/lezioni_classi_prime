@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Verifica — Google Fogli + Binario (RESTO)</title>
+
+  <!-- Asset comuni progetto -->
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+
+  <header class="page-header">
+    <div class="container">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+        <div>
+          <h1>Verifica di laboratorio — Google Fogli + Sistema binario</h1>
+          <p class="subtitle">
+            Funzioni: <span class="pill">SOMMA</span> <span class="pill">MEDIA</span>
+            <span class="pill">MIN</span> <span class="pill">MAX</span> <span class="pill">SE</span>
+            <span class="pill">RESTO</span>
+          </p>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+            <span aria-hidden="true">🌓</span> <span class="btn-label">Tema</span>
+          </button>
+          <button id="contrastToggle" class="btn btn-ghost" type="button" aria-pressed="false">
+            Contrasto alto ☀️
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="panel callout">
+      <h2>Informazioni</h2>
+      <ul>
+        <li><strong>Durata:</strong> 1 h 20 min</li>
+        <li><strong>Strumento:</strong> Google Fogli</li>
+        <li><strong>Consegna:</strong> secondo le indicazioni date in classe (nome file: <code>Verifica_Fogli_Nome_Cognome</code>)</li>
+      </ul>
+
+      <div class="box">
+        <p class="muted" style="margin:0">
+          Lavora in autonomia. Controlla che i risultati si aggiornino se modifichi un numero.
+          Se non riesci a completare tutto, consegna comunque: ogni parte dà punteggio.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Parte A — Base (obbligatoria) • 15 punti</h2>
+
+      <ol class="steps">
+        <li>
+          <h3>1) Crea la tabella vendite (6 punti)</h3>
+          <p>Crea un foglio con questa struttura (riga 1 = intestazioni):</p>
+          <div class="box">
+            <p style="margin:0">
+              <strong>A</strong> Prodotto |
+              <strong>B</strong> Lunedì |
+              <strong>C</strong> Martedì |
+              <strong>D</strong> Mercoledì |
+              <strong>E</strong> Totale |
+              <strong>F</strong> Media
+            </p>
+          </div>
+
+          <ul>
+            <li>Inserisci <strong>almeno 4 prodotti</strong> (es. Acqua, Panini, Snack, Bibite).</li>
+            <li>Inserisci numeri realistici (5–40) in B–D.</li>
+            <li>Calcola <strong>Totale</strong> e <strong>Media</strong> per ogni prodotto usando formule.</li>
+          </ul>
+        </li>
+
+        <li>
+          <h3>2) Totali per giorno (3 punti)</h3>
+          <p>Sotto la tabella, calcola con una formula il totale delle vendite di:</p>
+          <ul>
+            <li>Lunedì</li>
+            <li>Martedì</li>
+            <li>Mercoledì</li>
+          </ul>
+        </li>
+
+        <li>
+          <h3>3) Trova massimo e minimo (3 punti)</h3>
+          <p>In un’area libera del foglio scrivi:</p>
+          <ul>
+            <li><strong>Vendita massima</strong> (tra tutti i numeri inseriti)</li>
+            <li><strong>Vendita minima</strong> (tra tutti i numeri inseriti)</li>
+          </ul>
+        </li>
+
+        <li>
+          <h3>4) Valutazione con SE (3 punti)</h3>
+          <p>Aggiungi una colonna <strong>G: Valutazione</strong> con questa regola:</p>
+          <ul>
+            <li>se <strong>Media ≥ 20</strong> → scrivi <strong>Alta</strong></li>
+            <li>altrimenti → scrivi <strong>Bassa</strong></li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Parte B — Sistema binario (RESTO) • 10 punti</h2>
+
+      <ol class="steps">
+        <li>
+          <h3>5) Conversione manuale (4 punti)</h3>
+          <p>Converti in binario il numero <strong>25</strong>.</p>
+          <ul>
+            <li>Scrivi i passaggi con <strong>divisioni successive per 2</strong> (quoziente e resto).</li>
+            <li>Scrivi il binario finale leggendo i resti <strong>dal basso verso l’alto</strong>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <h3>6) Conversione con Google Fogli (6 punti)</h3>
+          <p>Crea una tabella con tre colonne:</p>
+          <div class="box">
+            <p style="margin:0">
+              <strong>A</strong> Numero |
+              <strong>B</strong> ÷2 (quoziente) |
+              <strong>C</strong> RESTO
+            </p>
+          </div>
+
+          <p>Numero da convertire: <strong>18</strong></p>
+
+          <ul>
+            <li>Inizia da 18 e costruisci le righe successive usando formule.</li>
+            <li>Usa <strong>RESTO</strong> per ottenere 0/1.</li>
+            <li>Ricostruisci il binario finale leggendo i resti <strong>dal basso verso l’alto</strong>.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Parte C — Bonus (facoltativo) • fino a +5 punti</h2>
+      <p>
+        Converti in binario il numero <strong>37</strong> usando <strong>solo formule</strong> (senza calcolo manuale).
+        Puoi riutilizzare la stessa struttura della Parte B.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Griglia di valutazione • 30 punti</h2>
+
+      <div class="box" role="region" aria-label="Griglia di valutazione">
+        <p style="margin:0"><strong>Parte A (15 punti)</strong></p>
+        <ul>
+          <li>Struttura tabella corretta: <strong>4</strong></li>
+          <li>Totale con SOMMA: <strong>3</strong></li>
+          <li>Media con MEDIA: <strong>3</strong></li>
+          <li>MIN e MAX corretti: <strong>3</strong></li>
+          <li>SE (Valutazione) corretto: <strong>2</strong></li>
+        </ul>
+
+        <p style="margin:0"><strong>Parte B (10 punti)</strong></p>
+        <ul>
+          <li>Conversione manuale (25): <strong>4</strong></li>
+          <li>Conversione con RESTO (18): <strong>6</strong></li>
+        </ul>
+
+        <p style="margin:0"><strong>Parte C (Bonus)</strong></p>
+        <ul>
+          <li>Conversione con sole formule (37): <strong>+5</strong> (facoltativo)</li>
+        </ul>
+      </div>
+
+      <details class="tip">
+        <summary>Conversione punti → voto (indicativa)</summary>
+        <ul>
+          <li>27–30 → 9/10</li>
+          <li>24–26 → 8</li>
+          <li>21–23 → 7</li>
+          <li>18–20 → 6</li>
+          <li>&lt; 18 → insufficiente</li>
+        </ul>
+      </details>
+    </section>
+
+    <footer class="panel small">
+      <p style="margin:0">
+        <strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.<br>
+        <span class="muted">
+          Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali,
+          font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.
+        </span>
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>
