@@ -6,27 +6,41 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Google Fogli – Prova di consolidamento (funzioni base)</title>
 
-  <!-- CSS condivisi -->
-  <link rel="stylesheet" href="../common/assets/style.css" />
-  <link rel="stylesheet" href="../common/assets/theme.css" />
-  <script defer src="../common/assets/theme.js"></script>
+  <!-- CSS comune -->
+  <link rel="stylesheet" href="../../common/assets/style.css" />
+  <link rel="stylesheet" href="../../common/assets/theme.css" />
+  <link rel="icon" href="../../common/assets/favicon.svg" type="image/svg+xml" />
 </head>
 
 <body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+
+  <div class="top-actions">
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambia tema" aria-pressed="false">
+      <span class="btn-label">Tema chiaro</span>
+    </button>
+    <button id="contrastToggle" class="btn-ghost"
+      title="AA/AAA = livelli di contrasto per migliorare la leggibilità (accessibilità)"
+      aria-pressed="false">
+      Contrasto alto 🔆
+    </button>
+  </div>
+
   <header class="topbar">
     <div class="container">
       <h1>Google Fogli – Prova di consolidamento</h1>
-      <p class="muted">Funzioni: SOMMA, MEDIA, MIN, MAX, SE (anche annidati) • Formattazione condizionale • Grafici</p>
+      <p class="muted">SOMMA • MEDIA • MIN • MAX • SE (anche annidati) • Formattazione condizionale • Grafici</p>
     </div>
   </header>
 
-  <main class="container grid">
-    <!-- PANNELLO SINISTRO: CONSEGNA -->
+  <main id="contenuto" class="container grid">
+    <!-- PANNELLO SINISTRO -->
     <section class="panel">
       <h2>Consegna</h2>
+
       <div class="callout orange">
         <strong>Tempo:</strong> 40–50 minuti<br/>
-        <strong>Strumenti:</strong> solo Google Fogli (niente componenti aggiuntivi)<br/>
+        <strong>Strumenti:</strong> solo Google Fogli<br/>
         <strong>Obiettivo:</strong> consolidare formule e strumenti base in modo ordinato e leggibile
       </div>
 
@@ -35,31 +49,36 @@
         <li>Un file Google Fogli chiamato: <strong>Verifica_Fogli_Cognome_Nome_Classe</strong></li>
         <li>Deve contenere 2 fogli:
           <ul>
-            <li><strong>Dati</strong> (tabella incollata + formule)</li>
+            <li><strong>Dati</strong> (tabella + formule)</li>
             <li><strong>Report</strong> (riepiloghi + grafici)</li>
           </ul>
         </li>
-        <li>Le formule devono essere <strong>visibili</strong> (non immagini) e scritte in modo chiaro.</li>
+        <li>Le formule devono essere <strong>visibili</strong> e scritte in modo chiaro.</li>
       </ul>
 
       <h3>Regole</h3>
       <ul>
         <li>Non cancellare righe/colonne della tabella: compila solo ciò che è richiesto.</li>
         <li>Evita calcoli “a mente”: usa sempre formule.</li>
-        <li>Se usi intervalli, cerca di usare riferimenti corretti (range coerenti).</li>
+        <li>Se sbagli una formula, correggila: non lasciare celle vuote.</li>
       </ul>
 
       <hr/>
 
-      <h2>Struttura consigliata del foglio</h2>
+      <h2>Struttura del lavoro</h2>
       <ol>
         <li>Crea 2 fogli: <strong>Dati</strong> e <strong>Report</strong></li>
-        <li>In <strong>Dati</strong>, incolla la tabella (vedi a destra) in <strong>A1:H13</strong></li>
-        <li>Completa le colonne richieste (I–N) e poi costruisci il <strong>Report</strong></li>
+        <li>Nel foglio <strong>Dati</strong> incolla la tabella in <strong>A1:H13</strong></li>
+        <li>Aggiungi colonne <strong>I–N</strong> e inserisci le formule richieste</li>
+        <li>Nel foglio <strong>Report</strong> crea riepiloghi e grafici</li>
       </ol>
+
+      <div class="callout orange">
+        <strong>Suggerimento:</strong> prima completa tutte le formule, poi fai formattazione condizionale e grafici.
+      </div>
     </section>
 
-    <!-- PANNELLO DESTRO: DATI + ESERCIZI -->
+    <!-- PANNELLO DESTRO -->
     <section class="panel">
       <h2>Foglio 1: “Dati”</h2>
       <p>Incolla questa tabella in <strong>A1:H13</strong> (copia e incolla così com’è):</p>
@@ -82,7 +101,7 @@
         <strong>Nota:</strong> “Lode” vale <em>SI/NO</em>. Le verifiche sono voti in decimi. Le assenze sono giorni.
       </div>
 
-      <h3>Parte A – Calcoli per riga (aggiungi colonne)</h3>
+      <h3>Parte A – Calcoli per riga (colonne I–N)</h3>
       <p>A partire dalla colonna <strong>I</strong>, crea queste intestazioni:</p>
       <ul>
         <li><strong>I1:</strong> Totale</li>
@@ -99,14 +118,14 @@
         <li><strong>Media</strong>: media di Verifica1–Verifica3</li>
         <li><strong>Min</strong>: minimo tra Verifica1–Verifica3</li>
         <li><strong>Max</strong>: massimo tra Verifica1–Verifica3</li>
-        <li><strong>Esito</strong> (con SE annidati):
+        <li><strong>Esito</strong> (SE annidati):
           <ul>
             <li>Se <strong>Media ≥ 8</strong> → <strong>“Ottimo”</strong></li>
             <li>Altrimenti se <strong>Media ≥ 6</strong> → <strong>“Sufficiente”</strong></li>
             <li>Altrimenti → <strong>“Insufficiente”</strong></li>
           </ul>
         </li>
-        <li><strong>Bonus</strong> (con SE annidati):
+        <li><strong>Bonus</strong> (SE annidati):
           <ul>
             <li>Se <strong>Lode = "SI"</strong> e <strong>Assenze = 0</strong> → <strong>2</strong></li>
             <li>Se <strong>Lode = "SI"</strong> e <strong>Assenze &gt; 0</strong> → <strong>1</strong></li>
@@ -134,44 +153,78 @@
       <hr/>
 
       <h2>Foglio 2: “Report”</h2>
-      <h3>Parte C – Riepiloghi (celle libere, ben ordinate)</h3>
-      <p>Inserisci un piccolo report con queste voci (usa formule):</p>
+
+      <h3>Parte C – Riepiloghi (usa formule)</h3>
       <ul>
         <li><strong>Media generale delle Medie</strong> (colonna J del foglio Dati)</li>
         <li><strong>Media più alta</strong> e <strong>media più bassa</strong></li>
         <li><strong>Assenze totali</strong></li>
-        <li><strong>Numero di “Insufficiente”</strong> (puoi contare con metodi a tua scelta: va bene anche contando manualmente SOLO se accompagnato da un controllo con formule su un intervallo; preferibile con formule se già conosci CONT.SE)</li>
+        <li><strong>Numero di “Insufficiente”</strong> (conta le celle in colonna M con quel testo)</li>
       </ul>
 
       <h3>Parte D – Grafici (2 grafici)</h3>
       <ol>
         <li><strong>Grafico a colonne</strong>: Media (J) per Studente (B)</li>
-        <li><strong>Grafico a torta</strong> oppure <strong>a colonne</strong>: Assenze (G) per Classe (C) (puoi raggruppare o visualizzare i singoli record, a tua scelta)</li>
+        <li><strong>Grafico</strong> (a torta o a colonne): Assenze (G) per Classe (C)</li>
       </ol>
-
-      <div class="callout orange">
-        <strong>Checklist finale</strong><br/>
-        ☐ Tabella incollata correttamente<br/>
-        ☐ Colonne I–N complete con formule<br/>
-        ☐ Formattazione condizionale applicata e leggibile<br/>
-        ☐ Foglio “Report” con riepiloghi e 2 grafici<br/>
-        ☐ Nome file corretto
-      </div>
-
-      <hr/>
-
-      <h2>Valutazione (indicativa)</h2>
-      <ul>
-        <li><strong>Formule corrette</strong> (Totale/Media/Min/Max): 40%</li>
-        <li><strong>SE annidati</strong> (Esito + Bonus): 30%</li>
-        <li><strong>Formattazione condizionale</strong>: 15%</li>
-        <li><strong>Grafici + ordine del report</strong>: 15%</li>
-      </ul>
     </section>
   </main>
 
   <footer class="container muted" style="padding: 1.25rem 0;">
     <small>© Prova di consolidamento – Google Fogli</small>
   </footer>
+
+  <script>
+    (function () {
+      // Helpers
+      const root = document.documentElement;
+      const themeBtn = document.getElementById("themeToggle");
+      const themeLabel = themeBtn?.querySelector(".btn-label");
+      const contrastBtn = document.getElementById("contrastToggle");
+
+      // --- THEME (light/dark) ---
+      // Convention: data-theme="light" | "dark"
+      const THEME_KEY = "pref-theme";
+      const defaultTheme = root.getAttribute("data-theme") || "light";
+
+      function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        localStorage.setItem(THEME_KEY, theme);
+
+        const isDark = theme === "dark";
+        if (themeBtn) themeBtn.setAttribute("aria-pressed", String(isDark));
+        if (themeLabel) themeLabel.textContent = isDark ? "Tema scuro" : "Tema chiaro";
+      }
+
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      applyTheme(savedTheme || defaultTheme);
+
+      themeBtn?.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") || "light";
+        applyTheme(current === "dark" ? "light" : "dark");
+      });
+
+      // --- CONTRAST (AA/AAA style) ---
+      // Convention: data-contrast="high" | "normal"
+      const CONTRAST_KEY = "pref-contrast";
+
+      function applyContrast(mode) {
+        root.setAttribute("data-contrast", mode);
+        localStorage.setItem(CONTRAST_KEY, mode);
+
+        const isHigh = mode === "high";
+        if (contrastBtn) contrastBtn.setAttribute("aria-pressed", String(isHigh));
+        if (contrastBtn) contrastBtn.textContent = isHigh ? "Contrasto normale 🌗" : "Contrasto alto 🔆";
+      }
+
+      const savedContrast = localStorage.getItem(CONTRAST_KEY) || "normal";
+      applyContrast(savedContrast);
+
+      contrastBtn?.addEventListener("click", () => {
+        const current = root.getAttribute("data-contrast") || "normal";
+        applyContrast(current === "high" ? "normal" : "high");
+      });
+    })();
+  </script>
 </body>
 </html>
