@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEC ↔ BIN — 10 esercizi (progressivi + inversi)</title>
+
+  <!-- Asset condivisi (come da tue preferenze) -->
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/theme.css">
+</head>
+
+<body>
+  <main class="panel" style="max-width: 980px; margin: 32px auto; padding: 28px;">
+    <header style="display:flex; gap:16px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;">
+      <div>
+        <h1 style="margin:0 0 6px 0;">Esercizi — Conversione DEC ↔ BIN</h1>
+        <p style="margin:0; opacity:.85; font-size:1.05rem;">
+          10 esercizi: <strong>6 progressivi (DEC → BIN)</strong> + <strong>4 inversi (BIN → DEC)</strong>.
+        </p>
+      </div>
+
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button id="toggleSolutions" type="button"
+          style="padding:10px 14px; border-radius:14px; border:1px solid rgba(0,0,0,.15); background:#fff; cursor:pointer; font-weight:700;">
+          Mostra soluzioni
+        </button>
+
+        <button id="toggleHelp" type="button"
+          style="padding:10px 14px; border-radius:14px; border:1px solid rgba(0,0,0,.15); background:#fff; cursor:pointer; font-weight:700;">
+          Mostra aiuto
+        </button>
+      </div>
+    </header>
+
+    <!-- Box aiuto (collassabile) -->
+    <section id="helpBox" class="callout callout-orange" style="margin-top:18px; display:none;">
+      <strong>Promemoria rapido</strong>
+      <ul style="margin:10px 0 0 18px;">
+        <li><strong>DEC → BIN</strong>: dividi per 2, prendi i resti, leggi i resti dal basso verso l’alto.</li>
+        <li><strong>BIN → DEC</strong>: somma i pesi delle posizioni con bit = 1 (… 128, 64, 32, 16, 8, 4, 2, 1).</li>
+      </ul>
+    </section>
+
+    <hr style="margin:22px 0; border:none; border-top:1px solid rgba(0,0,0,.12);" />
+
+    <!-- Sezione A -->
+    <section>
+      <h2 style="margin:0 0 10px 0;">Parte A — Progressivi (DEC → BIN)</h2>
+      <p style="margin:0 0 18px 0; opacity:.9;">
+        Converti i seguenti numeri in binario con <strong>divisioni successive</strong>.
+      </p>
+
+      <ol style="display:grid; gap:14px; padding-left: 22px;">
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>6</strong> (DEC) → (BIN) = ________</span>
+            <span class="sol">Soluzione: <strong>110</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>13</strong> (DEC) → (BIN) = ________</span>
+            <span class="sol">Soluzione: <strong>1101</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>25</strong> (DEC) → (BIN) = ________</span>
+            <span class="sol">Soluzione: <strong>11001</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>42</strong> (DEC) → (BIN) = ________</span>
+            <span class="sol">Soluzione: <strong>101010</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>73</strong> (DEC) → (BIN) = ________</span>
+            <span class="sol">Soluzione: <strong>1001001</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>156</strong> (DEC) → (BIN) = ________</span>
+            <span class="sol">Soluzione: <strong>10011100</strong></span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <hr style="margin:26px 0; border:none; border-top:1px solid rgba(0,0,0,.12);" />
+
+    <!-- Sezione B -->
+    <section>
+      <h2 style="margin:0 0 10px 0;">Parte B — Inversi (BIN → DEC)</h2>
+      <p style="margin:0 0 18px 0; opacity:.9;">
+        Converti i seguenti numeri in decimale usando i <strong>pesi delle posizioni</strong>.
+      </p>
+
+      <ol start="7" style="display:grid; gap:14px; padding-left: 22px;">
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>1011</strong> (BIN) → (DEC) = ________</span>
+            <span class="sol">Soluzione: <strong>11</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>110010</strong> (BIN) → (DEC) = ________</span>
+            <span class="sol">Soluzione: <strong>50</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>10010101</strong> (BIN) → (DEC) = ________</span>
+            <span class="sol">Soluzione: <strong>149</strong></span>
+          </div>
+        </li>
+
+        <li class="ex">
+          <div class="ex-row">
+            <span><strong>1110010</strong> (BIN) → (DEC) = ________</span>
+            <span class="sol">Soluzione: <strong>114</strong></span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="callout callout-highlight" style="margin-top:26px;">
+      <strong>Gestione tempo (consiglio):</strong> fai prima gli esercizi 1–6. Se avanzi, completa 7–10.
+    </section>
+
+    <footer style="margin-top:26px; opacity:.75; font-size:.95rem;">
+      Suggerimento: se vuoi verificare velocemente un risultato, puoi riconvertire il BIN ottenuto in DEC (controllo incrociato).
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const btnSol = document.getElementById('toggleSolutions');
+      const btnHelp = document.getElementById('toggleHelp');
+      const helpBox = document.getElementById('helpBox');
+      const sols = Array.from(document.querySelectorAll('.sol'));
+
+      let solsVisible = false;
+      let helpVisible = false;
+
+      function applySolutionsVisibility() {
+        sols.forEach(s => s.style.display = solsVisible ? 'inline' : 'none');
+        btnSol.textContent = solsVisible ? 'Nascondi soluzioni' : 'Mostra soluzioni';
+      }
+
+      function applyHelpVisibility() {
+        helpBox.style.display = helpVisible ? 'block' : 'none';
+        btnHelp.textContent = helpVisible ? 'Nascondi aiuto' : 'Mostra aiuto';
+      }
+
+      // default: soluzioni nascoste
+      applySolutionsVisibility();
+      applyHelpVisibility();
+
+      btnSol.addEventListener('click', () => {
+        solsVisible = !solsVisible;
+        applySolutionsVisibility();
+      });
+
+      btnHelp.addEventListener('click', () => {
+        helpVisible = !helpVisible;
+        applyHelpVisibility();
+      });
+    })();
+  </script>
+
+  <style>
+    /* Piccole regole locali SOLO per leggibilità, senza duplicare i tuoi asset */
+    .ex {
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 16px;
+      padding: 14px 14px;
+      list-style-position: outside;
+    }
+    .ex-row{
+      display:flex;
+      gap:14px;
+      justify-content:space-between;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      font-size: 1.15rem;
+    }
+    .sol{
+      opacity: .95;
+      white-space: nowrap;
+    }
+  </style>
+</body>
+</html>

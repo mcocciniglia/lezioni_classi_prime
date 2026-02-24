@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DEC → BIN | Algoritmo divisioni successive</title>
+ <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+</head>
+
+<body>
+
+<div class="panel">
+
+  <h1>Conversione DEC → BIN</h1>
+  <h2>Algoritmo delle divisioni successive</h2>
+
+  <div class="callout callout-orange">
+    <strong>Parole chiave:</strong>  
+    DIV (quoziente intero) e MOD (resto)
+  </div>
+
+  <section>
+    <h3>Passaggi dell’algoritmo</h3>
+
+    <ol class="steps">
+      <li>Dividi il numero per 2</li>
+      <li>Annota il resto (0 oppure 1)</li>
+      <li>Prendi il quoziente intero</li>
+      <li>Ripeti finché il quoziente diventa 0</li>
+      <li>Leggi i resti <strong>dal basso verso l’alto</strong></li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>Schema logico</h3>
+
+    <div class="algorithm-box">
+      <pre>
+n ← numero decimale
+
+MENTRE n > 0 FAI
+    resto ← n MOD 2
+    stampa resto
+    n ← n DIV 2
+FINE
+
+Il numero binario si ottiene leggendo i resti dal basso verso l’alto.
+      </pre>
+    </div>
+  </section>
+
+  <div class="callout callout-highlight">
+    💡 Il resto può essere solo 0 o 1 perché stiamo dividendo per 2.
+  </div>
+
+</div>
+
+</body>
+</html>
