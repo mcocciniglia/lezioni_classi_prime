@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Prima codifica di un diagramma di flusso</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    .symbol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px}
+    .symbol-card{background:var(--bg);border:1px solid var(--panel-border);border-radius:14px;padding:14px}
+    .shape{display:flex;align-items:center;justify-content:center;height:82px;margin:8px auto 14px;font-weight:700;color:var(--fg);background:var(--panel)}
+    .oval{width:150px;border:2px solid #6c757d;border-radius:999px}
+    .rect{width:150px;border:2px solid #6c757d;border-radius:8px}
+    .parallelogram{width:160px;height:76px;border:2px solid #6c757d;transform:skew(-20deg);border-radius:8px}
+    .parallelogram span{transform:skew(20deg)}
+    .diamond{width:90px;height:90px;border:2px solid #6c757d;transform:rotate(45deg);border-radius:8px}
+    .diamond span{transform:rotate(-45deg)}
+    .flow-demo{display:flex;flex-direction:column;align-items:center;gap:12px;margin:18px 0}
+    .arrow{font-size:28px;line-height:1;color:var(--muted)}
+    .checklist li{margin:8px 0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .exercise-card{background:var(--bg);border:1px solid var(--panel-border);border-radius:14px;padding:16px}
+    .mini{font-size:.95rem;color:var(--muted)}
+    table.guide{width:100%;border-collapse:collapse;margin-top:12px;background:var(--bg);border-radius:12px;overflow:hidden}
+    table.guide th, table.guide td{border:1px solid var(--panel-border);padding:10px 12px;text-align:left;vertical-align:top}
+    table.guide th{background:var(--panel)}
+    .kbd-row kbd{margin-right:6px}
+    @media (max-width:760px){.two-col{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto principale</a>
+
+  <header class="page-header">
+    <div class="container narrow">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
+        <div>
+          <p class="pill">Classe prima · Laboratorio di Tecnologie Informatiche</p>
+          <h1>Prima codifica di un diagramma di flusso</h1>
+          <p class="subtitle">Dall'algoritmo scritto in italiano alla rappresentazione grafica su carta</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <button id="themeToggle" class="theme-toggle" aria-pressed="false" type="button"><span class="btn-label">Tema chiaro</span></button>
+          <button id="contrastToggle" class="btn btn-ghost" aria-pressed="false" type="button">Contrasto alto ☀️</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="panel callout">
+      <h2>Obiettivo della lezione</h2>
+      <p>In questa lezione impariamo a trasformare un algoritmo scritto in modo discorsivo in un <strong>diagramma di flusso</strong>. Per il momento lavoriamo <strong>solo su carta</strong>, senza usare il computer, senza cicli e senza ripetizioni. Ci concentriamo su tre elementi: <strong>ordine</strong>, <strong>chiarezza</strong> e <strong>correttezza dei simboli</strong>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Obiettivi di apprendimento</h2>
+      <ul>
+        <li>Riconoscere i simboli fondamentali del diagramma di flusso.</li>
+        <li>Usare correttamente <strong>inizio/fine</strong>, <strong>input/output</strong>, <strong>operazione</strong> e <strong>decisione</strong>.</li>
+        <li>Capire come si collega un blocco al successivo.</li>
+        <li>Verificare se un diagramma sta andando nella direzione giusta.</li>
+        <li>Rappresentare semplici problemi con variabili introdotte in modo naturale.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Che cos'è un diagramma di flusso?</h2>
+      <p>Un diagramma di flusso è una rappresentazione grafica di un algoritmo. Invece di scrivere i passaggi solo in italiano, usiamo <strong>figure convenzionali</strong> collegate da frecce. Ogni figura ha un significato preciso. Le frecce indicano l'ordine con cui il computer o la persona devono eseguire le istruzioni.</p>
+      <div class="box">
+        <strong>Idea chiave:</strong> il diagramma non sostituisce il ragionamento. Serve a <strong>renderlo più chiaro</strong>.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>I simboli fondamentali</h2>
+      <div class="symbol-grid">
+        <article class="symbol-card">
+          <div class="shape oval">Inizio / Fine</div>
+          <h3>Ovale</h3>
+          <p>Si usa per indicare dove l'algoritmo <strong>inizia</strong> e dove <strong>termina</strong>.</p>
+        </article>
+        <article class="symbol-card">
+          <div class="shape parallelogram"><span>Input / Output</span></div>
+          <h3>Parallelogramma</h3>
+          <p>Si usa quando il programma <strong>legge</strong> un dato oppure <strong>mostra</strong> un risultato.</p>
+        </article>
+        <article class="symbol-card">
+          <div class="shape rect">Operazione</div>
+          <h3>Rettangolo</h3>
+          <p>Si usa per eseguire un'azione o un calcolo. Per esempio: <code>somma = numero1 + numero2</code>.</p>
+        </article>
+        <article class="symbol-card">
+          <div class="shape diamond"><span>Decisione</span></div>
+          <h3>Rombo</h3>
+          <p>Si usa per porre una domanda con due possibili uscite, di solito <strong>Sì</strong> e <strong>No</strong>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Regole pratiche di scrittura</h2>
+      <ol class="steps">
+        <li><strong>Si parte sempre da un blocco di inizio.</strong></li>
+        <li><strong>Ogni blocco deve avere un contenuto chiaro e breve.</strong> Niente frasi troppo lunghe.</li>
+        <li><strong>Le frecce devono mostrare l'ordine.</strong> Si legge dall'alto verso il basso, salvo casi particolari che studieremo più avanti.</li>
+        <li><strong>Ogni algoritmo deve avere una fine.</strong> Un diagramma senza fine è incompleto.</li>
+        <li><strong>Usa il simbolo giusto.</strong> Non si scrive un input dentro un rettangolo se il simbolo corretto è il parallelogramma.</li>
+        <li><strong>Per ora niente cicli.</strong> Ogni percorso deve andare avanti fino alla conclusione.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Le variabili: quanto basta per iniziare</h2>
+      <p>Su carta le variabili si introducono solo quando servono. Non facciamo ancora una lezione teorica completa. Per adesso basta pensare a una variabile come a una <strong>scatola con un nome</strong> che contiene un valore.</p>
+      <div class="box">
+        <p><strong>Esempio:</strong> per sommare due numeri possiamo usare tre nomi:</p>
+        <p><code>numero1</code> · <code>numero2</code> · <code>somma</code></p>
+        <p class="mini">Prima leggiamo i numeri, poi eseguiamo l'operazione, infine mostriamo il risultato.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio guidato 1 · Sommare due numeri</h2>
+      <p><strong>Problema:</strong> leggere due numeri e visualizzare la loro somma.</p>
+      <table class="guide">
+        <thead>
+          <tr>
+            <th>Domanda</th>
+            <th>Risposta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Quali dati devo ricevere?</td>
+            <td><code>numero1</code> e <code>numero2</code></td>
+          </tr>
+          <tr>
+            <td>Cosa devo calcolare?</td>
+            <td><code>somma = numero1 + numero2</code></td>
+          </tr>
+          <tr>
+            <td>Cosa devo mostrare alla fine?</td>
+            <td>Il valore di <code>somma</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="flow-demo" aria-label="Schema lineare della somma di due numeri">
+        <div class="shape oval">Inizio</div>
+        <div class="arrow">↓</div>
+        <div class="shape parallelogram"><span>Leggi numero1</span></div>
+        <div class="arrow">↓</div>
+        <div class="shape parallelogram"><span>Leggi numero2</span></div>
+        <div class="arrow">↓</div>
+        <div class="shape rect">somma = numero1 + numero2</div>
+        <div class="arrow">↓</div>
+        <div class="shape parallelogram"><span>Scrivi somma</span></div>
+        <div class="arrow">↓</div>
+        <div class="shape oval">Fine</div>
+      </div>
+
+      <details class="tip">
+        <summary>Domande da porsi durante la codifica</summary>
+        <ul class="checklist">
+          <li>Ho scritto dove inizia il diagramma?</li>
+          <li>Ho indicato chiaramente i dati in ingresso?</li>
+          <li>Ho usato un rettangolo per il calcolo?</li>
+          <li>Sto mostrando il risultato finale?</li>
+          <li>Il diagramma termina con un blocco di fine?</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio guidato 2 · Calcolare il doppio di un numero</h2>
+      <p><strong>Problema:</strong> leggere un numero e visualizzare il suo doppio.</p>
+      <div class="two-col">
+        <div class="exercise-card">
+          <h3>Passi in linguaggio naturale</h3>
+          <ol>
+            <li>Leggi il numero.</li>
+            <li>Calcola il doppio.</li>
+            <li>Scrivi il risultato.</li>
+          </ol>
+        </div>
+        <div class="exercise-card">
+          <h3>Variabili utili</h3>
+          <p><code>numero</code></p>
+          <p><code>doppio</code></p>
+        </div>
+      </div>
+      <div class="box">
+        <strong>Operazione:</strong> <code>doppio = numero * 2</code>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio guidato 3 · Verificare se un numero è positivo</h2>
+      <p><strong>Problema:</strong> leggere un numero e stabilire se è positivo oppure no.</p>
+      <p>Qui compare per la prima volta una <strong>decisione</strong>. Quando nel problema c'è una domanda del tipo <em>è vero o non è vero?</em>, di solito serve un <strong>rombo</strong>.</p>
+
+      <div class="flow-demo" aria-label="Schema con decisione: numero positivo">
+        <div class="shape oval">Inizio</div>
+        <div class="arrow">↓</div>
+        <div class="shape parallelogram"><span>Leggi numero</span></div>
+        <div class="arrow">↓</div>
+        <div class="shape diamond"><span>numero &gt; 0 ?</span></div>
+        <div class="mini">Da questo blocco devono uscire due strade: <strong>Sì</strong> e <strong>No</strong>.</div>
+      </div>
+
+      <table class="guide">
+        <thead>
+          <tr>
+            <th>Se la risposta è...</th>
+            <th>Allora...</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sì</strong></td>
+            <td>Scrivi <code>Il numero è positivo</code></td>
+          </tr>
+          <tr>
+            <td><strong>No</strong></td>
+            <td>Scrivi <code>Il numero è zero o negativo</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <details class="warning">
+        <summary>Errore frequente</summary>
+        <p>Nel rombo non si scrive un'azione. Nel rombo si scrive una <strong>domanda</strong> o una <strong>condizione</strong>, per esempio <code>numero &gt; 0 ?</code>. L'azione da eseguire si mette nei blocchi successivi.</p>
+      </details>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizi da svolgere su carta</h2>
+      <p>Per ogni esercizio fai prima questo percorso:</p>
+      <ol>
+        <li>Leggi bene il problema.</li>
+        <li>Individua i dati di ingresso.</li>
+        <li>Individua il risultato da ottenere.</li>
+        <li>Scrivi i passaggi in italiano.</li>
+        <li>Trasforma i passaggi in diagramma di flusso.</li>
+      </ol>
+
+      <div class="two-col">
+        <article class="exercise-card">
+          <h3>Esercizio 1 · Area del rettangolo</h3>
+          <p>Leggi base e altezza. Calcola l'area. Scrivi il risultato.</p>
+          <p class="mini">Suggerimento: usa <code>base</code>, <code>altezza</code>, <code>area</code>.</p>
+        </article>
+        <article class="exercise-card">
+          <h3>Esercizio 2 · Età tra 10 anni</h3>
+          <p>Leggi l'età di una persona. Calcola l'età che avrà tra 10 anni. Scrivi il risultato.</p>
+        </article>
+        <article class="exercise-card">
+          <h3>Esercizio 3 · Numero pari o dispari</h3>
+          <p>Leggi un numero. Verifica se è pari. Scrivi un messaggio adatto.</p>
+          <p class="mini">Qui serve una decisione.</p>
+        </article>
+        <article class="exercise-card">
+          <h3>Esercizio 4 · Temperatura</h3>
+          <p>Leggi una temperatura. Se è maggiore di 30 scrivi <code>Fa caldo</code>, altrimenti scrivi <code>Temperatura moderata</code>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Checklist di autocontrollo</h2>
+      <p>Prima di consegnare, controlla il tuo diagramma con queste domande.</p>
+      <ul class="checklist">
+        <li>Ho scritto chiaramente <strong>Inizio</strong> e <strong>Fine</strong>?</li>
+        <li>Ogni blocco usa il <strong>simbolo corretto</strong>?</li>
+        <li>Le frecce seguono un ordine chiaro?</li>
+        <li>Il testo dentro ogni figura è breve e comprensibile?</li>
+        <li>Se c'è una decisione, dal rombo escono due rami distinti?</li>
+        <li>Le variabili hanno nomi comprensibili?</li>
+        <li>Il risultato finale viene davvero mostrato?</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Come capire se la codifica va nella direzione giusta</h2>
+      <p>Quando costruisci un diagramma di flusso non devi chiederti solo <em>"È bello?"</em>. Devi chiederti soprattutto <em>"Funziona davvero?"</em>.</p>
+      <table class="guide">
+        <thead>
+          <tr>
+            <th>Domanda utile</th>
+            <th>Perché è importante</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Questo blocco rappresenta davvero ciò che voglio fare?</td>
+            <td>Evita di usare simboli a caso.</td>
+          </tr>
+          <tr>
+            <td>Sto leggendo dei dati prima di usarli?</td>
+            <td>Non posso calcolare con un valore che non ho ancora acquisito.</td>
+          </tr>
+          <tr>
+            <td>Il risultato è scritto in un blocco di output?</td>
+            <td>Calcolare non basta: devo anche mostrare il risultato.</td>
+          </tr>
+          <tr>
+            <td>Le frecce portano sempre avanti?</td>
+            <td>In questa fase non stiamo ancora studiando i cicli.</td>
+          </tr>
+          <tr>
+            <td>Se c'è un rombo, la domanda ha senso?</td>
+            <td>La decisione deve essere chiara e deve portare a due esiti.</td>
+          </tr>
+          <tr>
+            <td>Se leggo il diagramma dall'inizio alla fine, il problema viene risolto?</td>
+            <td>Questa è la verifica più importante.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Errori tipici da evitare</h2>
+      <ul>
+        <li>Scrivere <em>Leggi numero</em> dentro un rettangolo invece che in un parallelogramma.</li>
+        <li>Dimenticare il blocco finale.</li>
+        <li>Mettere troppe azioni dentro lo stesso blocco.</li>
+        <li>Scrivere nel rombo una frase come <em>Calcola il risultato</em> invece di una condizione.</li>
+        <li>Usare frecce poco chiare o incrociate inutilmente.</li>
+        <li>Mostrare il risultato prima di averlo calcolato.</li>
+      </ul>
+    </section>
+
+    <section class="panel callout">
+      <h2>Conclusione</h2>
+      <p>Un buon diagramma di flusso non è complicato: è <strong>ordinato</strong>, <strong>leggibile</strong> e <strong>coerente con il problema</strong>. In questa fase non ci interessa fare algoritmi difficili, ma imparare a rappresentare bene quelli semplici. Quando questi passaggi saranno chiari su carta, potremo trasferirli al computer con maggiore sicurezza.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Scorciatoie utili durante la consultazione della pagina</h2>
+      <p class="kbd-row"><kbd>Tab</kbd> per spostarti tra i controlli · <kbd>Maiusc</kbd> + <kbd>Tab</kbd> per tornare indietro · <kbd>Ctrl</kbd> + <kbd>+</kbd> per ingrandire · <kbd>Ctrl</kbd> + <kbd>-</kbd> per ridurre · <kbd>Ctrl</kbd> + <kbd>0</kbd> per tornare alla dimensione normale.</p>
+    </section>
+  </main>
+
+  <footer class="container narrow small muted" style="padding-bottom:32px;">
+    <hr>
+    <p><strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche. Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+  </footer>
+</body>
+</html>
