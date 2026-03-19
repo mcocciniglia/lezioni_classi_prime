@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Flowgorithm — IF annidati</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--panel-border);background:var(--bg);font-size:.95rem;margin:4px 6px 0 0}
+    .ok{border-left:10px solid #2b8a3e}
+    .warn{border-left:10px solid #d6336c}
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:collapse;background:var(--bg);border:1px solid var(--panel-border);border-radius:12px;overflow:hidden}
+    th,td{padding:12px;border-bottom:1px solid var(--panel-border);text-align:left;vertical-align:top}
+    th{background:var(--panel);font-size:1rem}
+    tr:last-child td{border-bottom:none}
+    .center{text-align:center}
+    .big{font-size:1.1rem}
+    .lead{font-size:1.06rem}
+    @media (max-width: 820px){
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .topbar{justify-content:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto principale</a>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="topbar" aria-label="Controlli pagina">
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" type="button"><span class="btn-label">Tema chiaro</span></button>
+        <button id="contrastToggle" class="btn btn-ghost" aria-pressed="false" type="button">Contrasto alto ☀️</button>
+      </div>
+      <h1>Flowgorithm — IF annidati</h1>
+      <p class="subtitle">Scheda per gli studenti • classe prima • laboratorio di 2 ore</p>
+      <div>
+        <span class="tag">Flowgorithm</span>
+        <span class="tag">IF</span>
+        <span class="tag">IF annidati</span>
+        <span class="tag">Test</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+    <section class="panel callout">
+      <h2>Cosa impariamo oggi</h2>
+      <p class="big">Oggi impariamo a gestire <strong>tre casi diversi</strong> usando un <strong>IF dentro un altro IF</strong>.</p>
+      <div class="box">
+        <p class="lead"><strong>Idea chiave:</strong> se una sola domanda non basta, il programma deve fare <strong>una seconda domanda</strong>.</p>
+      </div>
+    </section>
+
+    <section class="panel ok">
+      <h2>Prima di iniziare</h2>
+      <p>Controlla di saper fare queste operazioni:</p>
+      <ul>
+        <li>dichiarare una variabile intera;</li>
+        <li>leggere un valore in input;</li>
+        <li>scrivere un messaggio in output;</li>
+        <li>usare un semplice blocco <span class="mono">IF</span>.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Ripasso veloce</h2>
+      <div class="grid-2">
+        <div class="box center">
+          <strong>Condizione corretta</strong><br>
+          <span class="mono">eta &gt;= 18</span>
+        </div>
+        <div class="box center">
+          <strong>Condizione diversa</strong><br>
+          <span class="mono">eta &gt; 18</span>
+        </div>
+      </div>
+      <p><strong>Attenzione:</strong> una persona di <strong>18 anni</strong> può votare. Per questo <span class="mono">&gt;=</span> non è uguale a <span class="mono">&gt;</span>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Nuovo concetto: IF annidato</h2>
+      <p>Con un solo IF distinguiamo <strong>due casi</strong>. Se i casi sono <strong>tre</strong>, possiamo usare un <strong>IF annidato</strong>.</p>
+      <div class="figure" role="img" aria-label="Schema logico di un IF annidato">
+        <div class="mono">Se condizione 1<br>→ Se condizione 2<br>→ Altrimenti<br>Altrimenti</div>
+        <div class="caption">Prima domanda, poi seconda domanda solo se serve.</div>
+      </div>
+      <div class="box">
+        <h3>Esempio logico</h3>
+        <p class="mono">
+          Se eta &gt;= 18<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Se eta &gt;= 65<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scrivi "Sei anziano"<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Altrimenti<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scrivi "Sei maggiorenne"<br>
+          Altrimenti<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Scrivi "Sei minorenne"
+        </p>
+      </div>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizio guidato</h2>
+      <p><strong>Obiettivo:</strong> classificare l'età in tre casi.</p>
+      <div class="grid-3">
+        <div class="box center"><strong>Caso 1</strong><br><span class="mono">eta &lt; 18</span><br>Sei minorenne</div>
+        <div class="box center"><strong>Caso 2</strong><br><span class="mono">18 ≤ eta &lt; 65</span><br>Sei maggiorenne</div>
+        <div class="box center"><strong>Caso 3</strong><br><span class="mono">eta ≥ 65</span><br>Sei anziano</div>
+      </div>
+
+      <h3>Passaggi da seguire</h3>
+      <ol class="steps">
+        <li>Dichiara una variabile intera chiamata <span class="mono">eta</span>.</li>
+        <li>Scrivi il messaggio: <span class="mono">"Inserisci la tua età:"</span>.</li>
+        <li>Leggi il valore inserito e salvalo nella variabile <span class="mono">eta</span>.</li>
+        <li>Inserisci un primo blocco <span class="mono">IF</span> con la condizione <span class="mono">eta &gt;= 18</span>.</li>
+        <li>Nel ramo <strong>Vero</strong>, inserisci un secondo <span class="mono">IF</span> con la condizione <span class="mono">eta &gt;= 65</span>.</li>
+        <li>Completa i tre messaggi finali.</li>
+      </ol>
+
+      <details class="tip">
+        <summary>Valori da provare</summary>
+        <p>Testa il diagramma con questi numeri: <span class="mono">10</span>, <span class="mono">18</span>, <span class="mono">64</span>, <span class="mono">65</span>.</p>
+      </details>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizio da svolgere da solo</h2>
+      <p><strong>Titolo:</strong> valutazione di un voto scolastico.</p>
+      <div class="box">
+        <p>Leggi una variabile intera chiamata <span class="mono">voto</span> e mostra uno di questi messaggi:</p>
+        <ul>
+          <li><span class="mono">voto = 10</span> → <strong>"Eccellente"</strong></li>
+          <li><span class="mono">voto &gt;= 6</span> → <strong>"Promosso"</strong></li>
+          <li><span class="mono">voto &lt; 6</span> → <strong>"Da recuperare"</strong></li>
+        </ul>
+      </div>
+      <details class="tip">
+        <summary>Aiuto</summary>
+        <p>Fai attenzione all'ordine dei controlli: il caso <span class="mono">10</span> va riconosciuto in modo preciso.</p>
+      </details>
+    </section>
+
+    <section class="panel warn">
+      <h2>Errori da evitare</h2>
+      <ul>
+        <li>Usare <span class="mono">&gt;</span> invece di <span class="mono">&gt;=</span>.</li>
+        <li>Invertire i messaggi nei rami <strong>Vero</strong> e <strong>Falso</strong>.</li>
+        <li>Dimenticare di testare il programma con valori diversi.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Checklist finale</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Controllo</th>
+              <th>Da verificare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Variabile</td>
+              <td>Hai dichiarato <span class="mono">eta</span> oppure <span class="mono">voto</span> come intero?</td>
+            </tr>
+            <tr>
+              <td>Input</td>
+              <td>Hai letto correttamente il valore inserito?</td>
+            </tr>
+            <tr>
+              <td>Condizioni</td>
+              <td>Hai usato i simboli giusti?</td>
+            </tr>
+            <tr>
+              <td>Test</td>
+              <td>Hai provato il diagramma con più numeri?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Consegna</h2>
+      <div class="box">
+        <p>Salva il file con nome:</p>
+        <p class="mono">Esercizio_IF_Annidati_Cognome.fprg</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container small muted">
+    <hr>
+    <p><strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche. Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+  </footer>
+</body>
+</html>
