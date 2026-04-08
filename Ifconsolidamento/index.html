@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Consolidamento IF annidati con Flowgorithm</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+
+  <header class="page-header">
+    <div class="container narrow">
+      <p class="pill">Laboratorio di Tecnologie Informatiche</p>
+      <h1>Consolidamento degli IF annidati</h1>
+      <p class="subtitle">Lezione di laboratorio con Flowgorithm</p>
+
+      <div class="panel soft" style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span aria-hidden="true">🌓</span>
+          <span class="btn-label">Tema chiaro</span>
+        </button>
+
+        <button id="contrastToggle" class="btn btn-ghost" type="button" aria-pressed="false">
+          Contrasto alto ☀️
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="panel callout">
+      <h2>Obiettivi della lezione</h2>
+      <ul>
+        <li>Applicare correttamente gli <strong>IF annidati</strong> in semplici problemi.</li>
+        <li>Riconoscere gli <strong>errori più frequenti</strong> nelle condizioni.</li>
+        <li>Usare <strong>Flowgorithm</strong> per costruire e testare algoritmi.</li>
+        <li>Controllare il comportamento dell’algoritmo con input diversi.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Cosa faremo oggi</h2>
+      <ol class="steps">
+        <li>Ripasso rapido del significato di <strong>IF annidato</strong>.</li>
+        <li>Esercizi guidati in <strong>Flowgorithm</strong>.</li>
+        <li>Correzione di algoritmi con errori.</li>
+        <li>Attività finale autonoma.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Richiamo rapido</h2>
+      <div class="box">
+        <p>Un <strong>IF annidato</strong> si usa quando una seconda decisione va presa <strong>solo in uno dei casi già selezionati</strong>.</p>
+        <p>Esempio di idea logica:</p>
+        <ul>
+          <li>prima controllo se il numero è positivo, negativo oppure zero;</li>
+          <li>solo se è positivo, faccio un secondo controllo.</li>
+        </ul>
+      </div>
+
+      <details class="tip">
+        <summary>Attenzione</summary>
+        <p>Non basta che l’algoritmo sembri corretto. Va sempre provato con valori diversi, soprattutto con i casi limite.</p>
+      </details>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizi guidati con Flowgorithm</h2>
+      <p>Per ogni esercizio segui sempre questa procedura:</p>
+
+      <ol class="steps">
+        <li>Leggi con attenzione la consegna.</li>
+        <li>Crea il diagramma in Flowgorithm.</li>
+        <li>Esegui il programma con almeno 3 input diversi.</li>
+        <li>Controlla se l’output è corretto in tutti i casi.</li>
+      </ol>
+
+      <h3>Esercizio 1 — Numero positivo e grande</h3>
+      <div class="box">
+        <p>Leggere un numero intero e:</p>
+        <ul>
+          <li>dire se è <strong>positivo</strong>, <strong>negativo</strong> oppure <strong>zero</strong>;</li>
+          <li>se è positivo, dire anche se è <strong>maggiore di 100</strong> oppure <strong>minore o uguale a 100</strong>.</li>
+        </ul>
+      </div>
+
+      <h3>Esercizio 2 — Età e categoria</h3>
+      <div class="box">
+        <p>Leggere l’età di una persona e stampare:</p>
+        <ul>
+          <li><strong>bambino</strong> se età &lt; 12</li>
+          <li><strong>ragazzo</strong> se età è compresa tra 12 e 17</li>
+          <li><strong>adulto</strong> se età &ge; 18</li>
+        </ul>
+        <p>In più, se la persona è adulta, scrivere anche: <strong>può votare</strong>.</p>
+      </div>
+
+      <h3>Esercizio 3 — Pari, dispari e segno</h3>
+      <div class="box">
+        <p>Leggere un numero intero e stampare:</p>
+        <ul>
+          <li><strong>pari positivo</strong></li>
+          <li><strong>pari negativo</strong></li>
+          <li><strong>dispari positivo</strong></li>
+          <li><strong>dispari negativo</strong></li>
+          <li><strong>zero</strong></li>
+        </ul>
+      </div>
+
+      <details class="tip">
+        <summary>Suggerimento</summary>
+        <p>Spesso conviene controllare prima il <strong>segno</strong> del numero e poi, dentro il caso corretto, controllare se è <strong>pari o dispari</strong>.</p>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>Errori tipici da riconoscere</h2>
+
+      <h3>Errore 1 — Condizioni nell’ordine sbagliato</h3>
+      <div class="box">
+<pre><code>SE voto &gt;= 6 ALLORA
+    scrivi "Sufficiente o più"
+ALTRIMENTI SE voto &gt;= 8 ALLORA
+    scrivi "Ottimo"
+FINE SE</code></pre>
+      </div>
+      <p>Problema: il controllo <code>voto &gt;= 8</code> non verrà mai raggiunto, perché 8 soddisfa già la prima condizione.</p>
+
+      <h3>Errore 2 — IF separati invece di una struttura corretta</h3>
+      <div class="box">
+<pre><code>SE numero &gt; 0 ALLORA
+    scrivi "Positivo"
+FINE SE
+
+SE numero mod 2 = 0 ALLORA
+    scrivi "Pari"
+FINE SE</code></pre>
+      </div>
+      <p>Problema: l’algoritmo stampa messaggi separati, ma non distingue davvero tutti i casi richiesti dalla consegna.</p>
+
+      <h3>Errore 3 — Dimenticare il caso zero</h3>
+      <div class="box">
+<pre><code>SE numero &gt; 0 ALLORA
+    scrivi "Positivo"
+ALTRIMENTI
+    scrivi "Negativo"
+FINE SE</code></pre>
+      </div>
+      <p>Problema: lo zero non è né positivo né negativo.</p>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Attività di debug</h2>
+      <p>Osserva gli algoritmi seguenti. Per ciascuno devi:</p>
+
+      <ol class="steps">
+        <li>dire che cosa non funziona;</li>
+        <li>indicare un input che mostra l’errore;</li>
+        <li>correggere il diagramma in Flowgorithm.</li>
+      </ol>
+
+      <h3>Debug 1</h3>
+      <div class="box">
+<pre><code>Leggi eta
+SE eta &gt;= 18 ALLORA
+    Scrivi "Adulto"
+ALTRIMENTI SE eta &gt;= 12 ALLORA
+    Scrivi "Bambino"
+ALTRIMENTI
+    Scrivi "Ragazzo"
+FINE SE</code></pre>
+      </div>
+
+      <h3>Debug 2</h3>
+      <div class="box">
+<pre><code>Leggi numero
+SE numero &gt; 0 ALLORA
+    SE numero &gt; 100 ALLORA
+        Scrivi "Positivo e grande"
+    FINE SE
+ALTRIMENTI
+    Scrivi "Non positivo"
+FINE SE</code></pre>
+      </div>
+      <p>Domanda: che cosa succede se inserisco <code>25</code>?</p>
+
+      <h3>Debug 3</h3>
+      <div class="box">
+<pre><code>Leggi numero
+SE numero mod 2 = 0 ALLORA
+    Scrivi "Pari"
+ALTRIMENTI
+    Scrivi "Dispari"
+FINE SE
+
+SE numero &lt; 0 ALLORA
+    Scrivi "Negativo"
+FINE SE</code></pre>
+      </div>
+      <p>Domanda: questo algoritmo distingue davvero i casi <em>pari positivo</em>, <em>pari negativo</em>, <em>dispari positivo</em>, <em>dispari negativo</em> e <em>zero</em>?</p>
+    </section>
+
+    <section class="panel">
+      <h2>Procedura consigliata in Flowgorithm</h2>
+      <ol class="steps">
+        <li>Apri un nuovo file.</li>
+        <li>Inserisci le variabili necessarie, per esempio <code>numero</code> oppure <code>eta</code>.</li>
+        <li>Aggiungi un blocco <strong>Input</strong>.</li>
+        <li>Inserisci il primo blocco <strong>Decision</strong>.</li>
+        <li>Se serve, dentro un ramo inserisci una seconda decisione.</li>
+        <li>Esegui l’algoritmo con più prove.</li>
+        <li>Salva il file con un nome chiaro.</li>
+      </ol>
+
+      <div class="figure">
+        <p><strong>Valori da provare sempre</strong></p>
+        <p>Un valore positivo, un valore negativo, zero e almeno un valore di confine, per esempio <code>12</code>, <code>18</code> oppure <code>100</code>.</p>
+        <div class="caption">I valori di confine aiutano a trovare errori nascosti nelle condizioni.</div>
+      </div>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Attività finale autonoma</h2>
+      <div class="box">
+        <p><strong>Consegna:</strong> realizzare in Flowgorithm un algoritmo che legga un numero intero e:</p>
+        <ul>
+          <li>dica se è <strong>positivo</strong>, <strong>negativo</strong> oppure <strong>zero</strong>;</li>
+          <li>se è positivo, dica anche se è <strong>pari</strong> o <strong>dispari</strong>;</li>
+          <li>se è positivo, dica anche se è <strong>maggiore di 100</strong> oppure <strong>minore o uguale a 100</strong>.</li>
+        </ul>
+      </div>
+
+      <p>Prova l’algoritmo almeno con questi input:</p>
+      <div class="box">
+        <p><code>-8</code>, <code>-3</code>, <code>0</code>, <code>2</code>, <code>11</code>, <code>100</code>, <code>101</code></p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Checklist finale</h2>
+      <ul>
+        <li>Hai gestito tutti i casi richiesti?</li>
+        <li>Hai usato gli IF annidati solo dove servono?</li>
+        <li>Hai provato più input diversi?</li>
+        <li>Hai controllato anche i casi limite?</li>
+        <li>L’output è chiaro e leggibile?</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="container narrow small muted">
+    <hr>
+    <p>Docente: Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche. Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+  </footer>
+</body>
+</html>
