@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dojo Flowgorithm - Analisi di un numero</title>
+ <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" /></head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+        <div>
+          <h1>Dojo Flowgorithm – Analisi di un numero</h1>
+          <p class="subtitle">
+            Attività di gruppo per consolidare l'uso degli IF e degli IF annidati in Flowgorithm.
+          </p>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span aria-hidden="true">🌓</span>
+          <span class="btn-label">Tema chiaro</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Obiettivo</h2>
+        <p>
+          In questa attività lavorerete in gruppo per progettare un algoritmo corretto,
+          chiaro e ben organizzato. L'obiettivo non è soltanto arrivare alla soluzione,
+          ma ragionare sulla struttura del diagramma e sull'uso corretto degli IF annidati.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Traccia</h2>
+        <p>Realizza un algoritmo utilizzando <strong>Flowgorithm</strong> che:</p>
+        <ul>
+          <li>legge un numero intero inserito dall'utente;</li>
+          <li>stabilisce se il numero è <strong>positivo</strong>, <strong>negativo</strong> oppure <strong>zero</strong>;</li>
+          <li>se il numero è diverso da zero, stabilisce se è <strong>pari</strong> oppure <strong>dispari</strong>;</li>
+          <li>se il numero è positivo, stabilisce se è:
+            <ul>
+              <li>minore di 10,</li>
+              <li>compreso tra 10 e 99,</li>
+              <li>maggiore o uguale a 100.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Organizzazione del dojo</h2>
+        <p>Lavorate in gruppo seguendo queste fasi:</p>
+        <ol>
+          <li>leggete con attenzione la traccia;</li>
+          <li>individuate i controlli da fare;</li>
+          <li>decidete quali controlli devono essere annidati;</li>
+          <li>costruite il diagramma in Flowgorithm;</li>
+          <li>provate il diagramma con i valori di test;</li>
+          <li>correggete eventuali errori logici.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>Ruoli nel gruppo</h2>
+        <p>Per lavorare meglio, ogni gruppo può assegnare questi ruoli:</p>
+        <ul>
+          <li><strong>lettore della traccia</strong>: controlla che tutti i punti siano svolti;</li>
+          <li><strong>costruttore del diagramma</strong>: inserisce i blocchi in Flowgorithm;</li>
+          <li><strong>controllore logico</strong>: verifica che gli IF siano nel posto giusto;</li>
+          <li><strong>tester</strong>: esegue le prove con i valori richiesti;</li>
+          <li><strong>portavoce</strong>: spiega le scelte fatte dal gruppo.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Valori di test obbligatori</h2>
+        <p>Provate il diagramma almeno con i seguenti valori:</p>
+        <div class="callout">
+          <p><strong>-8, -3, 0, 4, 9, 10, 11, 99, 100, 145</strong></p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Attenzione</h2>
+        <ul>
+          <li>Usa correttamente gli <strong>IF annidati</strong>.</li>
+          <li>Non duplicare controlli inutili.</li>
+          <li>Gestisci correttamente il caso <strong>zero</strong>.</li>
+          <li>Prima di eseguire il diagramma, prova a prevedere l'output.</li>
+          <li>Controlla che tutti i casi richiesti dalla traccia siano presenti.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Domande guida per il gruppo</h2>
+        <ul>
+          <li>Quali controlli devono essere fatti sempre?</li>
+          <li>Quali controlli devono essere fatti solo in alcuni casi?</li>
+          <li>Il controllo pari/dispari va fatto anche per i numeri negativi?</li>
+          <li>Dove conviene usare un IF annidato?</li>
+          <li>Il diagramma copre davvero tutti i casi?</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Consegna</h2>
+        <p>
+          Al termine dell'attività, ogni gruppo deve salvare il file di Flowgorithm e consegnarlo
+          secondo le indicazioni fornite dal docente.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+
+      const label = btn.querySelector('.btn-label');
+      const root = document.documentElement;
+
+      function applyButtonState() {
+        const isDark = root.getAttribute('data-theme') === 'dark';
+        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        if (label) {
+          label.textContent = isDark ? 'Tema scuro' : 'Tema chiaro';
+        }
+      }
+
+      applyButtonState();
+
+      btn.addEventListener('click', function () {
+        const current = root.getAttribute('data-theme');
+        if (current === 'dark') {
+          root.setAttribute('data-theme', 'light');
+        } else {
+          root.setAttribute('data-theme', 'dark');
+        }
+        applyButtonState();
+      });
+    })();
+  </script>
+</body>
+</html>
