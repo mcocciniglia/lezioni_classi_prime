@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Flowgorithm — Connettori logici</title>
+
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+
+  <style>
+    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--panel-border);background:var(--bg);font-size:.95rem;margin:4px 6px 0 0}
+    .ok{border-left:10px solid #2b8a3e}
+    .warn{border-left:10px solid #d6336c}
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:collapse;background:var(--bg);border:1px solid var(--panel-border);border-radius:12px;overflow:hidden}
+    th,td{padding:12px;border-bottom:1px solid var(--panel-border);text-align:left;vertical-align:top}
+    th{background:var(--panel);font-size:1rem}
+    tr:last-child td{border-bottom:none}
+    .center{text-align:center}
+    .big{font-size:1.1rem}
+    .lead{font-size:1.06rem}
+    @media (max-width: 820px){
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .topbar{justify-content:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto principale</a>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="topbar" aria-label="Controlli pagina">
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" type="button">
+          <span class="btn-label">Tema chiaro</span>
+        </button>
+        <button id="contrastToggle" class="btn btn-ghost" aria-pressed="false" type="button">
+          Contrasto alto ☀️
+        </button>
+      </div>
+
+      <h1>Flowgorithm — Connettori logici</h1>
+      <p class="subtitle">Scheda per gli studenti • classe prima • laboratorio di 2 ore</p>
+
+      <div>
+        <span class="tag">Flowgorithm</span>
+        <span class="tag">IF</span>
+        <span class="tag">AND</span>
+        <span class="tag">OR</span>
+        <span class="tag">NOT</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="panel callout">
+      <h2>Cosa impariamo oggi</h2>
+      <p class="big">
+        Oggi impariamo a usare i <strong>connettori logici</strong> per scrivere condizioni più complete.
+      </p>
+      <div class="box">
+        <p class="lead">
+          <strong>Idea chiave:</strong> quando una sola condizione non basta, possiamo collegare più condizioni con
+          <span class="mono">AND</span>, <span class="mono">OR</span> e <span class="mono">NOT</span>.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel ok">
+      <h2>Prima di iniziare</h2>
+      <p>Controlla di saper fare queste operazioni:</p>
+      <ul>
+        <li>dichiarare una variabile;</li>
+        <li>leggere un valore in input;</li>
+        <li>scrivere un messaggio in output;</li>
+        <li>usare un blocco <span class="mono">IF</span>;</li>
+        <li>usare gli operatori di confronto: <span class="mono">&lt;</span>, <span class="mono">&lt;=</span>, <span class="mono">&gt;</span>, <span class="mono">&gt;=</span>, <span class="mono">=</span>.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Perché servono i connettori logici?</h2>
+      <p>
+        Fino a ora abbiamo usato condizioni semplici oppure IF annidati.
+        I connettori logici permettono di scrivere condizioni più compatte.
+      </p>
+
+      <div class="grid-2">
+        <div class="box">
+          <h3>Prima: IF annidati</h3>
+          <p class="mono">
+            Se eta &gt;= 18<br>
+            &nbsp;&nbsp;Se eta &lt;= 65<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Scrivi "Puoi entrare"
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>Dopo: AND</h3>
+          <p class="mono">
+            Se eta &gt;= 18 AND eta &lt;= 65<br>
+            &nbsp;&nbsp;Scrivi "Puoi entrare"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>I tre connettori principali</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Connettore</th>
+              <th>Significato</th>
+              <th>Esempio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="mono">AND</span></td>
+              <td>Tutte le condizioni devono essere vere.</td>
+              <td><span class="mono">eta &gt;= 18 AND eta &lt;= 65</span></td>
+            </tr>
+            <tr>
+              <td><span class="mono">OR</span></td>
+              <td>Almeno una condizione deve essere vera.</td>
+              <td><span class="mono">numero &lt; 0 OR numero &gt; 100</span></td>
+            </tr>
+            <tr>
+              <td><span class="mono">NOT</span></td>
+              <td>Rende falsa una condizione vera, oppure vera una condizione falsa.</td>
+              <td><span class="mono">NOT(numero = 0)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio 1 — Uso di AND</h2>
+      <p><strong>Problema:</strong> dire se un numero è compreso tra 10 e 20, estremi inclusi.</p>
+
+      <div class="box">
+        <p class="mono">
+          Se numero &gt;= 10 AND numero &lt;= 20<br>
+          &nbsp;&nbsp;Scrivi "Numero compreso tra 10 e 20"<br>
+          Altrimenti<br>
+          &nbsp;&nbsp;Scrivi "Numero fuori intervallo"
+        </p>
+      </div>
+
+      <details class="tip">
+        <summary>Valori da provare</summary>
+        <p>Prova con <span class="mono">9</span>, <span class="mono">10</span>, <span class="mono">15</span>, <span class="mono">20</span>, <span class="mono">21</span>.</p>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio 2 — Uso di OR</h2>
+      <p><strong>Problema:</strong> dire se un numero è fuori dall’intervallo 10-20.</p>
+
+      <div class="box">
+        <p class="mono">
+          Se numero &lt; 10 OR numero &gt; 20<br>
+          &nbsp;&nbsp;Scrivi "Numero fuori intervallo"<br>
+          Altrimenti<br>
+          &nbsp;&nbsp;Scrivi "Numero dentro l'intervallo"
+        </p>
+      </div>
+
+      <p>
+        Qui basta che sia vera una delle due condizioni:
+        o il numero è minore di 10, oppure è maggiore di 20.
+      </p>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Attività guidata in Flowgorithm</h2>
+      <p><strong>Obiettivo:</strong> stabilire se una persona può accedere a un servizio riservato agli adulti con meno di 70 anni.</p>
+
+      <div class="box">
+        <p>Il programma deve:</p>
+        <ul>
+          <li>leggere l’età dell’utente;</li>
+          <li>stampare <strong>"Accesso consentito"</strong> se l’età è compresa tra 18 e 69;</li>
+          <li>stampare <strong>"Accesso non consentito"</strong> negli altri casi.</li>
+        </ul>
+      </div>
+
+      <h3>Passaggi da seguire</h3>
+      <ol class="steps">
+        <li>Dichiara una variabile intera chiamata <span class="mono">eta</span>.</li>
+        <li>Scrivi un messaggio per chiedere l’età.</li>
+        <li>Leggi il valore inserito.</li>
+        <li>Inserisci un blocco <span class="mono">IF</span>.</li>
+        <li>Scrivi la condizione: <span class="mono">eta &gt;= 18 AND eta &lt; 70</span>.</li>
+        <li>Completa i due messaggi di output.</li>
+      </ol>
+
+      <details class="tip">
+        <summary>Valori da provare</summary>
+        <p>Prova con <span class="mono">17</span>, <span class="mono">18</span>, <span class="mono">30</span>, <span class="mono">69</span>, <span class="mono">70</span>.</p>
+      </details>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizi in classe</h2>
+
+      <h3>Esercizio 1 — Numero valido</h3>
+      <div class="box">
+        <p>Leggi un numero intero e stampa:</p>
+        <ul>
+          <li><strong>"Numero valido"</strong> se è compreso tra 1 e 100;</li>
+          <li><strong>"Numero non valido"</strong> altrimenti.</li>
+        </ul>
+        <p>Usa <span class="mono">AND</span>.</p>
+      </div>
+
+      <h3>Esercizio 2 — Giorno non lavorativo</h3>
+      <div class="box">
+        <p>Leggi un numero da 1 a 7 che rappresenta un giorno della settimana.</p>
+        <ul>
+          <li>1 = lunedì</li>
+          <li>2 = martedì</li>
+          <li>3 = mercoledì</li>
+          <li>4 = giovedì</li>
+          <li>5 = venerdì</li>
+          <li>6 = sabato</li>
+          <li>7 = domenica</li>
+        </ul>
+        <p>Stampa <strong>"Fine settimana"</strong> se il numero è 6 oppure 7.</p>
+        <p>Usa <span class="mono">OR</span>.</p>
+      </div>
+
+      <h3>Esercizio 3 — Numero fuori intervallo</h3>
+      <div class="box">
+        <p>Leggi un numero intero e stampa:</p>
+        <ul>
+          <li><strong>"Fuori intervallo"</strong> se è minore di 10 oppure maggiore di 50;</li>
+          <li><strong>"Dentro intervallo"</strong> altrimenti.</li>
+        </ul>
+        <p>Usa <span class="mono">OR</span>.</p>
+      </div>
+    </section>
+
+    <section class="panel warn">
+      <h2>Errori da evitare</h2>
+      <ul>
+        <li>Usare <span class="mono">AND</span> quando basta che una sola condizione sia vera.</li>
+        <li>Usare <span class="mono">OR</span> quando invece devono essere vere entrambe le condizioni.</li>
+        <li>Dimenticare i valori di confine, ad esempio <span class="mono">18</span>, <span class="mono">70</span>, <span class="mono">100</span>.</li>
+        <li>Scrivere condizioni impossibili, per esempio: <span class="mono">numero &lt; 10 AND numero &gt; 20</span>.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Checklist finale</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Controllo</th>
+              <th>Da verificare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Variabili</td>
+              <td>Hai dichiarato le variabili necessarie?</td>
+            </tr>
+            <tr>
+              <td>Input</td>
+              <td>Hai letto il valore inserito dall’utente?</td>
+            </tr>
+            <tr>
+              <td>Connettore</td>
+              <td>Hai scelto correttamente tra <span class="mono">AND</span> e <span class="mono">OR</span>?</td>
+            </tr>
+            <tr>
+              <td>Confini</td>
+              <td>Hai controllato i valori limite?</td>
+            </tr>
+            <tr>
+              <td>Test</td>
+              <td>Hai provato il diagramma con più valori?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizio da consegnare</h2>
+      <p><strong>Titolo:</strong> controllo accesso palestra.</p>
+
+      <div class="box">
+        <p>Realizza in Flowgorithm un algoritmo che legga:</p>
+        <ul>
+          <li>l’età di una persona;</li>
+          <li>il valore della quota pagata.</li>
+        </ul>
+
+        <p>La persona può entrare in palestra solo se:</p>
+        <ul>
+          <li>ha almeno 14 anni;</li>
+          <li>ha pagato una quota maggiore o uguale a 20 euro.</li>
+        </ul>
+
+        <p>Il programma deve stampare:</p>
+        <ul>
+          <li><strong>"Accesso consentito"</strong> se entrambe le condizioni sono vere;</li>
+          <li><strong>"Accesso negato"</strong> altrimenti.</li>
+        </ul>
+      </div>
+
+      <h3>Requisiti tecnici</h3>
+      <ul>
+        <li>Usa almeno un connettore logico.</li>
+        <li>Non usare cicli.</li>
+        <li>Usa input, output e IF.</li>
+        <li>Prova il programma con valori diversi.</li>
+      </ul>
+
+      <details class="tip">
+        <summary>Valori da provare</summary>
+        <p>
+          <span class="mono">eta = 13, quota = 20</span><br>
+          <span class="mono">eta = 14, quota = 19</span><br>
+          <span class="mono">eta = 14, quota = 20</span><br>
+          <span class="mono">eta = 20, quota = 25</span>
+        </p>
+      </details>
+
+      <div class="box">
+        <p>Salva il file con nome:</p>
+        <p class="mono">ConnettoriLogici_CognomeNome_Classe.fprg</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container small muted">
+    <hr>
+    <p><strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche. Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+  </footer>
+</body>
+</html>
