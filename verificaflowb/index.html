@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Verifica Kart - Prof. Cocciniglia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { background-color: #f1f5f9; margin: 0; font-family: 'Lato', sans-serif; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+        .slide-container { 
+            width: 1280px; height: 720px; background: white; padding: 60px; 
+            position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            display: flex; flex-direction: column; border-radius: 4px;
+        }
+        .slide-container::before { 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 12px; 
+            background: linear-gradient(90deg, #0f172a, #f59e0b, #0f172a); 
+        }
+        h1 { font-family: 'Poppins'; font-size: 64px; color: #0f172a; margin: 0; line-height: 1.1; }
+        h2 { font-family: 'Poppins'; font-size: 38px; color: #0f172a; border-left: 8px solid #f59e0b; padding-left: 20px; margin-bottom: 25px; }
+        h3 { font-family: 'Poppins'; font-size: 28px; color: #334155; margin-bottom: 15px; }
+        .content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; font-size: 22px; color: #475569; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 30px; border-radius: 12px; }
+        .card i { font-size: 40px; color: #f59e0b; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 18px; }
+        th { background: #0f172a; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e2e8f0; }
+        .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; color: #94a3b8; font-size: 16px; border-top: 1px solid #f1f5f9; padding-top: 15px; font-weight: bold; }
+        @media print {
+            body { padding: 0; background: white; }
+            .slide-container { box-shadow: none; page-break-after: always; border: 1px solid #eee; margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div class="content" style="text-align: center;">
+        <p style="text-transform: uppercase; letter-spacing: 4px; color: #64748b; font-weight: 700;">Laboratorio di Informatica</p>
+        <h1>🧪 Verifica: Noleggio Kart</h1>
+        <div style="font-size: 30px; color: #f59e0b; font-weight: bold; margin-top: 20px;">Prof. Marco Angelo Cocciniglia</div>
+        <p style="margin-top: 40px; font-size: 20px; color: #94a3b8;">Codice Corso: ocoym5jv</p>
+    </div>
+    <div class="footer"><span>Informatica - Algoritmi</span><span>Slide 1</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Obiettivo della Prova</h2>
+    <div class="content">
+        <p>Realizzare un algoritmo in <strong>Flowgorithm</strong> per la gestione degli accessi e dei costi di un circuito di Karting.</p>
+        <div class="card" style="margin-top: 30px;">
+            <h3>Competenze da dimostrare:</h3>
+            <ul style="line-height: 1.8;">
+                <li>Controllo dei dati (Validazione).</li>
+                <li>Smistamento piloti (Pista Junior vs Adulti).</li>
+                <li>Calcolo tariffe dinamiche (Età + Weekend).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 2</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 1: Input Dati</h2>
+    <div class="content">
+        <p>L'algoritmo deve leggere in input tre variabili:</p>
+        <div class="grid-2" style="margin-top: 20px;">
+            <div class="card">
+                <i class="fa-solid fa-user"></i>
+                <h3>Anagrafica</h3>
+                <p>Età e Altezza del pilota (numeri interi).</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-calendar-day"></i>
+                <h3>Giorno</h3>
+                <p>Numero da 1 (Lunedì) a 7 (Domenica).</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 3</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 2: Validazione</h2>
+    <div class="content">
+        <div class="card" style="background: #fff1f2; border-color: #fecdd3;">
+            <h3 style="color: #be123c;">Errore nei dati inseriti se:</h3>
+            <ul>
+                <li>Età <= 0</li>
+                <li>Altezza <= 0</li>
+                <li>Giorno < 1 oppure Giorno > 7</li>
+            </ul>
+            <p><strong>Azione:</strong> Stampa il messaggio di errore e termina il programma.</p>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 4</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 3: Scelta della Pista</h2>
+    <div class="content">
+        <div class="grid-2">
+            <div class="card" style="border-left: 8px solid #3b82f6;">
+                <h3>Pista Junior</h3>
+                <p>Se l'altezza è <strong>minore di 140 cm</strong>.</p>
+                <p style="font-weight: bold; color: #1e40af;">Output: "Accesso pista junior"</p>
+            </div>
+            <div class="card" style="border-left: 8px solid #0f172a;">
+                <h3>Pista Adulti</h3>
+                <p>Se l'altezza è <strong>maggiore o uguale a 140 cm</strong>.</p>
+                <p style="font-weight: bold; color: #0f172a;">Azione: Procedi al calcolo del costo.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 5</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 4: Calcolo Costo (Pista Adulti)</h2>
+    <div class="content">
+        <div style="display: flex; gap: 20px; margin-top: 30px;">
+            <div class="card" style="flex:1; text-align: center;">
+                <h1 style="font-size: 50px;">10€</h1>
+                <p>Minorenni (&lt; 18)</p>
+            </div>
+            <div class="card" style="flex:1; text-align: center;">
+                <h1 style="font-size: 50px;">15€</h1>
+                <p>Adulti (18-65)</p>
+            </div>
+            <div class="card" style="flex:1; text-align: center;">
+                <h1 style="font-size: 50px;">8€</h1>
+                <p>Senior (&gt; 65)</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 6</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 5: Supplemento Weekend</h2>
+    <div class="content">
+        <div class="card" style="border-top: 10px solid #f59e0b;">
+            <i class="fa-solid fa-flag-checkered"></i>
+            <h3>Condizione Speciale (+3 Euro)</h3>
+            <p>Se il pilota accede alla pista adulti e il giorno è <strong>Sabato (6)</strong> o <strong>Domenica (7)</strong>:</p>
+            <p style="font-size: 32px; color: #0f172a; font-weight: bold; text-align: center;">Costo Finale = Costo Base + 3€</p>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 7</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Casi di Test Obbligatori</h2>
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Età</th>
+                    <th>Altezza</th>
+                    <th>Giorno</th>
+                    <th>Output Atteso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10</td><td>130</td><td>3</td><td>Accesso pista junior</td></tr>
+                <tr><td>16</td><td>150</td><td>2</td><td>10 euro</td></tr>
+                <tr><td>30</td><td>170</td><td>6</td><td>18 euro</td></tr>
+                <tr><td>70</td><td>180</td><td>7</td><td>11 euro</td></tr>
+                <tr><td>-2</td><td>150</td><td>3</td><td>Errore</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 8</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Griglia di Valutazione</h2>
+    <div class="content">
+        <ul style="line-height: 2;">
+            <li><strong>Validazione (2pt):</strong> Gestione dati invalidi.</li>
+            <li><strong>Pista (2pt):</strong> Smistamento Junior/Adulti.</li>
+            <li><strong>Tariffe (3pt):</strong> Calcolo base per età.</li>
+            <li><strong>Weekend (2pt):</strong> Supplemento Sabato/Domenica.</li>
+            <li><strong>Formattazione (1pt):</strong> Nomi variabili e I/O.</li>
+        </ul>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 9</span></div>
+</div>
+
+<div class="slide-container">
+    <div class="content" style="text-align: center;">
+        <i class="fa-solid fa-trophy" style="font-size: 100px; color: #f59e0b; margin-bottom: 30px;"></i>
+        <h2>Consegna Elaborato</h2>
+        <p>Salva il file come: <strong>nomecognome_classe.fprg</strong></p>
+        <p style="margin-top: 20px;">Carica su Classroom entro la fine dell'ora.</p>
+        <h3 style="margin-top: 50px;">Buon Lavoro dal Prof. Cocciniglia!</h3>
+    </div>
+    <div class="footer"><span>Fine Prova</span><span>Slide 10</span></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Verifica Lab - Prof. Cocciniglia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { background-color: #f1f5f9; margin: 0; font-family: 'Lato', sans-serif; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+        
+        .slide-container { 
+            width: 1280px; height: 720px; background: white; padding: 60px; 
+            position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            display: flex; flex-direction: column; border-radius: 4px;
+        }
+
+        .slide-container::before { 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 12px; 
+            background: linear-gradient(90deg, #1e40af, #3b82f6); 
+        }
+
+        h1 { font-family: 'Poppins'; font-size: 64px; color: #1e40af; margin: 0; line-height: 1.1; }
+        h2 { font-family: 'Poppins'; font-size: 38px; color: #1e40af; border-left: 8px solid #1e40af; padding-left: 20px; margin-bottom: 25px; }
+        h3 { font-family: 'Poppins'; font-size: 28px; color: #334155; margin-bottom: 15px; }
+        
+        .content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; font-size: 22px; color: #475569; }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 30px; border-radius: 12px; }
+        .card i { font-size: 40px; color: #3b82f6; margin-bottom: 20px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 18px; }
+        th { background: #1e40af; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e2e8f0; }
+        
+        .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; color: #94a3b8; font-size: 16px; border-top: 1px solid #f1f5f9; padding-top: 15px; font-weight: bold; }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .slide-container { box-shadow: none; page-break-after: always; border: 1px solid #eee; margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div class="content" style="text-align: center;">
+        <p style="text-transform: uppercase; letter-spacing: 4px; color: #64748b; font-weight: 700;">Informatica - Laboratorio</p>
+        <h1>Biglietteria Piscina Comunale</h1>
+        <div style="font-size: 30px; color: #1e40af; font-weight: bold; margin-top: 20px;">Prof. Marco Angelo Cocciniglia</div>
+        <p style="margin-top: 40px; font-size: 20px; color: #94a3b8;">Verifica sulle strutture di selezione e IF annidati</p>
+    </div>
+    <div class="footer"><span>Codice Corso: ocoym5jv</span><span>Slide 1</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Obiettivo della Prova</h2>
+    <div class="content">
+        <p>Sviluppare un algoritmo in <strong>Flowgorithm</strong> capace di simulare il software di una biglietteria automatica.</p>
+        <div class="card" style="margin-top: 30px;">
+            <h3>Competenze richieste:</h3>
+            <ul style="line-height: 1.8;">
+                <li>Dichiarazione corretta delle variabili (tipi di dati).</li>
+                <li>Gestione dell'input/output.</li>
+                <li>Utilizzo di operatori logici (AND, OR).</li>
+                <li>Implementazione di selezioni semplici e annidate.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 2</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 1: Acquisizione Input</h2>
+    <div class="content">
+        <p>L'algoritmo deve richiedere all'utente tre valori fondamentali:</p>
+        <div class="grid-2" style="margin-top: 20px;">
+            <div class="card">
+                <i class="fa-solid fa-id-card"></i>
+                <h3>Età</h3>
+                <p>Inserire l'età del visitatore (Intero).</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-ruler-vertical"></i>
+                <h3>Altezza</h3>
+                <p>Inserire l'altezza in centimetri (Intero).</p>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px; border-left: 8px solid #3b82f6;">
+            <i class="fa-solid fa-calendar-days"></i>
+            <strong>Giorno:</strong> Inserire un numero da 1 (Lunedì) a 7 (Domenica).
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 3</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 2: Validazione Dati</h2>
+    <div class="content">
+        <p>Prima di procedere, l'algoritmo deve verificare che i dati siano corretti:</p>
+        <div class="card" style="background: #fff1f2; border-color: #fecdd3;">
+            <h3 style="color: #be123c;">Condizioni di errore:</h3>
+            <ul>
+                <li>Età &le; 0</li>
+                <li>Altezza &le; 0</li>
+                <li>Giorno &lt; 1 oppure Giorno &gt; 7</li>
+            </ul>
+            <p><strong>Azione:</strong> Se una di queste condizioni è vera, stampa <strong>"Errore nei dati inseriti"</strong> e termina.</p>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 4</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 3: Selezione Vasca</h2>
+    <div class="content">
+        <div class="grid-2">
+            <div class="card">
+                <i class="fa-solid fa-child-reaching"></i>
+                <h3>Piscina Bambini</h3>
+                <p>Se l'altezza è <strong>minore di 120 cm</strong>.</p>
+                <p style="font-weight: bold; color: #1e40af;">Output: "Accesso solo piscina bambini"</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-person-swimming"></i>
+                <h3>Piscina Principale</h3>
+                <p>Se l'altezza è <strong>maggiore o uguale a 120 cm</strong>.</p>
+                <p style="font-weight: bold; color: #1e40af;">Azione: Procedi al calcolo del prezzo.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 5</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 4: Calcolo Prezzo Base</h2>
+    <div class="content">
+        <p>Per chi accede alla piscina principale, il prezzo dipende dall'età:</p>
+        <div style="display: flex; gap: 20px; margin-top: 30px;">
+            <div class="card" style="flex:1; text-align: center;">
+                <h1 style="font-size: 50px;">8€</h1>
+                <p>Minori di 18 anni</p>
+            </div>
+            <div class="card" style="flex:1; text-align: center;">
+                <h1 style="font-size: 50px;">12€</h1>
+                <p>Dai 18 ai 65 anni</p>
+            </div>
+            <div class="card" style="flex:1; text-align: center;">
+                <h1 style="font-size: 50px;">6€</h1>
+                <p>Oltre i 65 anni</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 6</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Fase 5: Supplemento Weekend</h2>
+    <div class="content">
+        <div class="card" style="border-top: 10px solid #1e40af;">
+            <h3>Condizione Speciale (+2 Euro)</h3>
+            <p>Se il visitatore accede alla piscina principale e il giorno della settimana è <strong>Sabato (6)</strong> oppure <strong>Domenica (7)</strong>:</p>
+            <p style="font-size: 32px; color: #1e40af; font-weight: bold; text-align: center;">Prezzo Finale = Prezzo Base + 2€</p>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 7</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Casi di Test Obbligatori</h2>
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Età</th>
+                    <th>Altezza</th>
+                    <th>Giorno</th>
+                    <th>Output Atteso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10</td><td>110</td><td>3</td><td>Accesso solo piscina bambini</td></tr>
+                <tr><td>12</td><td>130</td><td>2</td><td>Prezzo 8 euro</td></tr>
+                <tr><td>30</td><td>170</td><td>6</td><td>Prezzo 14 euro</td></tr>
+                <tr><td>70</td><td>160</td><td>7</td><td>Prezzo 8 euro</td></tr>
+                <tr><td>20</td><td>170</td><td>9</td><td>Errore nei dati inseriti</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 8</span></div>
+</div>
+
+<div class="slide-container">
+    <h2>Griglia di Valutazione</h2>
+    <div class="content">
+        <div class="grid-2">
+            <ul style="font-size: 18px; line-height: 2;">
+                <li><strong>Dichiarazione e I/O:</strong> 1pt</li>
+                <li><strong>Validazione Dati:</strong> 2pt</li>
+                <li><strong>Gestione Altezza:</strong> 2pt</li>
+                <li><strong>Calcolo Prezzo Età:</strong> 2pt</li>
+            </ul>
+            <ul style="font-size: 18px; line-height: 2;">
+                <li><strong>Struttura e Ordine:</strong> 1pt</li>
+                <li><strong>Supplemento Weekend:</strong> 1pt</li>
+                <li><strong>Correttezza Test:</strong> 1pt</li>
+                <li><strong>TOTALE:</strong> 10 Punti</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 9</span></div>
+</div>
+
+<div class="slide-container">
+    <div class="content" style="text-align: center;">
+        <i class="fa-solid fa-cloud-arrow-up" style="font-size: 100px; color: #1e40af; margin-bottom: 30px;"></i>
+        <h2>Fine della Prova</h2>
+        <p>Salva il file come: <strong>nomecognome_classe.fprg</strong></p>
+        <p style="margin-top: 20px;">Carica l'elaborato su Classroom entro il termine della lezione.</p>
+        <h3 style="margin-top: 50px; color: #3b82f6;">Buon Lavoro dal Prof. Cocciniglia!</h3>
+    </div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 10</span></div>
+</div>
+
+</body>
+</html>
