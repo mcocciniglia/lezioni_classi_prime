@@ -52,7 +52,7 @@
         <div style="font-size: 30px; color: #1e40af; font-weight: bold; margin-top: 20px;">Prof. Marco Angelo Cocciniglia</div>
         <p style="margin-top: 40px; font-size: 20px; color: #94a3b8;">Verifica sulle strutture di selezione e IF annidati</p>
     </div>
-    <div class="footer"><span>Codice Corso: ocoym5jv</span><span>Slide 1</span></div>
+    <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 1</span></div>
 </div>
 
 <div class="slide-container">
@@ -64,9 +64,10 @@
             <ul style="line-height: 1.8;">
                 <li>Dichiarazione corretta delle variabili (tipi di dati).</li>
                 <li>Gestione dell'input/output.</li>
-                <li>Utilizzo di operatori logici (AND, OR).</li>
+                <li>Utilizzo di IF e IF annidati, senza connettori logici.</li>
                 <li>Implementazione di selezioni semplici e annidate.</li>
             </ul>
+            <p style="margin-top: 20px;"><strong>Vincolo:</strong> risolvi usando IF e IF annidati.</p>
         </div>
     </div>
     <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 2</span></div>
@@ -105,9 +106,10 @@
             <ul>
                 <li>Età &le; 0</li>
                 <li>Altezza &le; 0</li>
-                <li>Giorno &lt; 1 oppure Giorno &gt; 7</li>
+                <li>Giorno &lt; 1</li>
+                <li>Giorno &gt; 7</li>
             </ul>
-            <p><strong>Azione:</strong> Se una di queste condizioni è vera, stampa <strong>"Errore nei dati inseriti"</strong> e termina.</p>
+            <p><strong>Azione:</strong> controlla questi casi con IF annidati. Se trovi un dato non valido, stampa <strong>"Errore nei dati inseriti"</strong> e termina.</p>
         </div>
     </div>
     <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 4</span></div>
@@ -161,8 +163,13 @@
     <div class="content">
         <div class="card" style="border-top: 10px solid #1e40af;">
             <h3>Condizione Speciale (+2 Euro)</h3>
-            <p>Se il visitatore accede alla piscina principale e il giorno della settimana è <strong>Sabato (6)</strong> oppure <strong>Domenica (7)</strong>:</p>
+            <p>Se il visitatore accede alla piscina principale, controlla il giorno:</p>
+            <ul style="font-size: 24px; line-height: 1.7;">
+                <li>se il giorno è <strong>Sabato (6)</strong>, aggiungi 2 euro;</li>
+                <li>altrimenti, controlla se il giorno è <strong>Domenica (7)</strong> e aggiungi 2 euro.</li>
+            </ul>
             <p style="font-size: 32px; color: #1e40af; font-weight: bold; text-align: center;">Prezzo Finale = Prezzo Base + 2€</p>
+            <p style="font-size: 20px; color: #64748b; text-align: center; margin-top: 20px;">Risolvi il controllo usando IF annidati.</p>
         </div>
     </div>
     <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 7</span></div>
@@ -196,18 +203,25 @@
     <h2>Griglia di Valutazione</h2>
     <div class="content">
         <div class="grid-2">
-            <ul style="font-size: 18px; line-height: 2;">
-                <li><strong>Dichiarazione e I/O:</strong> 1pt</li>
-                <li><strong>Validazione Dati:</strong> 2pt</li>
-                <li><strong>Gestione Altezza:</strong> 2pt</li>
-                <li><strong>Calcolo Prezzo Età:</strong> 2pt</li>
-            </ul>
-            <ul style="font-size: 18px; line-height: 2;">
-                <li><strong>Struttura e Ordine:</strong> 1pt</li>
-                <li><strong>Supplemento Weekend:</strong> 1pt</li>
-                <li><strong>Correttezza Test:</strong> 1pt</li>
-                <li><strong>TOTALE:</strong> 10 Punti</li>
-            </ul>
+            <div class="card">
+                <h3>Parte base: fino a 8 punti</h3>
+                <ul style="font-size: 18px; line-height: 1.8;">
+                    <li><strong>Dichiarazione variabili e input/output:</strong> 1pt</li>
+                    <li><strong>Validazione dati con IF annidati:</strong> 2pt</li>
+                    <li><strong>Gestione altezza e accesso vasca:</strong> 2pt</li>
+                    <li><strong>Calcolo prezzo base in base all'età:</strong> 2pt</li>
+                    <li><strong>Struttura logica ordinata:</strong> 1pt</li>
+                </ul>
+            </div>
+            <div class="card" style="border-left: 8px solid #1e40af;">
+                <h3>Parte avanzata: 9 e 10</h3>
+                <ul style="font-size: 18px; line-height: 1.8;">
+                    <li><strong>Supplemento weekend corretto:</strong> 1pt</li>
+                    <li><strong>Correttezza complessiva sui test e chiarezza output:</strong> 1pt</li>
+                    <li><strong>TOTALE:</strong> 10 punti</li>
+                </ul>
+                <p style="font-size: 18px; color:#475569;"><strong>Nota:</strong> senza la parte weekend il punteggio massimo è 8.</p>
+            </div>
         </div>
     </div>
     <div class="footer"><span>Prof. M. A. Cocciniglia</span><span>Slide 9</span></div>
