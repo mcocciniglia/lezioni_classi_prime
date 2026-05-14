@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>I cicli in Flowgorithm — Laboratorio di Tecnologie Informatiche</title>
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/style.css">
+  <link rel="stylesheet" href="https://mcocciniglia.github.io/common/assets/theme.css">
+  <script defer src="https://mcocciniglia.github.io/common/assets/theme.js"></script>
+  <link rel="icon" href="https://mcocciniglia.github.io/common/assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto principale</a>
+
+  <header class="page-header">
+    <div class="container">
+      <p class="pill">Classe prima • Flowgorithm • Algoritmi</p>
+      <h1>I cicli in Flowgorithm</h1>
+      <p class="subtitle">Ripetere istruzioni, contare, accumulare valori e controllare gli errori.</p>
+      <p>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span class="btn-label">Tema chiaro</span>
+        </button>
+        <button id="contrastToggle" class="theme-toggle" type="button" aria-pressed="false">
+          Contrasto alto ☀️
+        </button>
+      </p>
+    </div>
+  </header>
+
+  <main id="contenuto" class="container narrow">
+
+    <section class="panel callout">
+      <h2>Prima di iniziare</h2>
+      <p>Nelle lezioni precedenti abbiamo lavorato con variabili, input, output, condizioni e connettori logici.</p>
+      <p>Oggi introduciamo i <strong>cicli</strong>, cioè strutture che permettono di ripetere più volte le stesse istruzioni senza riscriverle.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Obiettivi della lezione</h2>
+      <ul>
+        <li>Capire a cosa serve un ciclo.</li>
+        <li>Distinguere tra ciclo <code>While</code>, <code>Do While</code> e <code>For</code>.</li>
+        <li>Usare un contatore.</li>
+        <li>Usare un accumulatore per calcolare una somma.</li>
+        <li>Evitare cicli infiniti.</li>
+        <li>Realizzare un algoritmo completo in Flowgorithm.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Durata prevista</h2>
+      <p>Lezione di laboratorio di circa <strong>2 ore</strong>.</p>
+      <div class="box">
+        <ul>
+          <li><strong>Prima ora:</strong> spiegazione, esempi guidati e simulazione passo passo.</li>
+          <li><strong>Seconda ora:</strong> esercitazione individuale e consegna del lavoro.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Che cos’è un ciclo?</h2>
+      <p>Un ciclo è una struttura che permette di <strong>ripetere</strong> una o più istruzioni.</p>
+      <p>Esempi di situazioni ripetitive:</p>
+      <ul>
+        <li>stampare i numeri da 1 a 10;</li>
+        <li>chiedere una password finché non è corretta;</li>
+        <li>leggere 5 voti e calcolare la media;</li>
+        <li>calcolare la somma di più numeri.</li>
+      </ul>
+    </section>
+
+    <section class="panel callout">
+      <h2>Idea chiave</h2>
+      <p>Ogni ciclo ha bisogno di una <strong>condizione</strong> che stabilisce se continuare o fermarsi.</p>
+      <p>Se la condizione non diventa mai falsa, il programma può entrare in un <strong>ciclo infinito</strong>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>1. Il ciclo While</h2>
+      <p>Il ciclo <code>While</code> controlla la condizione <strong>prima</strong> di eseguire le istruzioni.</p>
+      <div class="box">
+        <h3>Schema</h3>
+        <pre><code>while condizione
+    istruzioni da ripetere</code></pre>
+      </div>
+      <p>Se la condizione è falsa già all’inizio, il blocco non viene eseguito.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio guidato 1 — Stampare i numeri da 1 a 5</h2>
+      <ol class="steps">
+        <li>Dichiara una variabile intera <code>numero</code>.</li>
+        <li>Assegna a <code>numero</code> il valore <code>1</code>.</li>
+        <li>Inserisci un ciclo <code>While</code> con condizione <code>numero &lt;= 5</code>.</li>
+        <li>Dentro il ciclo stampa <code>numero</code>.</li>
+        <li>Dentro il ciclo aggiorna il contatore con <code>numero = numero + 1</code>.</li>
+      </ol>
+      <div class="box">
+        <h3>Pseudocodice</h3>
+        <pre><code>numero = 1
+
+while numero &lt;= 5
+    output numero
+    numero = numero + 1</code></pre>
+      </div>
+    </section>
+
+    <section class="panel callout">
+      <h2>Attenzione: aggiornare il contatore</h2>
+      <p>L’istruzione <code>numero = numero + 1</code> è fondamentale.</p>
+      <p>Senza questa istruzione, <code>numero</code> rimarrebbe sempre uguale a 1 e il ciclo non finirebbe mai.</p>
+    </section>
+
+    <section class="panel">
+      <h2>2. Il ciclo For</h2>
+      <p>Il ciclo <code>For</code> si usa quando sappiamo già quante volte vogliamo ripetere le istruzioni.</p>
+      <div class="box">
+        <h3>Esempi</h3>
+        <ul>
+          <li>ripeti 10 volte;</li>
+          <li>stampa i numeri da 1 a 20;</li>
+          <li>chiedi 5 numeri;</li>
+          <li>calcola la somma di 10 valori.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Esempio guidato 2 — Somma dei numeri da 1 a 5</h2>
+      <p>Vogliamo calcolare:</p>
+      <pre><code>1 + 2 + 3 + 4 + 5</code></pre>
+      <p>Ci servono due variabili:</p>
+      <ul>
+        <li><code>i</code>: contatore del ciclo;</li>
+        <li><code>somma</code>: accumulatore.</li>
+      </ul>
+      <div class="box">
+        <h3>Pseudocodice</h3>
+        <pre><code>somma = 0
+
+for i = 1 to 5
+    somma = somma + i
+
+output somma</code></pre>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Giro</th>
+            <th>Valore di i</th>
+            <th>Nuova somma</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>2</td><td>2</td><td>3</td></tr>
+          <tr><td>3</td><td>3</td><td>6</td></tr>
+          <tr><td>4</td><td>4</td><td>10</td></tr>
+          <tr><td>5</td><td>5</td><td>15</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>3. Il ciclo Do While</h2>
+      <p>Il ciclo <code>Do While</code> controlla la condizione <strong>dopo</strong> aver eseguito le istruzioni.</p>
+      <p>Per questo motivo viene eseguito <strong>almeno una volta</strong>.</p>
+      <div class="box">
+        <h3>Esempio</h3>
+        <pre><code>do
+    input numero
+while numero &lt;= 0</code></pre>
+      </div>
+      <p>Questo esempio continua a chiedere un numero finché l’utente inserisce un valore non positivo.</p>
+    </section>
+
+    <section class="panel callout">
+      <h2>Confronto rapido</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ciclo</th>
+            <th>Quando usarlo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>While</code></td>
+            <td>Quando non sappiamo quante ripetizioni serviranno.</td>
+          </tr>
+          <tr>
+            <td><code>Do While</code></td>
+            <td>Quando il blocco deve essere eseguito almeno una volta.</td>
+          </tr>
+          <tr>
+            <td><code>For</code></td>
+            <td>Quando conosciamo già il numero di ripetizioni.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Esercizio guidato in classe</h2>
+      <h3>Programma: tabellina di un numero</h3>
+      <p>Realizzare un programma che:</p>
+      <ol>
+        <li>chieda all’utente un numero intero;</li>
+        <li>stampi la tabellina del numero da 1 a 10;</li>
+        <li>usi un ciclo <code>For</code>.</li>
+      </ol>
+      <div class="box">
+        <h3>Esempio di output</h3>
+        <pre><code>Inserisci un numero: 7
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+...
+7 x 10 = 70</code></pre>
+      </div>
+    </section>
+
+    <section class="panel exercise">
+      <h2>Lavori da restituire</h2>
+      <p>Consegnare su Moodle i file Flowgorithm in formato <code>.fprg</code>.</p>
+      <p>Nome dei file:</p>
+      <pre><code>Cognome_Nome_Classe_Cicli_1.fprg
+Cognome_Nome_Classe_Cicli_2.fprg
+Cognome_Nome_Classe_Cicli_3.fprg</code></pre>
+
+      <h3>Lavoro 1 — Conto alla rovescia</h3>
+      <p>Realizzare un algoritmo che:</p>
+      <ol>
+        <li>stampi i numeri da 10 a 1;</li>
+        <li>alla fine stampi il messaggio <code>Fine conto alla rovescia</code>;</li>
+        <li>usi un ciclo.</li>
+      </ol>
+
+      <h3>Lavoro 2 — Somma di N numeri</h3>
+      <p>Realizzare un algoritmo che:</p>
+      <ol>
+        <li>chieda quanti numeri l’utente vuole inserire;</li>
+        <li>chieda uno alla volta i numeri;</li>
+        <li>calcoli la somma totale;</li>
+        <li>stampi il risultato finale.</li>
+      </ol>
+      <p><strong>Attenzione:</strong> usare una variabile accumulatore, ad esempio <code>somma</code>.</p>
+
+      <h3>Lavoro 3 — Controllo password</h3>
+      <p>Realizzare un algoritmo che:</p>
+      <ol>
+        <li>chieda una password;</li>
+        <li>continui a chiederla finché non viene inserita la parola <code>informatica</code>;</li>
+        <li>quando la password è corretta, stampi <code>Accesso consentito</code>.</li>
+      </ol>
+      <p><strong>Suggerimento:</strong> usare un ciclo <code>While</code> oppure <code>Do While</code>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Lavoro facoltativo per chi termina prima</h2>
+      <h3>Media di voti con controllo</h3>
+      <p>Realizzare un algoritmo che:</p>
+      <ol>
+        <li>chieda quanti voti devono essere inseriti;</li>
+        <li>per ogni voto controlli che sia compreso tra 1 e 10;</li>
+        <li>se il voto non è valido, lo richieda;</li>
+        <li>calcoli e stampi la media finale.</li>
+      </ol>
+      <p>Questo esercizio richiede di combinare <strong>cicli</strong>, <strong>condizioni</strong> e <strong>connettori logici</strong>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Checklist prima della consegna</h2>
+      <ul>
+        <li>Ho usato almeno un ciclo?</li>
+        <li>Il ciclo termina correttamente?</li>
+        <li>Le variabili hanno nomi chiari?</li>
+        <li>Ho inizializzato correttamente il contatore o l’accumulatore?</li>
+        <li>Ho testato il programma con più esempi?</li>
+        <li>Il file è stato salvato con il nome richiesto?</li>
+      </ul>
+    </section>
+
+    <section class="panel callout">
+      <h2>Errori frequenti da evitare</h2>
+      <ul>
+        <li>Dimenticare di aggiornare il contatore.</li>
+        <li>Usare una condizione sempre vera.</li>
+        <li>Non inizializzare la variabile <code>somma</code> a 0.</li>
+        <li>Confondere il numero di ripetizioni con il valore inserito.</li>
+        <li>Usare troppi blocchi <code>If</code> quando un ciclo sarebbe più adatto.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Domande di verifica orale</h2>
+      <ol>
+        <li>Che cosa significa “ripetere” in un algoritmo?</li>
+        <li>Qual è la differenza tra <code>While</code> e <code>For</code>?</li>
+        <li>Che cos’è un accumulatore?</li>
+        <li>Che cos’è un ciclo infinito?</li>
+        <li>Quando è utile usare un <code>Do While</code>?</li>
+      </ol>
+    </section>
+
+    <footer class="panel small muted">
+      <p><strong>Docente:</strong> Prof. Marco Cocciniglia — Laboratorio di Tecnologie Informatiche.</p>
+      <p>Questa pagina è pensata per essere letta anche da studenti DSA: istruzioni sequenziali, font leggibili, contrasti elevati e scorciatoie da tastiera evidenziate.</p>
+    </footer>
+
+  </main>
+</body>
+</html>
